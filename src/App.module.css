@@ -1,0 +1,251 @@
+.mainContainer {
+  @apply w-full bg-[#0F0F0F];
+}
+
+.topWrapper {
+  @apply bg-[url("/top-bg.png")]
+    h-[323px]
+    bg-center
+    bg-cover
+    bg-no-repeat
+    border-b-[1px] border-[#FFFFFF40];
+}
+.avatarWrapper {
+  @apply pt-[8px] pl-[8px]
+    bg-[#151515]
+    max-w-[180px] max-h-[180px];
+}
+
+.bottomWrapper {
+  @apply flex justify-between h-full relative;
+}
+
+.navBar {
+  @apply min-h-full min-w-fit
+    bg-[#1C1C1C]
+    flex flex-col
+    gap-[120px] items-center pt-[60px];
+}
+
+.navLogo {
+  @apply w-[32px] h-[27px];
+}
+
+.navBtn {
+  @apply border
+  border-[#3F3F3F]
+    px-4 py-3
+    -rotate-90
+    font-medium text-[12px]
+    text-[#9C9C9C];
+}
+.navWhiteBtn {
+  @apply bg-[#FFFFFF]
+      px-4 py-3
+      -rotate-90
+      font-medium text-[12px]
+      text-[#1C1C1C];
+}
+
+.leftWrapper {
+  @apply max-w-[410px]
+  w-full
+  h-[1000px]
+  flex flex-col
+  gap-[24px]
+  bg-[#151515]
+  pt-[70px] px-[34px];
+}
+
+.leftCard {
+  @apply max-w-[344px]
+    relative overflow-hidden
+    w-full
+    h-fit
+    pt-[32px]
+    pl-[24px]
+    pb-[34px]
+    flex flex-col gap-[30px]
+    justify-between
+    border
+    border-[#FFFFFF25];
+}
+
+.leftCardTitle {
+  @apply text-[20px]
+  font-normal
+  leading-[26px]
+  text-[#FFFFFF];
+}
+.leftCardBg {
+  @apply absolute
+    top-0 right-0;
+}
+
+.rounds {
+  @apply flex flex-col
+    gap-[24px]
+    text-[#FFFFFF] max-w-[344px];
+}
+
+.roundsTitle {
+  @apply text-[20px] font-semibold leading-[27px];
+}
+
+.roundBtn {
+  @apply border
+    border-[#FFFFFF25]
+    px-[32px] py-[16px]
+    flex 
+    justify-between items-center;
+}
+
+.socials {
+  @apply flex flex-col
+    gap-[16px]
+    max-w-[344px] text-[#FFFFFF];
+}
+
+.socialsTitle {
+  @apply text-[20px]
+  font-semibold
+  leading-[27px]
+  mb-2;
+}
+
+.social {
+  @apply flex 
+    items-center justify-between;
+}
+
+.socialLeft {
+  @apply flex items-center
+    gap-[16px];
+}
+
+.rightWrapper {
+  @apply relative
+    flex
+    flex-col
+    pt-[70px]
+    px-[32px]
+    w-full min-h-full
+    text-[#FFFFFF];
+}
+
+.rightCard {
+  @apply border
+  border-[#FFFFFF25]
+    max-w-[719px]
+    p-[32px]
+    flex flex-col
+    justify-between
+    relative;
+  background: linear-gradient(252deg, #2c2c2c -6.59%, #0f0f0f 35.06%);
+}
+
+.rightTitle {
+  @apply flex gap-[24px] items-center;
+}
+
+.rightTitle h3,
+.rightTitle span {
+  @apply text-[20px];
+  background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rightTitle span {
+  @apply text-[16px];
+}
+
+.rightText {
+  @apply text-[12px]
+    text-[#C0C0C0]
+    max-w-[400px]
+    mt-[26px];
+}
+
+.rightBtn {
+  @apply max-w-[167px]
+    mt-[32px]
+    bg-[#FFFFFF]
+    px-[20px] py-[14px]
+    text-[#0F0F0F]
+    font-bold text-[12px]
+    uppercase;
+}
+
+.rightCardBg {
+  @apply absolute
+  h-full
+    bottom-0
+    right-0 opacity-75;
+}
+
+.vestingTitle {
+  @apply text-[20px] font-semibold mt-[46px] mb-[24px];
+  background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vesting {
+  @apply flex flex-col
+    gap-[40px]
+    border
+    border-[#FFFFFF25]
+      max-w-[719px]
+      p-[32px] text-[#FFFFFF];
+}
+
+.vestingWrapper {
+  @apply flex
+     justify-between
+     items-center;
+}
+
+.vestingItem {
+  @apply flex
+    gap-[16px]
+    items-center;
+}
+
+.vestingNumber {
+  @apply w-[23px] h-[23px]
+    rounded-full
+    flex items-center justify-center
+    bg-[#FFFFFF]
+    text-[14px]
+    font-medium
+    text-[#3F3F3F];
+}
+
+.vestingName {
+  @apply text-[14px] font-semibold;
+  background: linear-gradient(90deg, #ffffff 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vestingInf {
+  @apply text-[14px] font-semibold;
+}
+
+.vestingBottomTitle {
+  @apply text-[18px] font-semibold mr-2;
+  background: linear-gradient(90deg, #ffffff 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vestingBottomInf {
+  @apply text-[18px] font-semibold mr-2;
+}
+
+.rightBg {
+    @apply absolute
+    bottom-0
+    left-[100px]
+}
