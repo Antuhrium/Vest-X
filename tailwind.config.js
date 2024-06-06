@@ -3,7 +3,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      sans: ['"Igra-Sans", sans-serif'],
+      igraSans: ['"Igra-Sans", sans-serif'],
+      milligram: ['"Milligram", sans-serif'],
+      nunito: ['"Nunito Sans", sans-serif']
+    },
+    container: {
+      screens: {
+        '2xl': '1280px',
+      }
     },
     extend: {},
   },

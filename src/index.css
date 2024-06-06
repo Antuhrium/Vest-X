@@ -1,11 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   @font-face {
     font-family: "Igra-Sans";
     src: url("/fonts/IgraSans.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Milligram";
+    src: url("/fonts/Milligram-Text-Medium-trial.ttf") format("ttf");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Milligram";
+    src: url("/fonts/Milligram-Text-Regular-trial.ttf") format("ttf");
+    font-weight: 400;
+  }
+  body {
+    @apply font-nunito;
   }
 }
