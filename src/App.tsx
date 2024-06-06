@@ -1,20 +1,20 @@
 import styles from "./App.module.css";
 import GrayArrow from "./components/GrayArrow";
 
-import Avatar from "/avatar.png";
+import Avatar from "/avatar.svg";
 import Logo from "/logo.png";
 import ProjIntrodImg from "/proj-introd-img.png";
 import KeyFeaturesImg from "/key-features-img.png";
 import ArkhamBg from "/arkham-bg.png";
 import RightBg from "/right-bg.png";
 import TopBg from "/top-bg.png";
-import Circle from "/circle.png";
 
-import Twitter from "/socials/twitter.png";
-import Telegram from "/socials/telegram.png";
-import Linkedin from "/socials/linkedin.png";
-import Website from "/socials/web.png";
-import MyChart from "./components/MyChart";
+import Twitter from "/socials/twitter.svg";
+import Telegram from "/socials/telegram.svg";
+import Linkedin from "/socials/linkedin.svg";
+import Website from "/socials/web.svg";
+import ChartLine from "./components/ChartLine";
+import ChartCircle from "./components/ChartCircle";
 
 const socials = [
   { name: "Twitter", img: Twitter },
@@ -176,14 +176,16 @@ function App() {
                     Total Supply Weight
                   </span>
                   <div className={styles.leftGraph}>
-                    <img src={Circle} alt="" className={styles.leftGraphImg} />
+                    <div className={styles.CircleGraph}>
+                      <ChartCircle />
+                    </div>
                     <span className={styles.graphPercent}>15%</span>
                     <span className={styles.graphText}>Supply</span>
                   </div>
                 </div>
                 <div className={styles.chartWrapper}>
                   <span className={styles.chartTitle}>Vesting</span>
-                  <MyChart />
+                  <ChartLine />
                 </div>
               </div>
               <img className={styles.rightBg} src={RightBg} alt="" />

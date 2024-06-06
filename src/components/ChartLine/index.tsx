@@ -15,7 +15,7 @@ const data = [
   { name: "May 31" },
 ];
 
-const MyChart = () => {
+const ChartLine = () => {
   return (
       <ResponsiveContainer width={"100%"} height={"100%"}>
         <AreaChart data={data}>
@@ -56,4 +56,4 @@ const MyChart = () => {
   );
 };
 
-export default MyChart;
+export default ChartLine;
