@@ -27,6 +27,13 @@ function App() {
   return (
     <>
       <main className={styles.mainContainer}>
+        <aside className={styles.navBarMobile}>
+          <img src={Logo} alt="logo" className={styles.navLogo} />
+          <div className={styles.btnWrapper}>
+            <button className={styles.navBtn}>ALL PROJECTS</button>
+            <button className={styles.navWhiteBtn}>CONNECT WALLET</button>
+          </div>
+        </aside>
         <div className={styles.topWrapper}>
           <div className={styles.avatarWrapper}>
             <img src={Avatar} alt="avatar" />
@@ -36,16 +43,30 @@ function App() {
 
         <div className={styles.bottomWrapper}>
           <aside className={styles.navBar}>
-            <div className={styles.navBarWrapper}>
-              <img src={Logo} alt="logo" className={styles.navLogo} />
-              <div className={styles.btnWrapper}>
-                <button className={styles.navBtn}>ALL PROJECTS</button>
-                <button className={styles.navWhiteBtn}>CONNECT WALLET</button>
-              </div>
+            <img src={Logo} alt="logo" className={styles.navLogo} />
+            <div className={styles.btnWrapper}>
+              <button className={styles.navBtn}>ALL PROJECTS</button>
+              <button className={styles.navWhiteBtn}>CONNECT WALLET</button>
             </div>
           </aside>
           <div className={styles.wrapper}>
             <div className={styles.leftWrapper}>
+              <div className={`${styles.rightCard} ${styles.mobileCard}`}>
+                <div className={styles.rightTitle}>
+                  <h3>Arkham | Seed round</h3>
+                  <span>(ARKM)</span>
+                </div>
+                <p className={styles.rightText}>
+                  Arkham (ARKM) is an intel-to-earn token powering the
+                  deanonymization of the blockchain with Al.
+                </p>
+                <button className={styles.rightBtn}>INVEST SEED</button>
+                <img
+                  className={styles.rightCardBg}
+                  src={ArkhamBg}
+                  alt="Arkham"
+                />
+              </div>
               <div className={styles.leftCard}>
                 <h3 className={styles.leftCardTitle}>
                   Project <br />
@@ -77,15 +98,19 @@ function App() {
               </div>
               <div className={styles.socials}>
                 <span className={styles.socialsTitle}>Links</span>
-                {socials.map((social) => (
-                  <button className={styles.social}>
-                    <div className={styles.socialLeft}>
-                      <img src={social.img} alt={social.name} />
-                      <span>{social.name}</span>
-                    </div>
-                    <GrayArrow />
-                  </button>
-                ))}
+                <div className={styles.socialsWrapper}>
+                  {socials.map((social) => (
+                    <button className={styles.social}>
+                      <div className={styles.socialLeft}>
+                        <img src={social.img} alt={social.name} />
+                        <span>{social.name}</span>
+                      </div>
+                      <div className={styles.socialBtn}>
+                        <GrayArrow />
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -140,7 +165,9 @@ function App() {
                     </span>
                     <span className={styles.vestingBottomInf}>0,04 USD</span>
                   </div>
-                  <GrayArrow />
+                  <div className={styles.vestingButton}>
+                    <GrayArrow />
+                  </div>
                 </div>
               </div>
               <div className={styles.graph}>

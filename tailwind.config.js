@@ -5,12 +5,19 @@ export default {
     fontFamily: {
       igraSans: ['"Igra-Sans", sans-serif'],
       milligram: ['"Milligram", sans-serif'],
-      nunito: ['"Nunito Sans", sans-serif']
+      nunito: ['"Nunito Sans", sans-serif'],
+    },
+    colors: {
+      black: "#0F0F0F",
+      dark: "#151515",
+      darkGray: "#1C1C1C",
+      gray: "#9C9C9C",
+      white: "#FFFFFF",
     },
     container: {
       screens: {
-        '2xl': '1280px',
-      }
+        "2xl": "1280px",
+      },
     },
     extend: {},
   },
