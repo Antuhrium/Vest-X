@@ -1,13 +1,9 @@
-// MyChart.js
-import React from "react";
 import {
   XAxis,
-  CartesianGrid,
   YAxis,
   ResponsiveContainer,
   AreaChart,
   Area,
-  ReferenceLine,
 } from "recharts";
 
 const data = [
