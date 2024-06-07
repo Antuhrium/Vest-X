@@ -4,12 +4,9 @@ import GrayArrow from "../GrayArrow";
 import styles from "./style.module.css";
 import ArkhamBg from "/arkham-bg.png";
 import RightBg from "/right-bg.png";
-import useIncrementOnView from "../../CustomHooks/useIncrementOnView";
+import CountUpComponent from "../CountUpComponent";
 
 const RightWrapper: React.FC = () => {
-  const [allocationRef, allocation] = useIncrementOnView(0, 31250, 1000000, 10);
-  const [priceRef, price] = useIncrementOnView(0, 0.01, 0.04, 100);
-
   return (
     <div className={styles.rightWrapper}>
       <div className={styles.rightCard}>
@@ -46,14 +43,14 @@ const RightWrapper: React.FC = () => {
         <div className={styles.vestingWrapper}>
           <div className={styles.vestingItem}>
             <span className={styles.vestingBottomTitle}>Allocation</span>
-            <span ref={allocationRef} className={styles.vestingBottomInf}>
-              {allocation} tokens
+            <span className={styles.vestingBottomInf}>
+              <CountUpComponent end={1000000} /> tokens
             </span>
           </div>
           <div className={styles.vestingItem}>
             <span className={styles.vestingBottomTitle}>Token price</span>
-            <span ref={priceRef} className={styles.vestingBottomInf}>
-              {price} USD
+            <span className={styles.vestingBottomInf}>
+              <CountUpComponent end={0.04} /> USD
             </span>
           </div>
           <div className={styles.vestingButton}>
