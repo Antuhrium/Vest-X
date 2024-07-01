@@ -2,9 +2,9 @@ import styles from "./App.module.scss";
 import LeftWrapper from "./components/LeftWrapper";
 import RightWrapper from "./components/RightWrapper";
 
-import Avatar from "/avatar.svg";
-import Logo from "/logo.png";
-import TopBg from "/top-bg.png";
+import Avatar from "/images/avatar.svg";
+import Logo from "/images/logo.png";
+import TopBg from "/images/top-bg.png";
 
 function App() {
   return (
