@@ -1,0 +1,12 @@
+.title {
+  width: fit-content;
+  font-family: "Igra-Sans", sans-serif;
+  font-size: 36px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

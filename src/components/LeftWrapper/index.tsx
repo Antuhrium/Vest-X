@@ -1,11 +1,11 @@
-import Twitter from "/socials/twitter.svg";
-import Telegram from "/socials/telegram.svg";
-import Linkedin from "/socials/linkedin.svg";
-import Website from "/socials/web.svg";
+import Twitter from "/images/socials/twitter.svg";
+import Telegram from "/images/socials/telegram.svg";
+import Linkedin from "/images/socials/linkedin.svg";
+import Website from "/images/socials/web.svg";
 
-import ProjIntrodImg from "/proj-introd-img.png";
-import KeyFeaturesImg from "/key-features-img.png";
-import ArkhamBg from "/arkham-bg.png";
+import ProjIntrodImg from "/images/proj-introd-img.png";
+import KeyFeaturesImg from "/images/key-features-img.png";
+import ArkhamBg from "/images/arkham-bg.png";
 
 import styles from "./style.module.scss";
 import GrayArrow from "../GrayArrow";
