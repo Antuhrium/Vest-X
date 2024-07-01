@@ -1,0 +1,36 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+  background-color: #0A0F1A;
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #1D283A;
+
+  &:focus-within {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .searchInput {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 8px;
+    outline: none;
+    color: #676E76;
+  }
+
+  
+    .searchIcon {
+      margin-left: 20px;
+      display: flex; // Changed to flex
+      align-items: center; // Center vertically
+      justify-content: center; // Center horizontally
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url('/tdesign_search.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+}
