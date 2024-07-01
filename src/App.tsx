@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 import LeftWrapper from "./components/LeftWrapper";
 import RightWrapper from "./components/RightWrapper";
 
