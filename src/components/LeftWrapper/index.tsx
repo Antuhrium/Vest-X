@@ -7,7 +7,7 @@ import ProjIntrodImg from "/proj-introd-img.png";
 import KeyFeaturesImg from "/key-features-img.png";
 import ArkhamBg from "/arkham-bg.png";
 
-import styles from "./style.module.css";
+import styles from "./style.module.scss";
 import GrayArrow from "../GrayArrow";
 import Fade from "../FadeIn";
 
