@@ -1,5 +1,6 @@
 import styles from "./App.module.scss";
 import LeftWrapper from "./components/LeftWrapper";
+import Menu from "./components/Menu";
 import RightWrapper from "./components/RightWrapper";
 
 import Avatar from "/images/avatar.svg";
@@ -25,13 +26,14 @@ function App() {
         <img className={styles.topBg} src={TopBg} alt="" />
 
         <div className={styles.bottomWrapper}>
-          <aside className={styles.navBar}>
+          {/* <aside className={styles.navBar}>
             <img src={Logo} alt="logo" className={styles.navLogo} />
             <div className={styles.btnWrapper}>
               <button className={styles.navBtn}>ALL PROJECTS</button>
               <button className={styles.navWhiteBtn}>CONNECT WALLET</button>
             </div>
-          </aside>
+          </aside> */}
+          <Menu />
           <div className={styles.wrapper}>
             <LeftWrapper />
             <RightWrapper />
