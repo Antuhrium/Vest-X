@@ -1,0 +1,103 @@
+.projectCard {
+  background-color: #0A0F1A;;
+  padding: 25px;
+  color: white;
+  max-width: 300px;
+  border-radius: 8px;
+  border: 1px solid #1D283A;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.projectName {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.vestingStatus {
+  display: flex;
+  align-items: center;
+  background-color: #00A86B;
+  color: #030711;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.checkmarkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #000000;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+.checkmark {
+  color: #00A86B;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.projectImage {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.projectDetails {
+  .tokenName {
+    margin-bottom: 8px;
+  }
+}
+
+.projectDescription {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.projectTags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #030711;
+}
+
+.tag {
+  background-color: #3A4556;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+
+
+  &[data-tag="AI"] {
+    background-image: var(--bg-image);
+    background-color: transparent; 
+  }
+}
+
+.viewDetailsBtn {
+  width: 100%;
+  background-color: #0A0F1A;
+  border: 1px solid var(--Gray-400, #7F8EA3);
+  color: #8B95A5;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
