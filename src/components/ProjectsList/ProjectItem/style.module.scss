@@ -1,0 +1,121 @@
+.projectItem {
+  width: 348px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  border-radius: 8px;
+  border: 1px solid #1d283a;
+  background: #0a0f1a;
+
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .projectName {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .vesting {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 8px;
+
+    border-radius: 2px;
+    background: #1d283a;
+
+    &.active {
+      border-radius: 2px;
+      background: #10b863;
+    }
+
+    span {
+      color: #030711;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 26px;
+    }
+
+    .vestingImage {
+      display: flex;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 100px;
+      background: #030711;
+    }
+  }
+}
+
+.projectImage {
+  margin-top: 24px;
+  width: 100%;
+  height: 106px;
+
+  object-fit: cover;
+  border-radius: 2px;
+  border: 0.75px solid rgba(255, 255, 255, 0.25);
+}
+
+.projectInfo {
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  .infoItem {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .info {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+
+.projectButton {
+  width: 100%;
+  margin-top: 32px;
+  padding: 14px 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 4px;
+  border: 1px solid #7f8ea3;
+
+  color: #7f8ea3;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: #7f8ea3;
+    color: #fff;
+  }
+  &:active {
+    background: transparent;
+    color: #7f8ea3;
+  }
+}

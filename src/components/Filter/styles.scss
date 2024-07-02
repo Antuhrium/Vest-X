@@ -1,0 +1,37 @@
+@import "rsuite/dist/rsuite.css";
+
+.rs-slider-bar {
+  background-color: #1d283a !important;
+  height: 4px;
+  width: 100%;
+}
+
+.rs-slider-progress-bar {
+  background-color: #0f62fe;
+  height: 100%;
+}
+
+.rs-slider-handle {
+  top: -9px;
+  &::before {
+    width: 22px;
+    height: 22px;
+    background-color: #0f62fe;
+    border: none;
+  }
+}
+
+.rs-slider-handle:hover,
+.rs-slider-handle.active,
+.rs-slider-handle:active,
+.rs-slider-handle:focus {
+  .rs-tooltip {
+    display: none;
+  }
+  &::before {
+    box-shadow: none;
+  }
+  &::before {
+    transform: scale(1);
+  }
+}
