@@ -1,0 +1,260 @@
+.tabButton {
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(127, 142, 163, 0.1882352941);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  font-size: 18px;
+  cursor: "pointer";
+}
+
+.tabButton:hover {
+  transform: scale(1.005);
+  transition-duration: 500ms;
+}
+
+.tagName {
+  color: white;
+}
+
+.useCount {
+  color: #7f8ea3;
+}/*# sourceMappingURL=style.module.css.map */: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("images/tdesign_search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}/*# sourceMappingURL=style.module.css.map */.rightTitle h3,
+.rightTitle span {
+  @apply text-[20px];
+  background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rightTitle span {
+  @apply text-[16px];
+}
+
+.rightText {
+  @apply text-[12px]
+      text-[#C0C0C0]
+      max-w-[300px]
+      mt-[26px]
+      font-milligram;
+}
+
+.rightBtn {
+  @apply max-w-[167px]
+      mt-[32px]
+      bg-white
+      px-[20px] py-[14px]
+      text-black
+      font-bold text-[12px]
+      uppercase transition-all;
+}
+
+.rightBtn:hover {
+  @apply transition-colors bg-gray;
+}
+
+.rightCardBg {
+  @apply absolute
+      h-full
+      -bottom-[18px]
+      right-0
+      mix-blend-lighten;
+}
+
+@media screen and (max-width: 640px) {
+  .rightCardBg {
+    @apply -right-[85px] -bottom-[59px];
+  }
+  .mobileCard .rightTitle {
+    @apply flex-col items-start gap-[16px];
+  }
+  .rightBtn {
+    @apply max-w-[111px] px-0;
+  }
+  .rightText {
+    @apply max-w-[220px];
+  }
+}
+.vestingTitle {
+  @apply text-[20px] font-semibold mt-[46px] mb-[24px];
+  background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vesting {
+  @apply flex flex-col
+      gap-[40px]
+      border
+      border-[#FFFFFF25]
+      p-[32px] text-white
+      relative transition-all;
+  background: linear-gradient(251.41deg, rgba(44, 44, 44, 0.3) -6.59%, rgba(15, 15, 15, 0.3) 35.06%);
+}
+
+.vesting:hover svg {
+  @apply transition-transform translate-x-2 translate-y-2;
+}
+
+.vesting:hover {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+.vestingWrapper {
+  @apply flex
+       justify-between
+       items-center;
+}
+
+@media screen and (max-width: 1280px) {
+  .vesting {
+    @apply w-full max-w-none px-[22px];
+  }
+}
+@media screen and (max-width: 1024px) {
+  .vestingWrapper {
+    @apply flex-col items-start gap-[16px];
+  }
+  .vestingButton {
+    @apply absolute top-[32px] right-[22px];
+  }
+}
+.vestingItem {
+  @apply flex
+      gap-[16px]
+      items-center;
+}
+
+.vestingNumber {
+  @apply w-[23px] h-[23px] 
+      rounded-full
+      flex items-center justify-center
+      bg-white
+      text-[14px]
+      font-medium
+      text-[#3F3F3F]
+      font-milligram;
+}
+
+.vestingName {
+  @apply text-[14px] font-semibold;
+  background: linear-gradient(90deg, #ffffff 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vestingInf {
+  @apply text-[14px] font-semibold;
+}
+
+.vestingBottomTitle {
+  @apply text-[18px] font-semibold mr-2;
+  background: linear-gradient(90deg, #ffffff 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vestingBottomInf {
+  @apply text-[18px] font-semibold mr-2 w-[200px];
+}
+
+@media screen and (max-width: 1024px) {
+  .vestingBottomInf {
+    @apply text-[16px] w-fit;
+  }
+}
+.rightBg {
+  @apply absolute
+      bottom-0
+      left-1/4;
+}
+
+@media screen and (max-width: 640px) {
+  .rightBg {
+    @apply left-0;
+  }
+}
+.graph {
+  @apply flex
+        border
+        border-[#FFFFFF25]
+      text-white
+      mt-[40px];
+  background: linear-gradient(251.41deg, rgba(44, 44, 44, 0.3) -6.59%, rgba(15, 15, 15, 0.3) 35.06%);
+}
+
+@media screen and (max-width: 1280px) {
+  .graph {
+    @apply flex-col max-w-none;
+  }
+}
+.leftGraphWrapper {
+  @apply max-w-[30%]
+      w-full h-full
+      p-[26px]
+      flex flex-col
+      items-center
+      gap-[30px]
+      justify-center
+      border-r border-[#FFFFFF25];
+  background: linear-gradient(251.41deg, rgba(44, 44, 44, 0.3) -6.59%, rgba(15, 15, 15, 0.3) 35.06%);
+}
+
+@media screen and (max-width: 1280px) {
+  .leftGraphWrapper {
+    @apply max-w-none border-b border-r-0;
+  }
+}
+.leftGraphTitle {
+  @apply text-[16px] font-semibold;
+}
+
+.leftGraph {
+  @apply relative 
+    flex flex-col
+    justify-center items-center
+    gap-1
+    w-[160px] h-[160px];
+}
+
+.CircleGraph {
+  @apply absolute top-0
+    left-0 w-[160px] h-[160px];
+}
+
+.graphPercent {
+  @apply text-[28px] font-semibold leading-[39px] mt-2;
+}
+
+.graphText {
+  @apply text-[14px] leading-[19px];
+}
+
+.chartWrapper {
+  @apply flex flex-col
+      gap-[24px]
+      px-[26px]
+      pt-[32px] pl-[20px]
+      w-full h-full;
+  background: linear-gradient(251.41deg, rgba(44, 44, 44, 0.3) -6.59%, rgba(15, 15, 15, 0.3) 35.06%);
+}
+
+@media screen and (max-width: 1280px) {
+  .chartWrapper {
+    @apply h-[245px] pl-0;
+  }
+  .chartTitle {
+    @apply ml-[22px];
+  }
+}/*# sourceMappingURL=style.module.css.map */

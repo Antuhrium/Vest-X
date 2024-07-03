@@ -1,0 +1,58 @@
+.chartsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.chartItem {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gradientText {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bigChart {
+  width: 70%;
+}
+
+.smallChart {
+  width: 30%;
+}
+
+.greenText {
+  color: #29e185;
+  font-size: 16px;
+  margin-left: 0.5rem;
+}
+
+.chartText {
+  font-size: 18px;
+  color: white;
+}
+
+.chartBalance {
+  font-size: 40px;
+  color: white;
+}
+
+.recharts-layer .recharts-pie {
+  transform: scale(1.5);
+}
