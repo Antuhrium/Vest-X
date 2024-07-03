@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 
 const CircularProgressChart = () => {
@@ -147,7 +147,7 @@ const CircularProgressChart = () => {
             onMouseEnter={(_, index) => onPieEnter(index)}
             onMouseLeave={onPieLeave}
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={`url(#${PATTERNS[index]})`}
@@ -168,7 +168,7 @@ const CircularProgressChart = () => {
               gap: "1rem",
             }}
             align="right"
-            onMouseEnter={(e, index) => onLegendMouseEnter(index)}
+            onMouseEnter={(_, index) => onLegendMouseEnter(index)}
             onMouseLeave={onLegendMouseLeave}
             payload={data.map((item, index) => ({
               id: item.name,

@@ -5,7 +5,7 @@ import { Tag } from "./types"; // Ensure this path is correct
 import NextTagIcon from "/images/next-tag.svg";
 
 const Tags: React.FC = () => {
-  const [tags, setTags] = useState<Tag[]>([
+  const [tags] = useState<Tag[]>([
     { name: "All" },
     { name: "Gaming", useCount: 67 },
     { name: "Artificial Intelligence", useCount: 67 },

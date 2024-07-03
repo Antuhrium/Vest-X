@@ -6,7 +6,6 @@ import {
   ResponsiveContainer,
   Area,
   Tooltip,
-  LineChart,
   CartesianGrid,
   AreaChart,
 } from "recharts";
