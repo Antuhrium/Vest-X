@@ -1,4 +1,5 @@
 import styles from "./App.module.scss";
+import "./global-recharts.css";
 import LeftWrapper from "./components/LeftWrapper";
 import Menu from "./components/Menu";
 import RightWrapper from "./components/RightWrapper";

@@ -1,0 +1,26 @@
+.tabButton {
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #7f8ea330;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  font-size: 18px;
+  cursor: "pointer";
+}
+
+.tabButton:hover {
+  transform: scale(1.005);
+  transition-duration: 500ms;
+}
+
+.tagName {
+  color: white;
+}
+
+.useCount {
+  color: #7f8ea3;
+}
