@@ -1,5 +1,5 @@
 .stepList {
-  background-color: #1a1a1a;
+  background-color: #0a0f1a;
   padding: 20px;
 }
 
@@ -24,7 +24,6 @@
 .stepHeader {
   display: flex;
   align-items: center;
-
 }
 
 .stepIconWrapper {
@@ -35,11 +34,12 @@
   align-items: center;
   border-radius: 50%;
   margin-right: 12px;
-  
-  &.completed, &.in_progress {
+
+  &.completed,
+  &.in_progress {
     background-color: #0066ff;
   }
-  
+
   &.pending {
     background-color: #444;
   }
@@ -54,26 +54,27 @@
 }
 
 .iconCompleted {
-  background-image: url('check.svg');
+  background-image: url("check.svg");
 }
 
 .iconInProgress {
-  background-image: url('in-progress-icon.svg');
+  background-image: url("in-progress-icon.svg");
 }
 
 .iconPending {
-  background-image: url('pending-icon.svg');
+  background-image: url("pending-icon.svg");
 }
 
 .stepTitle {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  
-  &.completed, &.in_progress {
+
+  &.completed,
+  &.in_progress {
     color: #ffffff;
   }
-  
+
   &.pending {
     color: #999;
   }
@@ -89,12 +90,12 @@
   align-items: center;
   margin-bottom: 8px;
   margin-left: 20px;
-  
+
   &.completed::before {
     background-color: #0066ff;
   }
   img {
-    margin-right: 10px
+    margin-right: 10px;
   }
 }
 
@@ -103,7 +104,7 @@
   font-style: normal;
   font-weight: 400;
   color: #999;
-  
+
   .completed & {
   }
   .current & {
@@ -122,9 +123,9 @@
 .stepLine {
   width: 100%;
   height: 100%;
-  background-color: #676E76;
-  
-  &.completedLine  {
-    background-color: #0F62FE;
+  background-color: #676e76;
+
+  &.completedLine {
+    background-color: #0f62fe;
   }
 }
