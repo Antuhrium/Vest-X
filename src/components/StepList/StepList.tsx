@@ -1,31 +1,31 @@
 import React from "react";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 
 export interface StepProps {
   title: string;
-  status: 'completed' | 'in_progress' | 'pending';
+  status: "completed" | "in_progress" | "pending";
   children?: StepChildrenProps[];
 }
 
 interface StepChildrenProps {
-  title: string,
-  status: 'completed' | 'current' | 'pending'
+  title: string;
+  status: "completed" | "current" | "pending";
 }
 
 export interface StepListProps {
   steps: StepProps[];
+  style?: React.CSSProperties;
 }
-
 
 const StepHeader: React.FC<StepProps> = ({ title, status }) => {
   //here only we render steps icons and step title
   const getIconClass = () => {
     switch (status) {
-      case 'completed':
+      case "completed":
         return styles.iconCompleted;
-      case 'in_progress':
+      case "in_progress":
         return styles.iconInProgress;
-      case 'pending':
+      case "pending":
         return styles.iconPending;
     }
   };
@@ -42,14 +42,19 @@ const StepHeader: React.FC<StepProps> = ({ title, status }) => {
   );
 };
 
-const StepChildren: React.FC<{ children?: StepChildrenProps[] }> = ({ children }) => {
+const StepChildren: React.FC<{ children?: StepChildrenProps[] }> = ({
+  children,
+}) => {
   if (!children || children.length === 0) return null;
 
   return (
     <div className={styles.childSteps}>
       {children.map((child, index) => (
-        <div key={index} className={`${styles.childStep} ${styles[child.status]}`}>
-          {child.status === 'completed' && (
+        <div
+          key={index}
+          className={`${styles.childStep} ${styles[child.status]}`}
+        >
+          {child.status === "completed" && (
             <img
               src="child-checkmark.svg"
               alt="Completed"
@@ -63,9 +68,9 @@ const StepChildren: React.FC<{ children?: StepChildrenProps[] }> = ({ children }
   );
 };
 
-const StepList: React.FC<StepListProps> = ({ steps }) => {
+const StepList: React.FC<StepListProps> = ({ steps, style = {} }) => {
   return (
-    <div className={styles.stepList}>
+    <div className={styles.stepList} style={{ ...style }}>
       {steps.map((step, index) => (
         <div key={index} className={styles.stepWrapper}>
           <div className={styles.stepContent}>
@@ -74,7 +79,11 @@ const StepList: React.FC<StepListProps> = ({ steps }) => {
           </div>
           {index < steps.length - 1 && (
             <div className={styles.stepLineWrapper}>
-              <div className={`${styles.stepLine} ${step.status === 'completed' ? styles.completedLine : ''}`}></div>
+              <div
+                className={`${styles.stepLine} ${
+                  step.status === "completed" ? styles.completedLine : ""
+                }`}
+              ></div>
             </div>
           )}
         </div>
@@ -107,7 +116,6 @@ export default StepList;
 //   { title: "Sign SAFT", status: "pending" },
 //   { title: "Finalize Payment", status: "pending" },
 // ]);
-
 
 // return (
 //   <div>

@@ -27,13 +27,18 @@ const links = [
   },
 ];
 
-const Menu: React.FC = () => {
+interface CustomStyles {
+  menuStyle?: Record<string, string>;
+  wrapperStyle?: Record<string, string>;
+}
+
+const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
   const { pathname } = useLocation();
 
   return (
-    <aside className={styles.menu}>
+    <aside className={styles.menu} style={{ ...menuStyle }}>
       <img src={Logo} alt="logo" className={styles.logoImg} />
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} style={{ ...wrapperStyle }}>
         {links.map((link) => (
           <Link
             to={link.to}
