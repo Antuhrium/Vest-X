@@ -14,8 +14,8 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
   return ReactDOM.createPortal(
     <div
       style={{
-        position: "fixed",
-        top: "12.5%",
+        position: "absolute",
+        top: "112%",
         left: "0%",
         zIndex: 1000,
       }}

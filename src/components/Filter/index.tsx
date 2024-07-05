@@ -139,6 +139,7 @@ const Filter: React.FC = () => {
           ))}
         </div>
       ))}
+      <button className={styles.button}>Apply</button>
     </div>
   );
 };

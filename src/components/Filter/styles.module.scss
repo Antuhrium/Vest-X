@@ -15,7 +15,6 @@
 .rangeContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
 }
 
 .inputsWrapper {
@@ -138,4 +137,24 @@ input[type="checkbox"]:checked {
     content: url("images/white-checkmark.svg");
     margin-bottom: 2px;
   }
+}
+
+.button {
+  margin-top: 60px;
+  display: flex;
+  width: 100%;
+  padding: 14px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 4px;
+  background: var(--Secondary-Blue-500---Primary, #0f62fe);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }

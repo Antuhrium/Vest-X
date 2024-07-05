@@ -42,7 +42,7 @@ const Tags: React.FC = () => {
             style={{
               buttonStyle: {
                 backgroundColor:
-                  tag.name === selectedTag?.name ? "#0F62FE" : "#101322",
+                  tag.name === selectedTag?.name ? "#0F62FE" : "transparent",
               },
             }}
           />
