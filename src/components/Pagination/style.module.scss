@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a1a1a;
-  padding: 8px 16px;
+  // background-color: #1a1a1a;
+  // padding: 8px 16px;
   border-radius: 8px;
 
   font-family: Inter;
@@ -15,12 +15,13 @@
 .pagination {
   display: flex;
   align-items: center;
+  gap: 5px;
 
   .paginationItem, .nextButton {
     color: #fff;
     border: #1D283A;
     padding: 8px 12px;
-    margin: 0 5px;
+    // margin: 0 5px;
     cursor: pointer;
     border-radius: 8px;
     min-width: 56px;

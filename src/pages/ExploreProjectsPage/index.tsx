@@ -7,6 +7,7 @@ import Search from "../../components/Search";
 import styles from "./style.module.scss";
 import Tags from "../../components/Tags";
 import SortDropdownMenu from "../../components/Sort";
+import Pagination from "../../components/Pagination/Pagination";
 
 const projects = [
   { projectName: "Project name" },
@@ -19,6 +20,7 @@ const projects = [
 
 const ExploreProjectsPage = () => {
   const [_, onSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   return (
     <section className={styles.container}>
       <Menu />
@@ -44,6 +46,13 @@ const ExploreProjectsPage = () => {
               tags={["Defi", "Paytech", "AI"]}
             />
           ))}
+        </div>
+        <div className={styles.paginationWrapper}>
+          <Pagination
+            totalPages={24}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+          />
         </div>
       </div>
     </section>

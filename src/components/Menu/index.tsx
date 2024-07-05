@@ -19,7 +19,7 @@ const links = [
   },
   {
     icon: GraphUp,
-    to: "",
+    to: "/invest-in-project",
   },
   {
     icon: Briefcase,
