@@ -12,6 +12,7 @@ import { routes } from "./routes";
 import { RouterProvider } from "react-router-dom";
 
 function App() {
+  // return <ProjectIntroduction />;
   return (
     <>
       <main className={styles.mainContainer}>

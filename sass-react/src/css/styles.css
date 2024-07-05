@@ -1,0 +1,40 @@
+@import "rsuite/dist/rsuite.css";
+.rs-slider-bar {
+  background-color: #1d283a !important;
+  height: 4px;
+  width: 100%;
+}
+
+.rs-slider-progress-bar {
+  background-color: #0f62fe;
+  height: 100%;
+}
+
+.rs-slider-handle {
+  top: -9px;
+}
+.rs-slider-handle::before {
+  width: 22px;
+  height: 22px;
+  background-color: #0f62fe;
+  border: none;
+}
+
+.rs-slider-handle:hover .rs-tooltip,
+.rs-slider-handle.active .rs-tooltip,
+.rs-slider-handle:active .rs-tooltip,
+.rs-slider-handle:focus .rs-tooltip {
+  display: none;
+}
+.rs-slider-handle:hover::before,
+.rs-slider-handle.active::before,
+.rs-slider-handle:active::before,
+.rs-slider-handle:focus::before {
+  box-shadow: none;
+}
+.rs-slider-handle:hover::before,
+.rs-slider-handle.active::before,
+.rs-slider-handle:active::before,
+.rs-slider-handle:focus::before {
+  transform: scale(1);
+}/*# sourceMappingURL=styles.css.map */

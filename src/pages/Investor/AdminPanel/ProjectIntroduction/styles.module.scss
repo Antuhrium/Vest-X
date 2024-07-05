@@ -72,7 +72,10 @@
 }
 
 .gradientHeader {
-  background: var(--Primary-Gradient-White-to-black, linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%));
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%)
+  );
   background-clip: text;
   font-weight: 600;
   -webkit-background-clip: text;
@@ -96,6 +99,7 @@
     @apply left-0;
   }
 }
+
 .containerWithPic {
   display: flex;
   flex-direction: column;
@@ -104,6 +108,5 @@
 .containerWithPic > img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}/*# sourceMappingURL=styles.module.css.map */
+  object-fit: cover;
+}
