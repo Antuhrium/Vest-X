@@ -1,13 +1,13 @@
 import styles from "./App.module.scss";
 import "./global-recharts.css";
-import LeftWrapper from "./components/LeftWrapper";
-import Menu from "./components/Menu";
-import RightWrapper from "./components/RightWrapper";
+// import LeftWrapper from "./components/LeftWrapper";
+// import Menu from "./components/Menu";
+// import RightWrapper from "./components/RightWrapper";
 
-import Avatar from "/images/avatar.svg";
-import Logo from "/images/logo.png";
-import TopBg from "/images/top-bg.png";
-import InvestorDashboardPage from "./pages/InvestorDashboardPage";
+// import Avatar from "/images/avatar.svg";
+// import Logo from "/images/logo.png";
+// import TopBg from "/images/top-bg.png";
+// import InvestorDashboardPage from "./pages/InvestorDashboardPage";
 import { routes } from "./routes";
 import { RouterProvider } from "react-router-dom";
 
