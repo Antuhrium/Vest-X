@@ -1,0 +1,44 @@
+.additionalTraction {
+  background-color: #030711;
+  color: #ffffff;
+  border: 1px solid #1D283A;
+  border-radius: 5px;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  font-family: "Igra Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 20px 32px;
+  border-bottom: 1px solid #1D283A;
+}
+
+.tractionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 30px 40px;
+}
+
+.tractionItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 0px 0px 4px 4px; 
+  border: 1px solid #1D283A;
+}
+
+.rocketIcon {
+  margin-right: 15px;
+  width: 24px;
+  height: 24px;
+}
+
+.tractionDescription {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
