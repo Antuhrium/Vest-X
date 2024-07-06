@@ -1,0 +1,100 @@
+.currentBackers {
+  background-color: #030711;
+  color: #ffffff;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  color: #999;
+  font-family: "Igra Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 20px 32px;
+  border: 1px solid var(--Gray-600, #1D283A);
+}
+
+.topBackersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  border: 1px solid var(--Gray-600, #1D283A);
+  border-bottom: none;
+  padding: 40px 32px;
+}
+
+.generalBackersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  border: 1px solid var(--Gray-600, #1D283A);
+  border-top: none;
+  padding: 40px 32px;
+  padding-top: 0;
+}
+
+.backer, .topBacker {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  justify-content:center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.name {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.amount {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Top backers specific styles */
+.topBacker {
+  margin-bottom: 48px;
+}
+
+.topBacker .avatar {
+  width: 60px;
+  height: 60px;
+}
+
+.topBacker .name {
+  font-size: 18px;
+}
+
+.topBacker .amount {
+  font-family: "Igra Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Inset effect for general backers */
+.generalBackersGrid {
+  padding-left: calc(100% / 12);
+  padding-right: calc(100% / 12);
+}

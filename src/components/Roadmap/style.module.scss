@@ -1,0 +1,59 @@
+.roadmap {
+  background-color: #030711;
+  color: #ffffff;
+  border: 1px solid #1D283A;
+  border-radius: 5px;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  font-family: "Igra Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 20px 32px;
+  border-bottom: 1px solid #1D283A;
+}
+
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px 40px;
+}
+
+.roadmapItem {
+  background-color: transparent;
+  padding: 20px;
+  border: 1px solid #1D283A;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.itemTitle {
+  font-family: "Igra Sans", sans-serif;
+  font-size: 20px;
+  color: #0F62FE;
+  margin-bottom: 15px;
+}
+
+.taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkmark {
+  margin-right: 10px;
+}
+
+.taskDescription {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
