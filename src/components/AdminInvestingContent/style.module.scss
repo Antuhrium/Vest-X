@@ -1,0 +1,197 @@
+.container {
+    @apply relative
+      max-w-[960px]
+      mt-[44px]
+      ml-[120px]
+      mr-auto
+      flex
+      flex-col
+      w-full min-h-full
+      text-white;
+}
+
+.topCard {
+    @apply flex
+      items-center
+      gap-[52px]
+      
+      py-[22px] pl-[20px];
+
+    border-radius: 4px;
+    border: 1px solid var(--Gray-600, #1d283a);
+}
+
+.topCardImg {
+    max-width: 218px;
+    max-height: 218px;
+
+    border-radius: 4px;
+}
+
+.topCardWrapper {
+    @apply flex flex-col
+  gap-4;
+}
+
+.topCardTitle {
+    @apply flex
+  gap-3 text-[30px] font-normal leading-[38px];
+}
+
+.topCardText {
+    @apply text-[#C0C0C0]
+    text-[18px] leading-[24px]
+    font-normal
+    max-w-[432px];
+
+    font-family: "Inter", sans-serif;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.investButton,
+.claimButton {
+    padding: 14px 24px;
+    width: fit-content;
+
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    border-radius: 4px;
+    background: #0f62fe;
+    transition: 0.2s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+
+.claimButton {
+    background: #101322;
+}
+
+.vestingTitle {
+    @apply w-fit
+    font-igraSans text-[24px]
+    font-normal mt-[56px] mb-[20px];
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.3)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vesting {
+    @apply flex flex-col gap-[44px]
+    py-[44px] pl-[48px] pr-[214px]
+    text-white relative transition-all;
+    border-radius: 4px;
+    border: 1px solid var(--Gray-600, #1d283a);
+
+    &:hover svg {
+        @apply transition-transform translate-x-2 translate-y-2;
+    }
+}
+.vestingWrapper {
+    @apply flex justify-between items-center;
+}
+
+.vestingItem {
+    @apply flex gap-[8px] items-center;
+}
+
+.vestingNumber {
+    @apply w-[28px] h-[28px] mr-[12px]
+      rounded-full bg-white
+      flex items-center justify-center
+      text-[20px] font-normal text-[#3F3F3F];
+    font-family: "Inter", sans-serif;
+}
+
+.vestingTopInfo,
+.vestingBottomInfo {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.vestingBottomInfo {
+    @apply text-[#E1E7EF];
+}
+
+.vestingButton {
+    @apply absolute bottom-10 right-10;
+}
+
+.rightBg {
+    @apply absolute
+      bottom-0
+      left-1/4;
+}
+
+.graph {
+    @apply flex gap-2 text-white mt-[56px] z-10;
+}
+
+.leftGraphWrapper {
+    @apply max-w-[326px]
+      w-full h-full
+      p-[30px]
+      flex flex-col
+      items-center justify-center
+      gap-[40px];
+    border-radius: 4px;
+    border: 1px solid #1d283a;
+    background: #030711;
+}
+
+.graphTitle {
+    @apply text-[20px] font-normal leading-[24px];
+    font-family: "Inter", sans-serif;
+}
+
+.leftGraph {
+    @apply relative 
+    flex flex-col
+    justify-center items-center
+    w-[214px] h-[214px];
+}
+
+.CircleGraph {
+    @apply absolute top-0
+    left-0 w-[214px] h-[214px];
+}
+
+.graphPercent {
+    @apply font-igraSans text-[48px] font-normal leading-[60px];
+}
+
+.graphText {
+    @apply text-[20px] leading-[24px] text-[#7F8EA3];
+    font-family: "Inter", sans-serif;
+}
+
+.chartWrapper {
+    @apply flex flex-col
+      gap-[24px]
+      px-[26px]
+      pt-[32px] pl-[20px]
+      w-full h-full;
+
+    border-radius: 4px;
+    border: 1px solid #1d283a;
+    background: #030711;
+}
+

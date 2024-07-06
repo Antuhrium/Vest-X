@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState } from "react";
+import React, { ReactNode, useRef } from "react";
 import ReactDOM from "react-dom";
 import styles from "./styles.module.scss"; // Ensure this path is correct
 import DropdownIcon from "/images/dropdown-icon.svg";
@@ -102,19 +102,18 @@ const SeedRoundDetails: React.FC = () => {
     </div>
   );
 };
+type SeedRoundModalButtonTypes = {
+  isModalOpen: boolean;
+  setIsModalOpen: (isOpen: boolean) => void;
+}
 
-const SeedRoundModalButton: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const SeedRoundModalButton: React.FC<SeedRoundModalButtonTypes> = ({isModalOpen, setIsModalOpen}) => {
   const modalRootRef = useRef<HTMLDivElement>(null);
 
-  const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <div className={styles.menuContainer}>
-      <button onClick={handleOpenModal} className={styles.openModalButton}>
-        Open Modal
-      </button>
       <div ref={modalRootRef} />
       {isModalOpen && (
         <SeedRoundModal onClose={handleCloseModal} modalRootRef={modalRootRef}>
