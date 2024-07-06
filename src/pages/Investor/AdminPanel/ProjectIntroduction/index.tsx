@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 
 import styles from "./styles.module.scss";
 import Menu from "../../../../components/Menu";
-import LeftWrapper from "../../../../components/LeftWrapper";
 import Person1 from "/images/person-1.png";
 import Person2 from "/images/person-2.png";
 import Person3 from "/images/person-3.png";
 import RightBg from "/images/right-bg.png";
 import ArkhamTopBg from "/images/arkham-top-bg.png";
 import { TeamMember } from "./types";
+import AdminMenu from "../../../../components/AdminMenu";
 export default function ProjectIntroduction() {
   const picPaths = [Person1, Person2, Person3];
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
@@ -39,8 +39,8 @@ export default function ProjectIntroduction() {
     <div className={styles.containerWithPic}>
       <img src={ArkhamTopBg} alt="arkham top bg" />
       <div className={styles.container}>
-        <Menu menuStyle={{ height: "173.3vh" }} />
-        <LeftWrapper />
+        <Menu />
+        <AdminMenu />
         <div className={styles.rightPartContainer}>
           <div className={styles.textSection}>
             <h2 className={styles.gradientHeader}>Summary</h2>

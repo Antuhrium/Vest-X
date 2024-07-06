@@ -1,0 +1,215 @@
+.leftWrapper {
+    @apply min-w-[555px]
+    h-fit w-fit
+    flex flex-col
+    gap-[24px]
+    bg-[#0A0F1A]
+    pb-[166px]
+    pt-[44px] px-[38px];
+}
+
+.leftCard {
+    @apply relative overflow-hidden
+      w-[480px]
+      h-[188px]
+      py-[32px]
+      pl-[32px]
+      flex flex-col gap-[12px]
+      justify-between
+      font-igraSans cursor-pointer
+      transition-all;
+
+    border-radius: 4px;
+    border: 1px solid #1d283a;
+    background: #0a0f1a;
+
+    &:hover svg {
+        @apply transition-transform translate-x-2 translate-y-2;
+    }
+}
+
+.leftCardTitle {
+    @apply font-igraSans text-[#7f8ea3]
+    text-[30px] font-normal leading-[38px];
+}
+.leftCardBg {
+    @apply absolute
+      -bottom-[72px] -right-[64px] opacity-10;
+
+    width: 261.53px;
+    height: 261.53px;
+
+    opacity: 0.1;
+}
+
+.rounds {
+    @apply flex flex-col
+      gap-[12px]
+      text-white;
+}
+
+.title {
+    @apply mt-3
+    mb-1
+    text-[24px]
+    font-normal
+    font-igraSans
+    leading-[32px]
+    text-[#e1e7ef];
+}
+
+.roundBtn {
+    @apply w-full h-[60px]
+      px-[32px] py-[12px]
+      flex 
+      justify-between items-center 
+      transition-all;
+
+    border: 1px solid #1d283a;
+
+    &:hover svg {
+        @apply transition-all translate-x-2 translate-y-2;
+    }
+}
+
+.socials {
+    @apply flex flex-col
+      gap-[12px] text-white;
+}
+
+.socialsWrapper {
+    @apply flex
+    flex-col
+    gap-[16px]
+    py-[15px]
+    px-0;
+
+    border-radius: 4px;
+    border: 1px solid var(--Gray-600, #1d283a);
+}
+
+.social {
+    @apply w-full h-[26px] flex 
+      items-center justify-between cursor-pointer;
+}
+.social:hover svg {
+    @apply transition-transform translate-x-2 translate-y-2;
+}
+
+.socialLeft {
+    @apply flex
+      items-center
+      gap-[20px];
+}
+.socialLeft span {
+    @apply font-milligram font-normal
+    leading-[24px]
+    text-[18px] opacity-70 text-[#7f8ea3];
+
+    font-family: "Inter", sans-serif;
+}
+
+.socialLeft img {
+    @apply h-[21px] w-[21px];
+}
+
+@media screen and (max-width: 640px) {
+    .socialBtn,
+    .socialLeft span {
+        @apply hidden;
+    }
+    .socialsWrapper {
+        @apply flex-row justify-center gap-[60px];
+    }
+    .socialLeft img {
+        @apply h-[36px] w-[36px];
+    }
+}
+
+.rightCard {
+    @apply border
+    border-[#FFFFFF25]
+      max-w-[719px]
+      p-[32px]
+      flex flex-col
+      justify-between
+      relative overflow-hidden;
+    background: linear-gradient(252deg, #2c2c2c -6.59%, #0f0f0f 35.06%);
+}
+
+.mobileCard {
+    @apply hidden px-[22px];
+}
+
+@media screen and (max-width: 1280px) {
+    .rightCard {
+        @apply hidden;
+    }
+    .mobileCard {
+        @apply flex w-full max-w-none;
+    }
+}
+
+.rightTitle {
+    @apply flex gap-[24px] items-center font-igraSans;
+}
+
+.rightTitle h3,
+.rightTitle span {
+    @apply text-[20px];
+    background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rightTitle span {
+    @apply text-[16px];
+}
+
+.rightText {
+    @apply text-[12px]
+      text-[#C0C0C0]
+      max-w-[300px]
+      mt-[26px]
+      font-milligram;
+}
+
+.rightBtn {
+    @apply max-w-[167px]
+      mt-[32px]
+      bg-white
+      px-[20px] py-[14px]
+      text-black
+      font-bold text-[12px]
+      uppercase transition-all;
+}
+
+.rightBtn:hover {
+    @apply transition-colors bg-gray;
+}
+
+.rightCardBg {
+    @apply absolute
+      h-full
+      -bottom-[18px]
+      right-0
+      mix-blend-lighten;
+}
+
+@media screen and (max-width: 640px) {
+    .rightCardBg {
+        @apply -right-[85px] -bottom-[59px];
+    }
+
+    .mobileCard .rightTitle {
+        @apply flex-col items-start gap-[16px];
+    }
+
+    .rightBtn {
+        @apply max-w-[111px] px-0;
+    }
+
+    .rightText {
+        @apply max-w-[220px];
+    }
+}

@@ -25,8 +25,8 @@ const ChartLine = () => {
       <AreaChart data={data}>
         <defs>
           <linearGradient id="colorUv" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor="#121212" stopOpacity={0} />
-            <stop offset="100%" stopColor="#262626" stopOpacity={1} />
+            <stop offset="0%" stopColor="#030711" stopOpacity={0} />
+            <stop offset="100%" stopColor="#ffffff20" stopOpacity={1} />
           </linearGradient>
         </defs>
         <XAxis dataKey="name" tickLine={false} tick={{ fontSize: 12 }} />
@@ -51,7 +51,7 @@ const ChartLine = () => {
           type="stepBefore"
           dataKey="pv"
           stroke="white"
-          strokeWidth={2}
+          strokeWidth={3}
           fill="url(#colorUv)"
           fillOpacity={1}
           connectNulls={true}
@@ -60,7 +60,7 @@ const ChartLine = () => {
         <Area
           isAnimationActive={isVisible ? true : false}
           dataKey="dot"
-          dot={{ fill: "#ffffff", stroke: "#fff", strokeWidth: 3 }}
+          dot={{ fill: "#ffffff", stroke: "#fff", strokeWidth: 5 }}
         />
         <Area
           type="basis"

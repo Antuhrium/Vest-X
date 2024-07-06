@@ -19,7 +19,7 @@ const CircularProgressChart = () => {
   ];
 
   return (
-    <PieChart width={160} height={160}>
+    <PieChart width={214} height={214}>
       <defs ref={ref}>
         <linearGradient id="gradient" x1="1.7" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#ffffff" />
@@ -29,8 +29,8 @@ const CircularProgressChart = () => {
       <Pie
         isAnimationActive={isVisible ? true : false}
         data={data}
-        innerRadius={73}
-        outerRadius={76}
+        innerRadius={100}
+        outerRadius={104}
         startAngle={90}
         endAngle={-270}
         paddingAngle={5}
@@ -43,8 +43,8 @@ const CircularProgressChart = () => {
       <Pie
         isAnimationActive={isVisible ? true : false}
         data={data}
-        innerRadius={70}
-        outerRadius={80}
+        innerRadius={97}
+        outerRadius={107}
         startAngle={90}
         endAngle={-270}
         paddingAngle={5}

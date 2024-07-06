@@ -19,11 +19,11 @@ const links = [
   },
   {
     icon: GraphUp,
-    to: "/invest-in-project",
+    to: "/investor/invest-in-project",
   },
   {
     icon: Briefcase,
-    to: "",
+    to: "/investor/admin",
   },
 ];
 
