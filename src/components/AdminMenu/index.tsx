@@ -5,11 +5,9 @@ import Website from "/images/socials/web.svg";
 
 import ProjIntrodImg from "/images/proj-introd-img.png";
 import KeyFeaturesImg from "/images/key-features-img.png";
-import ArkhamBg from "/images/arkham-bg.png";
 
 import styles from "./style.module.scss";
 import GrayArrow from "../GrayArrow";
-import Fade from "../FadeIn";
 
 const socials = [
     { name: "Twitter", img: Twitter },
@@ -45,10 +43,10 @@ const AdminMenu = () => {
             <div className={styles.rounds}>
                 <span className={styles.title}>Investment Rounds</span>
                 <button className={`${styles.roundBtn}`}>
-                    Seed round <GrayArrow color="#1D283A"/>
+                    Seed round <GrayArrow color="#1D283A" />
                 </button>
                 <button className={styles.roundBtn}>
-                    Private round <GrayArrow color="#1D283A"/>
+                    Private round <GrayArrow color="#1D283A" />
                 </button>
             </div>
             <div className={styles.socials}>
@@ -61,7 +59,11 @@ const AdminMenu = () => {
                                 <span>{social.name}</span>
                             </div>
                             <div className={styles.socialBtn}>
-                                <GrayArrow color="#1D283A" width={24} height={24}/>
+                                <GrayArrow
+                                    color="#1D283A"
+                                    width={24}
+                                    height={24}
+                                />
                             </div>
                         </button>
                     ))}
