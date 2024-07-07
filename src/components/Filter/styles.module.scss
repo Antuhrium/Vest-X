@@ -134,10 +134,6 @@ input[type="checkbox"]:checked {
   & + .checkboxCheckmark {
     background-color: #007bff;
   }
-  & + .checkboxCheckmark::after {
-    content: url("images/white-checkmark.svg");
-    margin-bottom: 2px;
-  }
 }
 
 .button {
