@@ -1,7 +1,7 @@
-import HeaderTitle from "../../components/HeaderTitle";
-import Menu from "../../components/Menu";
-import PortfolioCharts from "../../components/PortfolioCharts";
-import ProjectsList from "../../components/ProjectsList";
+import HeaderTitle from "../../../components/HeaderTitle";
+import Menu from "../../../components/Menu";
+import PortfolioCharts from "../../../components/PortfolioCharts";
+import ProjectsList from "../../../components/ProjectsList";
 import styles from "./style.module.scss";
 
 const InvestorDashboardPage = () => {

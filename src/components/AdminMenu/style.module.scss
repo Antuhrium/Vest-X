@@ -1,6 +1,6 @@
 .leftWrapper {
     @apply min-w-[555px]
-    h-fit w-fit
+    h-screen w-fit
     flex flex-col
     gap-[24px]
     bg-[#0A0F1A]
@@ -11,7 +11,7 @@
 .leftCard {
     @apply relative overflow-hidden
       w-[480px]
-      h-[188px]
+      min-h-[188px]
       py-[32px]
       pl-[32px]
       flex flex-col gap-[12px]
@@ -23,6 +23,11 @@
     border: 1px solid #1d283a;
     background: #0a0f1a;
 
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
     &:hover svg {
         @apply transition-transform translate-x-2 translate-y-2;
     }
@@ -32,6 +37,7 @@
     @apply font-igraSans text-[#7f8ea3]
     text-[30px] font-normal leading-[38px];
 }
+
 .leftCardBg {
     @apply absolute
       -bottom-[72px] -right-[64px] opacity-10;
@@ -66,6 +72,13 @@
       transition-all;
 
     border: 1px solid #1d283a;
+    color: #7f8ea3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 
     &:hover svg {
         @apply transition-all translate-x-2 translate-y-2;

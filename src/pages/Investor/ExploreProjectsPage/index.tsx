@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Filter from "../../components/Filter";
-import HeaderTitle from "../../components/HeaderTitle";
-import Menu from "../../components/Menu";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import Search from "../../components/Search";
+import Filter from "../../../components/Filter";
+import HeaderTitle from "../../../components/HeaderTitle";
+import Menu from "../../../components/Menu";
+import ProjectCard from "../../../components/ProjectCard/ProjectCard";
+import Search from "../../../components/Search";
 import styles from "./style.module.scss";
-import Tags from "../../components/Tags";
-import SortDropdownMenu from "../../components/Sort";
-import Pagination from "../../components/Pagination/Pagination";
+import Tags from "../../../components/Tags";
+import SortDropdownMenu from "../../../components/Sort";
+import Pagination from "../../../components/Pagination/Pagination";
 
 const projects = [
   { projectName: "Project name" },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import StepList, { StepProps } from "../../../components/StepList/StepList"; // Adjust the import path according to your project structure
-import Menu from "../../../components/Menu";
+import StepList, { StepProps } from "../../../../components/StepList/StepList"; // Adjust the import path according to your project structure
+import Menu from "../../../../components/Menu";
 import styles from "./styles.module.scss";
 import Content from "./Content";
 

@@ -8,6 +8,7 @@ import KeyFeaturesImg from "/images/key-features-img.png";
 
 import styles from "./style.module.scss";
 import GrayArrow from "../GrayArrow";
+import { Link, useLocation } from "react-router-dom";
 
 const socials = [
     { name: "Twitter", img: Twitter },
@@ -16,18 +17,48 @@ const socials = [
     { name: "Website", img: Website },
 ];
 
+const founderLinks = [
+    "Edit Project Info",
+    "Edit Vesting schedule",
+    "Vesting override",
+    "SAFT Agreement",
+    "Investor database",
+];
+
 const AdminMenu = () => {
+    const { pathname } = useLocation();
+
+    if (pathname.includes("/founder")) {
+        return (
+            <div className={styles.leftWrapper}>
+                <div className={styles.rounds}>
+                    {founderLinks.map((link) => (
+                        <button key={link} className={`${styles.roundBtn}`}>
+                            {link} <GrayArrow color="#7F8EA3" />
+                        </button>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.leftWrapper}>
-            <div className={styles.leftCard}>
+            <Link
+                to={"/investor/admin/project-introduction"}
+                className={styles.leftCard}
+            >
                 <h3 className={styles.leftCardTitle}>
                     Project <br />
                     Introduction
                 </h3>
                 <GrayArrow />
                 <img className={styles.leftCardBg} src={ProjIntrodImg} alt="" />
-            </div>
-            <div className={styles.leftCard}>
+            </Link>
+            <Link
+                to={"/investor/admin/key-features-highlights"}
+                className={styles.leftCard}
+            >
                 <h3 className={styles.leftCardTitle}>
                     Key Features <br />
                     and Highlights
@@ -38,7 +69,7 @@ const AdminMenu = () => {
                     src={KeyFeaturesImg}
                     alt=""
                 />
-            </div>
+            </Link>
 
             <div className={styles.rounds}>
                 <span className={styles.title}>Investment Rounds</span>
