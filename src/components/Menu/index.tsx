@@ -65,6 +65,7 @@ const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
             <div className={styles.wrapper} style={{ ...wrapperStyle }}>
                 {links.map((link) => (
                     <Link
+                        key={link.to}
                         to={link.to}
                         className={`${styles.link} ${linkStyle(link.to)}`}
                     >
