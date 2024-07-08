@@ -8,6 +8,7 @@ import KeyFeaturesImg from "/images/key-features-img.png";
 
 import styles from "./style.module.scss";
 import GrayArrow from "../GrayArrow";
+import { Link, useLocation } from "react-router-dom";
 
 const socials = [
     { name: "Twitter", img: Twitter },
@@ -16,29 +17,65 @@ const socials = [
     { name: "Website", img: Website },
 ];
 
+const founderLinks = [
+    "Edit Project Info",
+    "Edit Vesting schedule",
+    "Vesting override",
+    "SAFT Agreement",
+    "Investor database",
+];
+
 const AdminMenu = () => {
+    const { pathname } = useLocation();
+
+    if (pathname.includes("/founder")) {
+        return (
+            <div className={styles.leftWrapper}>
+                <div className={styles.rounds}>
+                    {founderLinks.map((link) => (
+                        <button key={link} className={`${styles.roundBtn}`}>
+                            {link} <GrayArrow color="#7F8EA3" />
+                        </button>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.leftWrapper}>
-            <div className={styles.leftCard}>
-                <h3 className={styles.leftCardTitle}>
+            <Link
+                to={"/investor/admin/project-introduction"}
+                className={styles.leftCard}
+            >
+                <h3
+                    className={styles.leftCardTitle}
+                    style={{ color: pathname === "/investor/admin/project-introduction" ? "#fff" : "" }}
+                >
                     Project <br />
                     Introduction
                 </h3>
-                <GrayArrow />
+                <GrayArrow color={pathname === "/investor/admin/project-introduction" ? "#fff" : "#7F8EA3" } />
                 <img className={styles.leftCardBg} src={ProjIntrodImg} alt="" />
-            </div>
-            <div className={styles.leftCard}>
-                <h3 className={styles.leftCardTitle}>
+            </Link>
+            <Link
+                to={"/investor/admin/key-features-highlights"}
+                className={styles.leftCard}
+            >
+                <h3
+                    className={styles.leftCardTitle}
+                    style={{ color: pathname === "/investor/admin/key-features-highlights" ? "#fff" : "" }}
+                >
                     Key Features <br />
                     and Highlights
                 </h3>
-                <GrayArrow />
+                <GrayArrow color={pathname === "/investor/admin/key-features-highlights" ? "#fff" : "#7F8EA3" } />
                 <img
                     className={styles.leftCardBg}
                     src={KeyFeaturesImg}
                     alt=""
                 />
-            </div>
+            </Link>
 
             <div className={styles.rounds}>
                 <span className={styles.title}>Investment Rounds</span>

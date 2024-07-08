@@ -2,6 +2,7 @@
     @apply relative
       max-w-[960px]
       mt-[44px]
+      pb-[48px]
       ml-[120px]
       mr-auto
       flex
@@ -29,8 +30,7 @@
 }
 
 .topCardWrapper {
-    @apply flex flex-col
-  gap-4;
+    @apply flex flex-col gap-4;
 }
 
 .topCardTitle {
@@ -79,7 +79,7 @@
     background: #101322;
 }
 
-.vestingTitle {
+.title {
     @apply w-fit
     font-igraSans text-[24px]
     font-normal mt-[56px] mb-[20px];
@@ -92,7 +92,8 @@
     -webkit-text-fill-color: transparent;
 }
 
-.vesting {
+.vesting,
+.analitics {
     @apply flex flex-col gap-[44px]
     py-[44px] pl-[48px] pr-[214px]
     text-white relative transition-all;
@@ -103,11 +104,15 @@
         @apply transition-transform translate-x-2 translate-y-2;
     }
 }
+.analitics {
+    @apply gap-[24px];
+}
 .vestingWrapper {
     @apply flex justify-between items-center;
 }
 
-.vestingItem {
+.vestingItem,
+.analiticsItem {
     @apply flex gap-[8px] items-center;
 }
 
@@ -120,7 +125,8 @@
 }
 
 .vestingTopInfo,
-.vestingBottomInfo {
+.vestingBottomInfo,
+.analiticsInfo {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -158,8 +164,16 @@
 }
 
 .graphTitle {
-    @apply text-[20px] font-normal leading-[24px];
+    @apply text-[20px] font-normal leading-[24px] text-nowrap;
     font-family: "Inter", sans-serif;
+}
+
+.noActive {
+    @apply text-[#676E76];
+}
+
+.founderGraphTitle {
+    @apply flex items-center justify-center gap-[14px];
 }
 
 .leftGraph {
@@ -195,3 +209,51 @@
     background: #030711;
 }
 
+.checkboxWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.checkboxCheckmark {
+    width: 24px;
+    height: 24px;
+
+    border: 1px solid #1d283a;
+    border-radius: 50%;
+    position: relative;
+}
+
+.checkboxCheckmark {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"]:checked {
+    & + .checkboxCheckmark {
+        background-color: #007bff;
+    }
+    & + .checkmark {
+        content: url("images/white-checkmark.svg");
+        margin-bottom: 2px;
+    }
+}
