@@ -48,22 +48,28 @@ const AdminMenu = () => {
                 to={"/investor/admin/project-introduction"}
                 className={styles.leftCard}
             >
-                <h3 className={styles.leftCardTitle}>
+                <h3
+                    className={styles.leftCardTitle}
+                    style={{ color: pathname === "/investor/admin/project-introduction" ? "#fff" : "" }}
+                >
                     Project <br />
                     Introduction
                 </h3>
-                <GrayArrow />
+                <GrayArrow color={pathname === "/investor/admin/project-introduction" ? "#fff" : "#7F8EA3" } />
                 <img className={styles.leftCardBg} src={ProjIntrodImg} alt="" />
             </Link>
             <Link
                 to={"/investor/admin/key-features-highlights"}
                 className={styles.leftCard}
             >
-                <h3 className={styles.leftCardTitle}>
+                <h3
+                    className={styles.leftCardTitle}
+                    style={{ color: pathname === "/investor/admin/key-features-highlights" ? "#fff" : "" }}
+                >
                     Key Features <br />
                     and Highlights
                 </h3>
-                <GrayArrow />
+                <GrayArrow color={pathname === "/investor/admin/key-features-highlights" ? "#fff" : "#7F8EA3" } />
                 <img
                     className={styles.leftCardBg}
                     src={KeyFeaturesImg}
