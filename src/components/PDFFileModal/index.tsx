@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import SimplePDF from "../../pages/InvestInProject/Signee/Content/simple_pdf.pdf";
+import SimplePDF from "/pdf/simple_pdf.pdf";
 import FileIcon from "/images/file-icon.svg";
 import DownloadFile from "/images/chat/file-download.svg";
 
