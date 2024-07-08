@@ -1,146 +1,107 @@
-.leftWrapper {
-  @apply max-w-[30%]
-    w-full
-    h-fit
-    pb-[300px]
-    flex flex-col
-    gap-[24px]
-    bg-dark
-    pt-[70px] px-[34px];
+.projectItem {
+  width: 348px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #1d283a;
+  background: #0a0f1a;
+  font-family: "Inter", sans-serif;
+  color: #fff;
 }
 
-@media screen and (max-width: 1280px) {
-  .leftWrapper {
-    @apply flex-row max-w-none
-      flex-wrap justify-center
-      px-[16px] pb-[32px];
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.leftCard {
-  @apply relative overflow-hidden
-      w-full
-      h-fit
-      pt-[32px]
-      pl-[24px]
-      pb-[34px]
-      flex flex-col gap-[30px]
-      justify-between
-      border
-      border-[#FFFFFF25]
-      font-igraSans cursor-pointer
-      transition-all;
-  background: linear-gradient(251.41deg, rgba(44, 44, 44, 0.3) -6.59%, rgba(15, 15, 15, 0.3) 35.06%);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+.header .projectName {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }
-
-.leftCard:hover svg {
-  @apply transition-transform translate-x-2 translate-y-2;
+.header .vesting {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  gap: 8px;
+  border-radius: 2px;
+  background: #1d283a;
 }
-
-.leftCard:hover {
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+.header .vesting.active {
+  border-radius: 2px;
+  background: #10b863;
 }
-
-@media screen and (max-width: 1280px) {
-  .leftCard {
-    @apply w-full max-w-none px-[22px];
-  }
+.header .vesting span {
+  color: #030711;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
 }
-.leftCardTitle {
-  @apply text-[20px]
-    font-normal
-    leading-[26px]
-    text-white;
+.header .vesting .vestingImage {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: #030711;
 }
 
-.leftCardBg {
-  @apply absolute
-      -bottom-[72px] -right-[64px] opacity-10;
+.projectImage {
+  margin-top: 24px;
+  width: 100%;
+  height: 106px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2px;
+  border: 0.75px solid rgba(255, 255, 255, 0.25);
 }
 
-.rounds {
-  @apply flex flex-col
-      gap-[24px]
-      text-white;
+.projectInfo {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.projectInfo .infoItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.projectInfo .infoItem .info {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
-@media screen and (max-width: 1280px) {
-  .rounds {
-    @apply max-w-none w-full;
-  }
+.projectButton {
+  width: 100%;
+  margin-top: 32px;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid #7f8ea3;
+  color: #7f8ea3;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  transition: all 0.2s ease-in-out;
 }
-.roundsTitle {
-  @apply text-[20px] font-semibold leading-[27px];
+.projectButton:hover {
+  background: #7f8ea3;
+  color: #fff;
 }
-
-.roundBtn {
-  @apply border
-  w-full
-      border-[#FFFFFF25]
-      px-[32px] py-[16px]
-      flex 
-      justify-between items-center transition-all;
-}
-
-.roundBtn:hover svg {
-  @apply transition-transform translate-x-2 translate-y-2;
-}
-
-.roundBtn:hover {
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
-}
-
-@media screen and (max-width: 1280px) {
-  .roundBtn {
-    @apply px-[22px];
-  }
-}
-.socials {
-  @apply flex flex-col
-      gap-[16px] text-white;
-}
-
-@media screen and (max-width: 1280px) {
-  .socials {
-    @apply w-full max-w-none;
-  }
-}
-.socialsTitle {
-  @apply text-[20px]
-    font-semibold
-    leading-[27px]
-    mb-2;
-}
-
-.social {
-  @apply flex 
-      items-center justify-between cursor-pointer;
-}
-
-.social:hover svg {
-  @apply transition-transform translate-x-2 translate-y-2;
-}
-
-.socialsWrapper {
-  @apply flex flex-col gap-[16px];
-}
-
-.socialLeft {
-  @apply flex
-      items-center
-      gap-[16px];
-}
-
-.socialLeft span {
-  @apply font-milligram
-    text-[12px] opacity-70;
-}
-
-.socialLeft img {
-  @apply h-[23px] w-[23px];
-}
-
-@media screen and (max-width: 640px) {
+.projectButton:active {
+  background: transparent;
+  color: #7f8ea3;
+}/*# sourceMappingURL=style.module.css.map */reen and (max-width: 640px) {
   .socialBtn,
   .socialLeft span {
     @apply hidden;

@@ -1,0 +1,80 @@
+.container {
+  background-color: #0a0f1a;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #0a0f1a;
+  z-index: 1000;
+}
+
+.formGroup {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroupFull {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: white;
+  font-size: 14px;
+}
+
+.requiredStar {
+  color: #0f62fe;
+  margin-left: 0.25rem;
+}
+
+.input,
+.select,
+.textarea {
+  background-color: #111827;
+  border: 1px solid #1b2531;
+}
+
+.formGroup,
+.formGroupFull {
+  margin-bottom: 1.5rem;
+}
+
+.textarea {
+  height: 6rem;
+  margin-bottom: 0.5rem;
+}
+
+.gradientHeader {
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%)
+  );
+  background-clip: text;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+}
+
+input {
+  padding: 11px !important;
+}

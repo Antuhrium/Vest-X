@@ -1,0 +1,15 @@
+.rs-calendar {
+    position: absolute !important;
+    z-index: 100000;
+    background-color: #111827;
+    margin-left: -0.75rem;
+    margin-top: -28rem;
+}
+
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-month-toolbar {
+    display: flex !important;
+}
+
+.rs-calendar-panel .rs-calendar-header .rs-calendar-btn-today {
+    display: none !important;
+}

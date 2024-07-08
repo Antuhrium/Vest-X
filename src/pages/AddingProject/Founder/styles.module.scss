@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #030711;
+}
+
+.contentContainer {
+  padding: 3rem;
+  width: 65%;
+  display: flex;
+  // margin-left: 3rem;
+  // margin-top: 3rem;
+  flex-direction: column;
+  position: relative;
+  // background-color: #0a0f1a;
+  // z-index: 1000;
+}
+
+.formButtons {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+}
+
+.rightBg {
+  @apply absolute
+      bottom-0
+      left-1/4;
+}
+
+@media screen and (max-width: 640px) {
+  .rightBg {
+    @apply left-0;
+  }
+}

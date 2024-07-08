@@ -1,0 +1,95 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal {
+  background: #1c1c1e;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 36px;
+  background-color: #0f62fe;
+  color: #fff;
+  border-radius: 100%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modalContent h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modalContent p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.cancelButton {
+  background-color: white;
+  border-radius: 4px;
+  color: #0f62fe;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.deleteButton {
+  background-color: #0f62fe;
+  border: 1px solid #0f62fe;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.bigMessage {
+  font-size: 48px !important;
+}

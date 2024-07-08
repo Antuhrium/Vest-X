@@ -1,33 +1,40 @@
-.periodDropdownContainer {
+.tokenDropdownContainer {
   display: flex;
   align-items: center;
   background: #111827;
+  border: 1px solid #1b2531;
   border-radius: 4px;
   color: #fff;
   width: 100%;
 }
 
-.periodInput {
+.tokenInput {
   background: #111827;
   border: none;
   color: #fff;
   padding: 10px;
-  width: 50px;
+  width: 100%;
   outline: none;
 }
 
-.unitDropdown {
+.tokenIcon {
+  width: 24px;
+  height: 24px;
+  margin: 0 4px;
+}
+
+.tokenUnitDropdown {
   position: relative;
-  width: 100%;
+  width: 35%;
   cursor: pointer;
 }
 
-.selectedUnit {
+.selectedToken {
   display: flex;
   align-items: center;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
   justify-content: space-between;
   padding: 4px 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .arrow {
@@ -45,7 +52,7 @@
   transform: rotate(45deg);
 }
 
-.unitDropdownList {
+.tokenDropdownList {
   position: absolute;
   top: 100%;
   left: 0;
@@ -62,11 +69,11 @@
   padding: 10px;
   border: none;
   border-bottom: 1px solid #1b2531;
-  background: #1c1c1e;
+  background: #111827;
   color: #fff;
 }
 
-.unitDropdownItem {
+.tokenDropdownItem {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -75,6 +82,6 @@
   cursor: pointer;
 }
 
-.unitDropdownItem:hover {
+.tokenDropdownItem:hover {
   background: #333;
-}/*# sourceMappingURL=styles.module.css.map */
+}
