@@ -14,9 +14,10 @@ interface FilterTypes {
     filters: filtersT[];
     title?: string;
     buttonTitle?: string;
+    style?: {[key: string]: string}
 }
 
-const Filter: React.FC<FilterTypes> = ({ title, filters, buttonTitle }) => {
+const Filter: React.FC<FilterTypes> = ({ title, filters, buttonTitle, style }) => {
     const [range, setRange] = useState<[number, number]>([299, 1499]);
     const [selectedRadio, setSelectedRadio] = useState<{
         [key: string]: string;
@@ -45,7 +46,7 @@ const Filter: React.FC<FilterTypes> = ({ title, filters, buttonTitle }) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={style}>
             {title ? (
                 <HeaderTitle className={styles.headerTitle}>
                     {title}
