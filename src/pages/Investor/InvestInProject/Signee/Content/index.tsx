@@ -13,7 +13,7 @@ import Wallet2 from "/images/wallet-2.svg";
 import Wallet3 from "/images/wallet-3.svg";
 import Wallet4 from "/images/wallet-4.svg";
 import CheckInProgress from "/images/check-in-progress.svg";
-import SimplePDF from "./simple_pdf.pdf";
+import SimplePDF from "/pdf/simple_pdf.pdf";
 import RightBg from "/images/right-bg.png";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";

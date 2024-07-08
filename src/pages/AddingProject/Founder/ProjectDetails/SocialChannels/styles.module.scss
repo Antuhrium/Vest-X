@@ -1,0 +1,207 @@
+.socialChannelsContainer {
+  width: 100%;
+  color: #fff;
+  background-color: #0a0f1a;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addLinkButton {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.socialLink {
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input,
+.selectPicker {
+  background: #1c1c1e;
+  border: 1px solid #1b2531;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px;
+}
+
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  background: #1c1c1e;
+  border: 1px solid #1b2531;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 16px;
+  min-height: 44px;
+  color: #fff;
+}
+
+.arrow {
+  margin-left: auto;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #1c1c1e;
+  border: 1px solid #1b2531;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+  background: #1c1c1e;
+  color: #fff;
+  font-size: 16px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background: #333;
+}
+
+.dropdownItem input {
+  margin-right: 10px;
+}
+
+.deleteButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  font-size: 16px;
+  border: none;
+}
+
+.divider {
+  border: 1px solid #0f62fe;
+  opacity: 0.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flexRow > * {
+  width: 100%;
+}
+
+.requiredStar {
+  color: #0f62fe;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #676e76;
+}
+
+.gradientHeader {
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
+  );
+  background-clip: text;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+}
+
+.blueCircle {
+  background: #0f62fe;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.deleteCircle {
+  background: #cd3636;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  justify-content: center;
+  color: white;
+}

@@ -1,0 +1,91 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #0a0f1a;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.botMessage {
+  color: #fff;
+  margin-right: auto;
+}
+
+.userMessage {
+  color: #fff;
+  margin-left: auto;
+}
+
+.userMessage > .messageBox {
+  border: 1px solid #1b2531;
+  padding: 10px;
+  border-radius: 4px;
+  background: #111827;
+}
+
+.fileMessage {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  cursor: pointer;
+}
+
+.downloadButton {
+  background: none;
+  border: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #0f62fe;
+  cursor: pointer;
+}
+
+.inputWithIcons {
+  position: relative;
+  height: max-content;
+  width: 100%;
+  position: relative;
+}
+
+.attachFileIcon {
+  position: absolute;
+  left: 16px;
+  top: 30%;
+  cursor: pointer;
+}
+
+.sendMessageIcon {
+  position: absolute;
+  right: 16px;
+  top: 30%;
+  cursor: pointer;
+}
+
+.messageInput {
+  padding-left: 36px !important;
+  color: white;
+}
+
+.filePreview {
+  margin-right: 1rem;
+}
+
+.greyText {
+  color: #676e76;
+}
