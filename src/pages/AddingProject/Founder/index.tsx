@@ -108,7 +108,7 @@ export default function AddingProjectFounder() {
           margin: "68px 0 auto",
         }}
       />
-      <StepList steps={steps} style={{ height: "100vh" }} />
+      <StepList steps={steps} style={{ height: "100vh", marginTop: "30px" }} />
       <div className={styles.contentContainer}>
         {step === 1 && subStep === 1 && <BasicInformation />}
         {step === 1 && subStep === 2 && <SocialChannels />}
