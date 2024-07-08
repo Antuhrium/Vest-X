@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
+import ChildCheckmark from "/images/child-checkmark.svg";
 
 export interface StepProps {
   title: string;
@@ -56,7 +57,7 @@ const StepChildren: React.FC<{ children?: StepChildrenProps[] }> = ({
         >
           {child.status === "completed" && (
             <img
-              src="child-checkmark.svg"
+              src={ChildCheckmark}
               alt="Completed"
               className={styles.childCheckmark}
             />
