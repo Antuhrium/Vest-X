@@ -4,61 +4,30 @@ import styles from "./styles.module.scss";
 import HeaderTitle from "../HeaderTitle";
 import "./styles.scss";
 
-const filters = [
-    {
-        title: "Status",
-        type: "radio",
-        options: [
-            { label: "Vesting Open", value: "Vesting Open", name: "Status" },
-            { label: "Active", value: "Active", name: "Status" },
-            { label: "Completed", value: "Completed", name: "Status" },
-        ],
-    },
-    {
-        title: "Funding Stage",
-        type: "checkbox",
-        options: [
-            { label: "Seed Stage", value: "Seed Stage", name: "Funding Stage" },
-            {
-                label: "Early Stage",
-                value: "Early Stage",
-                name: "Funding Stage",
-            },
-            {
-                label: "Growth Stage",
-                value: "Growth Stage",
-                name: "Funding Stage",
-            },
-            { label: "Late Stage", value: "Late Stage", name: "Funding Stage" },
-            { label: "Exit Stage", value: "Exit Stage", name: "Funding Stage" },
-        ],
-    },
-    {
-        title: "Location",
-        type: "checkbox",
-        options: [
-            { label: "USA", value: "USA", name: "Location" },
-            { label: "Asia", value: "Asia", name: "Location" },
-            { label: "Europa", value: "Europa", name: "Location" },
-            { label: "Africa", value: "Africa", name: "Location" },
-            { label: "Others", value: "Others", name: "Location" },
-        ],
-    },
-];
+export type filtersT = {
+    title: string;
+    type: "radio" | "checkbox";
+    options: string[];
+};
 
-const Filter: React.FC = () => {
+interface FilterTypes {
+    filters: filtersT[];
+    title?: string;
+    buttonTitle?: string;
+}
+
+const Filter: React.FC<FilterTypes> = ({ title, filters, buttonTitle }) => {
     const [range, setRange] = useState<[number, number]>([299, 1499]);
-    const [selectedRadio, setSelectedRadio] = useState<string>("Vesting Open");
+    const [selectedRadio, setSelectedRadio] = useState<{
+        [key: string]: string;
+    }>({});
     const [selectedCheckboxes, setSelectedCheckboxes] = useState<{
         [key: string]: string[];
-    }>({
-        "Funding Stage": [],
-        Location: [],
-    });
+    }>({});
 
     const handleCheckboxChange = (filterName: string, value: string) => {
         setSelectedCheckboxes((prevState) => {
-            const isSelected = prevState[filterName].includes(value);
+            const isSelected = prevState[filterName]?.includes(value);
             if (isSelected) {
                 return {
                     ...prevState,
@@ -69,7 +38,7 @@ const Filter: React.FC = () => {
             } else {
                 return {
                     ...prevState,
-                    [filterName]: [...prevState[filterName], value],
+                    [filterName]: [...(prevState[filterName] || []), value],
                 };
             }
         });
@@ -77,7 +46,11 @@ const Filter: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <HeaderTitle className={styles.headerTitle}>Filter</HeaderTitle>
+            {title ? (
+                <HeaderTitle className={styles.headerTitle}>
+                    {title}
+                </HeaderTitle>
+            ) : null}
 
             <div className={styles.rangeContainer}>
                 <div className={styles.title}>Investment amount (USDT)</div>
@@ -123,22 +96,28 @@ const Filter: React.FC = () => {
                 <div className={styles.filtersWrapper} key={filter.title}>
                     <div className={styles.title}>{filter.title}</div>
                     {filter.options.map((option) => (
-                        <label
-                            className={styles.radioContainer}
-                            key={option.value}
-                        >
+                        <label className={styles.radioContainer} key={option}>
                             <input
                                 type={filter.type}
-                                name={option.name}
-                                value={option.value}
-                                checked={ filter.type === "radio" ? selectedRadio === option.value : selectedCheckboxes[ filter.title ]?.includes(option.value) }
+                                name={filter.title}
+                                value={option}
+                                checked={
+                                    filter.type === "radio"
+                                        ? selectedRadio[filter.title] === option
+                                        : selectedCheckboxes[
+                                              filter.title
+                                          ]?.includes(option)
+                                }
                                 onChange={() => {
                                     if (filter.type === "radio") {
-                                        setSelectedRadio(option.value);
+                                        setSelectedRadio((prevState) => ({
+                                            ...prevState,
+                                            [filter.title]: option,
+                                        }));
                                     } else {
                                         handleCheckboxChange(
                                             filter.title,
-                                            option.value
+                                            option
                                         );
                                     }
                                 }}
@@ -150,18 +129,25 @@ const Filter: React.FC = () => {
                                         : styles.checkboxCheckmark
                                 }
                             >
-                                <img
-                                    style={{ display:  selectedCheckboxes[ filter.title ]?.includes(option.value) ? "flex" : "none" }}
-                                    src="/images/white-checkmark.svg"
-                                    alt="checkmark"
-                                />
+                                {filter.type === "checkbox" &&
+                                    selectedCheckboxes[filter.title]?.includes(
+                                        option
+                                    ) && (
+                                        <img
+                                            style={{
+                                                display: "flex",
+                                            }}
+                                            src="/images/white-checkmark.svg"
+                                            alt="checkmark"
+                                        />
+                                    )}
                             </span>
-                            {option.label}
+                            {option}
                         </label>
                     ))}
                 </div>
             ))}
-            <button className={styles.button}>Apply</button>
+            {buttonTitle && <button className={styles.button}>{buttonTitle}</button>}
         </div>
     );
 };
