@@ -1,0 +1,120 @@
+.bg {
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    opacity: 0.88;
+    background: #030711;
+    backdrop-filter: blur(43.25px);
+}
+
+.container {
+    position: fixed;
+    z-index: 1000;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+
+    background: #101322;
+}
+
+.closeButton {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.mainIcon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100px;
+    background: #0f62fe;
+
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -1.2px;
+}
+
+.title {
+    margin-top: 32px;
+    max-width: 529px;
+
+    color: #fff;
+    font-family: "Igra-Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+    text-align: center;
+}
+
+.desc {
+    margin-top: 32px;
+    max-width: 480px;
+    color: #e1e7ef;
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    a {
+        text-decoration: underline;
+        color: #0f62fe;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.buttonsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.button {
+    margin-top: 32px;
+    width: 100%;
+    padding: 14px 30px;
+
+    border-radius: 4px;
+    background: #0f62fe;
+
+    color: #fff;
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.whiteButton {
+    background: #e1e7ef;
+    color: #0f62fe;
+}
