@@ -10,6 +10,9 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .pagination {
@@ -17,7 +20,7 @@
   align-items: center;
   gap: 5px;
 
-  .paginationItem, .nextButton {
+  .paginationItem, .nextButton, .prevButton {
     color: #fff;
     border: #1D283A;
     padding: 8px 12px;
@@ -44,6 +47,12 @@
   .nextButton {
     margin-left: 8px;
   }
+
+  @media screen and (min-width: 768px) {
+    .prevButton {
+      display: none;
+    }
+  }
 }
 
 .showItems {
@@ -62,5 +71,9 @@
   }
   .arrowDown {
     margin-left: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }

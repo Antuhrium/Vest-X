@@ -1,8 +1,15 @@
 .chartsContainer {
+  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 4rem;
   // padding: 0rem 2rem 2rem 2rem;
+
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .chartItem {
@@ -13,6 +20,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    height: fit-content;
+    padding: 54px 1rem 1rem;
+  }
 }
 
 .gradientText {
@@ -35,12 +48,79 @@
 
 .smallChart {
   width: 30%;
+  @media screen and (max-width: 1280px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+  
+@media screen and (max-width: 1280px) {
+  .smallChart, .bigChart {
+    width: 100%;
+    display: none;
+  }
+
+  .activeChart {
+    display: flex;
+  }
+}
+
+.chartsSwitch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+
+@media screen and (min-width: 1280px) {
+  .chartsSwitch {
+    display: none;
+  }
 }
 
 .greenText {
   color: #29e185;
   font-size: 16px;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.smallGreen {
+  color: #29e185;
+  font-size: 16px;
   margin-left: 0.5rem;
+}
+
+.smallChartText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .smallChartText {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+  
+     .chartText {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+     }
+  
+     .smallGreen {
+      margin-left: 0;
+      font-size: 12px;
+    }
+    width: 100%;
+    margin-bottom: 90px;
+  }
 }
 
 .chartText {
@@ -51,6 +131,27 @@
 .chartBalance {
   font-size: 40px;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .chartTitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  .chartBalance {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+  }
+
+  .greenText {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px; 
+    margin-bottom: 80px;
+  }
 }
 
 .recharts-layer .recharts-pie {

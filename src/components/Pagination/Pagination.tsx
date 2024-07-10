@@ -10,7 +10,7 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPageChange }) => {
   const renderPageNumbers = () => {
     const pageNumbers = [];
-    const pagesToShow = 5; // We'll show 5 page numbers at a time
+    const pagesToShow = 2; // We'll show 5 page numbers at a time
 
     let startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2));
     let endPage = Math.min(totalPages, startPage + pagesToShow - 1);
@@ -19,11 +19,11 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPage
       startPage = Math.max(1, endPage - pagesToShow + 1);
     }
 
-    if (startPage > 1) {
+    if (startPage > 1 && window.innerWidth > 480) {
       pageNumbers.push(
         <button key={1} className={styles.paginationItem} onClick={() => onPageChange(1)}>1</button>
       );
-      if (startPage > 2) {
+      if (startPage > 2 && window.innerWidth > 480) {
         pageNumbers.push(<button key="ellipsis1" className={styles.paginationItem}>...</button>);
       }
     }
@@ -63,6 +63,12 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPage
   return (
     <div className={styles.paginationContainer}>
       <div className={styles.pagination}>
+        <button
+            className={styles.prevButton}
+            onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+          >
+            &lt;
+        </button>
         {renderPageNumbers()}
         <button
           className={styles.nextButton}
