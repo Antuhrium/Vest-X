@@ -11,6 +11,13 @@
 
   font-family: "Inter", sans-serif;
   color: #fff;
+
+  @media screen and (max-width: 1280px) {
+    width: calc(50% - 24px);
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .header {
@@ -67,6 +74,10 @@
   object-fit: cover;
   border-radius: 2px;
   border: 0.75px solid rgba(255, 255, 255, 0.25);
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .projectInfo {

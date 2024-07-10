@@ -62,7 +62,7 @@ const CircularProgressChart = () => {
       ref={ref}
       style={{ width: "100%", height: "100%", marginTop: "-4rem" }}
     >
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 420 ? 200 : 400}>
         <PieChart>
           <defs>
             <pattern
@@ -137,8 +137,8 @@ const CircularProgressChart = () => {
             cx="35%"
             cy="35%"
             transform="scale(1.25)"
-            innerRadius={60}
-            outerRadius={80}
+            innerRadius={window.innerWidth < 420 ? 50 : 60}
+            outerRadius={window.innerWidth < 420 ? 65 : 80}
             fill="#8884d8"
             paddingAngle={5}
             dataKey="value"

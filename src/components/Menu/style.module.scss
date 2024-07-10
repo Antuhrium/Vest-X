@@ -1,3 +1,50 @@
+.mobileMenu {
+  position: fixed;
+  z-index: 900;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: fit-content;
+  padding: 12px 0;
+  background: #111827;
+
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+
+  .mobileLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    opacity: 0.2;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      color: #fff;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 12px;
+    }
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1280px) {
+    display: flex;
+  }
+}
+
 .menu {
   height: 100vh;
   max-width: 140px;
@@ -57,5 +104,9 @@
       background: #e1e7ef;
       color: #101322;
     }
+  }
+
+  @media screen and (max-width: 1280px) {
+    display: none;
   }
 }
