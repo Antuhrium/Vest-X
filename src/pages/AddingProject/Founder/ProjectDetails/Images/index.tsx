@@ -18,6 +18,7 @@ export default function Images() {
     },
     { id: 2, type: "banner", file: null },
     { id: 3, type: "preview", file: null },
+    { id: 4, type: "Tokenomics", file: null },
   ]);
 
   const handleFileChange = (id: number, file: File | null) => {

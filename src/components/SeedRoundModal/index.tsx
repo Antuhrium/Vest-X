@@ -57,7 +57,7 @@ const SeedRoundDetails: React.FC = () => {
             />
             Total amount of tokens
           </span>
-          <span>1,000,000</span>
+          <span className={styles.igraSans}>1,000,000</span>
         </div>
         <div className={styles.detailItem}>
           <span className={styles.propNameText}>
@@ -68,7 +68,7 @@ const SeedRoundDetails: React.FC = () => {
             />
             Tokens claimed
           </span>
-          <span>500,000</span>
+          <span className={styles.igraSans}>500,000</span>
         </div>
       </div>
       <div
@@ -84,7 +84,7 @@ const SeedRoundDetails: React.FC = () => {
             <img src={NextClaim} alt="next claim" className={styles.propIcon} />
             Next claim
           </span>
-          <span>21.05.2024 19:00 UTC</span>
+          <span className={styles.igraSans}>21.05.2024 19:00 UTC</span>
         </div>
         <div className={styles.detailItem}>
           <span className={styles.propNameText}>
@@ -95,7 +95,7 @@ const SeedRoundDetails: React.FC = () => {
             />
             Next claim amount
           </span>
-          <span>250,000</span>
+          <span className={styles.igraSans}>250,000</span>
         </div>
       </div>
       <button className={styles.claimButton}>Claim tokens</button>
@@ -105,9 +105,12 @@ const SeedRoundDetails: React.FC = () => {
 type SeedRoundModalButtonTypes = {
   isModalOpen: boolean;
   setIsModalOpen: (isOpen: boolean) => void;
-}
+};
 
-const SeedRoundModalButton: React.FC<SeedRoundModalButtonTypes> = ({isModalOpen, setIsModalOpen}) => {
+const SeedRoundModalButton: React.FC<SeedRoundModalButtonTypes> = ({
+  isModalOpen,
+  setIsModalOpen,
+}) => {
   const modalRootRef = useRef<HTMLDivElement>(null);
 
   const handleCloseModal = () => setIsModalOpen(false);

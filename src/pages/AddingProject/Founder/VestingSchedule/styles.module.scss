@@ -206,6 +206,7 @@ input {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
+  @apply font-igraSans;
 }
 
 .tgeInputContainer {
@@ -214,4 +215,9 @@ input {
   border: 1px solid #1b2531;
   border-radius: 4px;
   position: relative;
+}
+
+.formGroup > label,
+.formGroupFull > label {
+  margin-bottom: 16px;
 }

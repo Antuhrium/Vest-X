@@ -87,6 +87,11 @@ export default function SmallTokenDropdown({
                 }}
               >
                 {token}
+                <img
+                  src={getIcon(tokenType)}
+                  alt="token icon"
+                  className={styles.tokenIcon}
+                />
               </div>
             ))}
           </div>

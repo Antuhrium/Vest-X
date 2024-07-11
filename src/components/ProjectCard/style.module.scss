@@ -1,10 +1,11 @@
 .projectCard {
-  background-color: #0A0F1A;;
+  background-color: #0a0f1a;
   padding: 25px;
   color: white;
   max-width: 300px;
   border-radius: 8px;
-  border: 1px solid #1D283A;
+  border: 1px solid #1d283a;
+  z-index: 1000;
 }
 
 .projectHeader {
@@ -19,10 +20,26 @@
   font-size: 18px;
 }
 
+.tag {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  position: relative;
+}
+
+.tag > span {
+  position: absolute;
+  color: white;
+  top: 8px;
+  left: 16px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
 .vestingStatus {
   display: flex;
   align-items: center;
-  background-color: #00A86B;
+  background-color: #00a86b;
   color: #030711;
   padding: 4px 10px;
   border-radius: 4px;
@@ -41,7 +58,7 @@
 }
 
 .checkmark {
-  color: #00A86B;
+  color: #00a86b;
   font-size: 14px;
   line-height: 1;
 }
@@ -79,23 +96,22 @@
 }
 
 .tag {
-  background-color: #3A4556;
+  background-color: #3a4556;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
 
-
   &[data-tag="AI"] {
     background-image: var(--bg-image);
-    background-color: transparent; 
+    background-color: transparent;
   }
 }
 
 .viewDetailsBtn {
   width: 100%;
-  background-color: #0A0F1A;
-  border: 1px solid var(--Gray-400, #7F8EA3);
-  color: #8B95A5;
+  background-color: #0a0f1a;
+  border: 1px solid var(--Gray-400, #7f8ea3);
+  color: #8b95a5;
   padding: 8px;
   border-radius: 4px;
   cursor: pointer;

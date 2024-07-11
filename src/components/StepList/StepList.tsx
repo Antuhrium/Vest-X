@@ -16,6 +16,7 @@ interface StepChildrenProps {
 export interface StepListProps {
   steps: StepProps[];
   style?: React.CSSProperties;
+  header?: string;
 }
 
 const StepHeader: React.FC<StepProps> = ({ title, status }) => {
@@ -69,9 +70,14 @@ const StepChildren: React.FC<{ children?: StepChildrenProps[] }> = ({
   );
 };
 
-const StepList: React.FC<StepListProps> = ({ steps, style = {} }) => {
+const StepList: React.FC<StepListProps> = ({
+  steps,
+  style = {},
+  header = "",
+}) => {
   return (
     <div className={styles.stepList} style={{ ...style }}>
+      {header && <h2 className={styles.gradientHeader}>{header}</h2>}
       {steps.map((step, index) => (
         <div key={index} className={styles.stepWrapper}>
           <div className={styles.stepContent}>
