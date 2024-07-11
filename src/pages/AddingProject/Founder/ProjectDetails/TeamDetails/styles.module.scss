@@ -110,6 +110,7 @@ textarea::placeholder {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
+  @apply font-igraSans;
 }
 
 .uploadContainer {
@@ -249,4 +250,9 @@ textarea {
   margin-right: 10px;
   justify-content: center;
   color: white;
+}
+
+.formGroup > label,
+.formGroupFull > label {
+  margin-bottom: 16px;
 }

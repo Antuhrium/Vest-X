@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './style.module.scss';
+import React from "react";
+import styles from "./style.module.scss";
 
 interface Backer {
   name: string;
@@ -12,7 +12,10 @@ interface CurrentBackersProps {
   generalBackers: Backer[];
 }
 
-const CurrentBackers: React.FC<CurrentBackersProps> = ({ topBackers, generalBackers }) => {
+const CurrentBackers: React.FC<CurrentBackersProps> = ({
+  topBackers,
+  generalBackers,
+}) => {
   return (
     <div className={styles.currentBackers}>
       <h2 className={styles.title}>Current Backers</h2>
@@ -20,11 +23,17 @@ const CurrentBackers: React.FC<CurrentBackersProps> = ({ topBackers, generalBack
         {topBackers.map((backer, index) => (
           <div key={`top-${index}`} className={styles.topBacker}>
             <div className={styles.avatarContainer}>
-              <img src={backer.avatar} alt={backer.name} className={styles.avatar} />
+              <img
+                src={backer.avatar}
+                alt={backer.name}
+                className={styles.avatar}
+              />
             </div>
             <div className={styles.info}>
               <div className={styles.name}>{backer.name}</div>
-              <div className={styles.amount}>{`${backer.amount.toLocaleString()} USD`}</div>
+              <div
+                className={styles.amount}
+              >{`${backer.amount.toLocaleString()} USD`}</div>
             </div>
           </div>
         ))}
@@ -33,11 +42,17 @@ const CurrentBackers: React.FC<CurrentBackersProps> = ({ topBackers, generalBack
         {generalBackers.map((backer, index) => (
           <div key={`general-${index}`} className={styles.backer}>
             <div className={styles.avatarContainer}>
-              <img src={backer.avatar} alt={backer.name} className={styles.avatar} />
+              <img
+                src={backer.avatar}
+                alt={backer.name}
+                className={styles.avatar}
+              />
             </div>
             <div className={styles.info}>
               <div className={styles.name}>{backer.name}</div>
-              <div className={styles.amount}>{`${backer.amount.toLocaleString()} USD`}</div>
+              <div
+                className={styles.amount}
+              >{`${backer.amount.toLocaleString()} USD`}</div>
             </div>
           </div>
         ))}
@@ -47,7 +62,7 @@ const CurrentBackers: React.FC<CurrentBackersProps> = ({ topBackers, generalBack
 };
 export default CurrentBackers;
 
-// take to outer div or not 
+// take to outer div or not
 // <CurrentBackers generalBackers={generalBackers} topBackers={topBackers} />
 //
 //
@@ -70,4 +85,3 @@ export default CurrentBackers;
 //   { name: 'Ethan B', amount: 34842, avatar: '/avatars/14.png' },
 //   { name: 'swhispers99', amount: 1231, avatar: '/avatars/15.png' },
 // ];
-

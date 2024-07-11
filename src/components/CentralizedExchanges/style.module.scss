@@ -7,22 +7,29 @@
 
 .title {
   text-align: center;
-  color: #999;
   font-family: "Igra Sans", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
   padding: 20px 32px;
-  border: 1px solid var(--Gray-600, #1D283A);
+  border: 1px solid var(--Gray-600, #1d283a);
   border-bottom: none;
   margin-bottom: 0 !important;
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0.3) 70%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @apply font-igraSans;
 }
 
 .exchangesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  border: 1px solid var(--Gray-600, #1D283A);
+  border: 1px solid var(--Gray-600, #1d283a);
   padding: 40px 32px;
   padding-left: 50px;
 }

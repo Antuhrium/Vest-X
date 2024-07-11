@@ -1,12 +1,12 @@
 .chartsContainer {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 48px;
   // padding: 0rem 2rem 2rem 2rem;
 }
 
 .chartItem {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #1d283a;
   border-radius: 0.5rem;
   padding: 2rem;
   height: 430px;
@@ -51,6 +51,7 @@
 .chartBalance {
   font-size: 40px;
   color: white;
+  font-family: "Igra-Sans", sans-serif;
 }
 
 .recharts-layer .recharts-pie {

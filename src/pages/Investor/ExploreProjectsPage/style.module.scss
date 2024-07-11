@@ -5,31 +5,38 @@
 
 .wrapper {
   padding: 80px 227px 110px 48px;
+  position: relative;
 }
 
 .searchWrapper {
-    padding-right: 38px;
-    margin-top: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 140px;
+  padding-right: 38px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
 }
 
 .tags {
-    width: 100%;
-    margin-top: 32px;
+  width: 100%;
+  margin-top: 32px;
 }
 
 .projectsWrapper {
-    padding-right: 37px;
-    margin-top: 48px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
+  padding-right: 37px;
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
 }
 
 .paginationWrapper {
   margin-top: 80px;
   padding-right: 38px;
+}
+
+.rightBg {
+  @apply absolute
+      bottom-[10rem]
+      left-1/4;
 }

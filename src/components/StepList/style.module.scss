@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 45px;
+  margin-bottom: 57px;
 }
 
 .stepContent {
@@ -54,15 +54,15 @@
 }
 
 .iconCompleted {
-  background-image: url("check.svg");
+  background-image: url("/images/check.svg");
 }
 
 .iconInProgress {
-  background-image: url("in-progress-icon.svg");
+  background-image: url("/images/in-progress-icon.svg");
 }
 
 .iconPending {
-  background-image: url("pending-icon.svg");
+  background-image: url("/images/pending-icon.svg");
 }
 
 .stepTitle {
@@ -115,8 +115,8 @@
 .stepLineWrapper {
   position: absolute;
   left: 19px;
-  top: 51px;
-  bottom: -35px;
+  top: 54px;
+  bottom: -45px;
   width: 2px;
 }
 
@@ -128,4 +128,22 @@
   &.completedLine {
     background-color: #0f62fe;
   }
+}
+
+.gradientHeader {
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 60%)
+  );
+  background-clip: text;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  font-family: "Igra Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  @apply font-igraSans;
 }

@@ -12,15 +12,14 @@
 }
 
 .imagesGrid {
-  display: flex;
+  display: grid;
   gap: 2rem;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .uploadContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
@@ -85,6 +84,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
+  @apply font-igraSans;
 }
 
 .blueText {

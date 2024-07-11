@@ -15,10 +15,13 @@ import Wallet4 from "/images/wallet-4.svg";
 import CheckInProgress from "/images/check-in-progress.svg";
 import SimplePDF from "/pdf/simple_pdf.pdf";
 import RightBg from "/images/right-bg.png";
+import CheckMark from "/images/check.svg";
+import CopyIcon from "/images/copy-file.svg";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
 import { Document, Page, pdfjs } from "react-pdf";
+import Sign from "../../../../../components/Sign";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -28,9 +31,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 const FifthStep: React.FC = () => {
   return (
     <div className={styles.paymentContainer}>
-      <h2 className={styles.paymentTitle}>
-        Finalize <span className={styles.paymentTitleSecondary}>Payment</span>
-      </h2>
+      <h2 className={styles.gradientHeaderMedium}>Finalize Payment</h2>
       <p className={styles.paymentDescription}>
         Please send the funds to this address or click on "Connect Wallet" to
         provide transaction automatically
@@ -46,7 +47,7 @@ const FifthStep: React.FC = () => {
           readOnly
         />
         <button className={styles.copyButton}>
-          <img src="copy-icon.png" alt="Copy" className={styles.copyIcon} />
+          <img src={CopyIcon} alt="Copy" className={styles.copyIcon} />
         </button>
       </div>
       <p className={styles.note}>
@@ -84,7 +85,7 @@ const FourthStep: React.FC = () => {
         <Document file={SimplePDF} onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} />
         </Document>
-        <p>
+        <p className={styles.pageNumber}>
           Page {pageNumber} of {numPages}
         </p>
       </div>
@@ -106,6 +107,7 @@ const FourthStep: React.FC = () => {
           Download
         </a>
       </div>
+      <Sign />
     </div>
   );
 };
@@ -116,7 +118,7 @@ const ThirdStep: React.FC = () => {
 
   return (
     <div className={styles.formContainer}>
-      <h2>Receivable Wallet</h2>
+      <h2 className={styles.gradientHeaderMedium}>Receivable Wallet</h2>
       <form>
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
@@ -187,7 +189,7 @@ const SecondStep: React.FC = () => {
       //   transform: "scale(0.8)",
       // }}
     >
-      <h2>Contact details</h2>
+      <h2 className={styles.gradientHeaderMedium}>Contact details</h2>
       <form>
         <div
           style={{
@@ -278,9 +280,9 @@ const FirstStep: React.FC = () => {
   const [companyAddress, setCompanyAddress] = useState("");
   return (
     <div className={styles.formContainer}>
-      <h2>Signee</h2>
+      <h2 className={styles.gradientHeaderSignee}>Signee</h2>
       <form className={styles.form}>
-        <div className={styles.formGroup}>
+        <div className={styles.bigFormGroup}>
           <label htmlFor="signeeName">
             Signee's name
             <span className={styles.requiredStar}>*</span>
@@ -288,11 +290,12 @@ const FirstStep: React.FC = () => {
           <input
             type="text"
             id="signeeName"
+            placeholder="John Doe"
             value={signeeName}
             onChange={(e) => setSigneeName(e.target.value)}
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className={styles.bigFormGroup}>
           <label htmlFor="companyName">
             Company name
             <span className={styles.requiredStar}>*</span>
@@ -300,11 +303,12 @@ const FirstStep: React.FC = () => {
           <input
             type="text"
             id="companyName"
+            placeholder="Too “JohnEvCorparation”"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className={styles.bigFormGroup}>
           <label htmlFor="companyAddress">
             Company address
             <span className={styles.requiredStar}>*</span>
@@ -312,6 +316,7 @@ const FirstStep: React.FC = () => {
           <input
             type="text"
             id="companyAddress"
+            placeholder="123 Green Street, Suite 456, Sustainability City"
             value={companyAddress}
             onChange={(e) => setCompanyAddress(e.target.value)}
           />
@@ -361,7 +366,8 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
           Save and finish later
         </button>
         <button type="button" onClick={handleNextStep}>
-          Next Step <img src={ArrowNext} alt="arrow next" />
+          {step === 5 ? "Complete Payment" : "Next Step"}{" "}
+          <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
         </button>
       </div>
       <img className={styles.rightBg} src={RightBg} alt="right bg" />

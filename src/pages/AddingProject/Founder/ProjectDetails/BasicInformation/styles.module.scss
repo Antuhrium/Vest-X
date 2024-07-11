@@ -58,6 +58,11 @@
   margin-bottom: 1.5rem;
 }
 
+.formGroup > label,
+.formGroupFull > label {
+  margin-bottom: 16px;
+}
+
 .textarea {
   height: 6rem;
   margin-bottom: 0.5rem;
@@ -73,6 +78,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
+  @apply font-igraSans;
 }
 
 input {

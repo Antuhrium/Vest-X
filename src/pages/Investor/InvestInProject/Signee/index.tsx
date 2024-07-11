@@ -36,14 +36,7 @@ const Signee: React.FC = () => {
       <Menu
         menuStyle={{
           padding: "26px 45px",
-          height:
-            step === 1
-              ? "100vh"
-              : step === 2
-              ? "122vh"
-              : step === 5
-              ? "105vh"
-              : "100vh",
+          height: "100vh",
         }}
         wrapperStyle={{
           margin: "68px 0 auto",
@@ -52,15 +45,10 @@ const Signee: React.FC = () => {
       <StepList
         steps={steps}
         style={{
-          height:
-            step === 1
-              ? "100vh"
-              : step === 2
-              ? "122vh"
-              : step === 5
-              ? "105vh"
-              : "100vh",
+          width: "435px",
+          height: "100vh",
         }}
+        header="Invest in project"
       />
       <Content step={step} setStep={setStep} />
     </div>

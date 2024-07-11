@@ -25,6 +25,7 @@ export default function AddingProjectFounder() {
         { title: "Social Channels", status: "pending" },
         { title: "Team Details", status: "pending" },
         { title: "Images", status: "pending" },
+        { title: "Traction", status: "pending" },
       ],
     },
     { title: "Vesting Schedule", status: "pending" },
@@ -79,7 +80,7 @@ export default function AddingProjectFounder() {
   };
 
   const handleNextStep = () => {
-    if (step === 1 && subStep <= 4) {
+    if (step === 1 && subStep <= 5) {
       setSubStep((prev) => prev + 1);
     } else {
       setStep((prev) => (prev < 4 ? prev + 1 : prev));
@@ -87,15 +88,15 @@ export default function AddingProjectFounder() {
   };
 
   useEffect(() => {
-    if (step === 1 && subStep === 5) {
+    if (step === 1 && subStep === 6) {
       setStep(2);
       setSubStep(4);
     }
   }, [step, subStep]);
 
   useEffect(() => {
-    console.log("Step: ", step, "SubStep: ", subStep);
-  }, [step, subStep]);
+    console.log("steps", steps);
+  }, [steps]);
 
   const handleSaveAndFinishLater = () => {
     console.log("Save and finish later");
@@ -108,7 +109,11 @@ export default function AddingProjectFounder() {
           margin: "68px 0 auto",
         }}
       />
-      <StepList steps={steps} style={{ height: "100vh" }} />
+      <StepList
+        steps={steps}
+        style={{ height: "100vh", width: "435px" }}
+        header="Create a project"
+      />
       <div className={styles.contentContainer}>
         {step === 1 && subStep === 1 && <BasicInformation />}
         {step === 1 && subStep === 2 && <SocialChannels />}

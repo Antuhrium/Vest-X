@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
-import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import styles from "./styles.module.scss";
 
 const CircularProgressChart = () => {
   const ref = useRef(null);
@@ -32,7 +33,6 @@ const CircularProgressChart = () => {
     { name: "Other", value: 2 },
   ];
 
-  const COLORS = ["#505050", "#606060", "#707070", "#808080", "#909090"];
   const PATTERNS = [
     "diagonalHatch",
     "crossHatch",
@@ -57,11 +57,67 @@ const CircularProgressChart = () => {
     setActiveIndex(null);
   };
 
+  const renderLegend = () => {
+    return (
+      <ul
+        style={{
+          listStyleType: "none",
+          padding: 0,
+          position: "absolute",
+          top: "5rem",
+          right: "-4rem",
+          gap: "0.5rem",
+          display: "flex",
+          flexDirection: "column",
+          color: "white",
+          fontSize: "18px",
+        }}
+      >
+        {data.map((entry, index) => (
+          <li
+            key={`item-${index}`}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+              paddingBottom: "0.5rem",
+            }}
+            onMouseEnter={() => onLegendMouseEnter(index)}
+            onMouseLeave={onLegendMouseLeave}
+          >
+            <svg
+              width="18"
+              height="18"
+              style={{
+                border:
+                  activeIndex === index
+                    ? "1px solid rgba(255,255,255,0.5)"
+                    : "none",
+              }}
+            >
+              <rect width="18" height="18" fill={`url(#${PATTERNS[index]})`} />
+            </svg>
+            <span
+              style={{ marginLeft: "1rem" }}
+            >{`${entry.name}: ${entry.value}%`}</span>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <div
       ref={ref}
-      style={{ width: "100%", height: "100%", marginTop: "-4rem" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        marginTop: "-3rem",
+        marginLeft: "-4rem",
+        position: "relative",
+      }}
     >
+      <div className={styles.blueBgGradient}></div>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <defs>
@@ -158,27 +214,9 @@ const CircularProgressChart = () => {
               />
             ))}
           </Pie>
-          <Legend
-            layout="vertical"
-            verticalAlign="middle"
-            wrapperStyle={{
-              marginTop: "-1rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-            align="right"
-            onMouseEnter={(_, index) => onLegendMouseEnter(index)}
-            onMouseLeave={onLegendMouseLeave}
-            payload={data.map((item, index) => ({
-              id: item.name,
-              type: "square",
-              value: `${item.name}: ${item.value}%`,
-              color: COLORS[index],
-            }))}
-          />
         </PieChart>
       </ResponsiveContainer>
+      {renderLegend()}
     </div>
   );
 };
