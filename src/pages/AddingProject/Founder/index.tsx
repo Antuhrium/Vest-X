@@ -109,11 +109,18 @@ export default function AddingProjectFounder() {
           margin: "68px 0 auto",
         }}
       />
-      <StepList
-        steps={steps}
-        style={{ height: "100vh", width: "435px" }}
-        header="Create a project"
-      />
+      <div
+        style={{
+          paddingTop: "30px",
+          background: "#0a0f1a",
+        }}
+      >
+        <StepList
+          steps={steps}
+          style={{ height: "100vh", width: "435px" }}
+          header="Create a project"
+        />
+      </div>
       <div className={styles.contentContainer}>
         {step === 1 && subStep === 1 && <BasicInformation />}
         {step === 1 && subStep === 2 && <SocialChannels />}

@@ -17,14 +17,17 @@ const investorLinks = [
     {
         icon: PieChart,
         to: "/investor",
+        label: "Dashboard",
     },
     {
         icon: GraphUp,
         to: "/investor/invest-in-project",
+        label: "Investing",
     },
     {
         icon: Briefcase,
         to: "/investor/admin",
+        label: "Admin",
     },
 ];
 
@@ -32,10 +35,12 @@ const founderLinks = [
     {
         icon: Plus,
         to: "/founder",
+        label: "Add project",
     },
     {
         icon: Briefcase,
         to: "/founder/admin",
+        label: "Admin",
     },
 ];
 
@@ -60,27 +65,45 @@ const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
     };
 
     return (
-        <aside className={styles.menu} style={{ ...menuStyle }}>
-            <img src={Logo} alt="logo" className={styles.logoImg} />
-            <div className={styles.wrapper} style={{ ...wrapperStyle }}>
+        <>
+            <aside className={styles.mobileMenu}>
                 {links.map((link) => (
                     <Link
                         key={link.to}
                         to={link.to}
-                        className={`${styles.link} ${linkStyle(link.to)}`}
+                        className={`${styles.mobileLink} ${pathname === link.to ? styles.active : ""}`}
                     >
-                        <img src={link.icon} alt="" />
+                        <img src={link.icon} alt={link.label} />
+                        <span>{link.label}</span>
                     </Link>
                 ))}
+                <Link to={""} className={styles.mobileLink}>
+                    <img src={Group} alt="Group" />
+                    <span>Group</span>
+                </Link>
+            </aside>
+            <aside className={styles.menu} style={{ ...menuStyle }}>
+                <img src={Logo} alt="logo" className={styles.logoImg} />
+                <div className={styles.wrapper} style={{ ...wrapperStyle }}>
+                    {links.map((link) => (
+                        <Link
+                            key={link.to}
+                            to={link.to}
+                            className={`${styles.link} ${linkStyle(link.to)}`}
+                        >
+                            <img src={link.icon} alt="" />
+                        </Link>
+                    ))}
 
-                <button className={styles.walletButton}>
-                    {shortenWallet(wallet)}
-                </button>
-            </div>
-            <Link to={""} className={styles.link}>
-                <img src={Group} alt="Group" />
-            </Link>
-        </aside>
+                    <button className={styles.walletButton}>
+                        {shortenWallet(wallet)}
+                    </button>
+                </div>
+                <Link to={""} className={styles.link}>
+                    <img src={Group} alt="Group" />
+                </Link>
+            </aside>
+        </>
     );
 };
 

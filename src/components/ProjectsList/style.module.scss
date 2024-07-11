@@ -4,4 +4,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 48px;
+
+  @media screen and (max-width: 1280px) {
+    flex-wrap: wrap;
+
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
