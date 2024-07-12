@@ -1,0 +1,59 @@
+.tractionContainer {
+  width: 100%;
+  color: #fff;
+  z-index: 1000;
+  padding: 2rem;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0a0f1a;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  left: 13%;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+.active {
+  color: #0f62fe;
+}
+
+.progressBarContainer {
+  width: 6rem;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin-top: 4px;
+}
+
+.progressBar {
+  height: 2px;
+  background-color: #0f62fe;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section {
+  margin-top: 50px; /* Adjust as necessary to offset the fixed navbar */
+  padding: 50px 0;
+}

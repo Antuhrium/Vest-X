@@ -25,7 +25,7 @@ const founderLinks = [
   "Investor database",
 ];
 
-const AdminMenu = () => {
+const AdminMenu = ({ style = {} }: { style?: Record<string, string> }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ const AdminMenu = () => {
   }
 
   return (
-    <div className={styles.leftWrapper}>
+    <div className={styles.leftWrapper} style={{ ...style }}>
       <Link
         to={"/investor/admin/project-introduction"}
         className={styles.leftCard}

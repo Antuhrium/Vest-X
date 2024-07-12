@@ -155,10 +155,17 @@ const KeyFeaturesPage: React.FC = () => {
       <div className={styles.container}>
         <Menu
           menuStyle={{
-            height: "105vh",
+            position: "relative",
+            height: "119vh",
           }}
         />
-        <AdminMenu />
+        <AdminMenu
+          style={{
+            position: "relative",
+            left: "0",
+            height: "119vh",
+          }}
+        />
         <div className={styles.wrapper}>
           <CurrentBackers
             topBackers={topBakers}

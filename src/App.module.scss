@@ -1,9 +1,15 @@
 .mainContainer {
-    @apply w-full bg-[#030711] relative;
+  @apply w-full bg-[#030711] relative;
+  min-height: 100%;
 }
 
-@media screen and (max-width: 1024px) {
-    .mainContainer {
-        @apply flex flex-col;
-    }
+@media screen and (max-widwth: 1024px) {
+  .mainContainer {
+    @apply flex flex-col;
+  }
+}
+
+html,
+body {
+  height: 100%;
 }

@@ -10,9 +10,23 @@ const PrivateRound = () => {
     <div>
       <img src={ArkhamTopBg} alt="arkham top bg" />
       <div className={styles.container}>
-        <Menu />
-        <AdminMenu />
-        <AdminInvestingContent roundTitle={"Arkham | Private round"} />
+        <Menu
+          menuStyle={{
+            position: "relative",
+            height: "119vh",
+          }}
+        />
+        <AdminMenu
+          style={{
+            position: "relative",
+            left: "0",
+            height: "119vh",
+          }}
+        />
+        <AdminInvestingContent
+          roundTitle={"Arkham | Private round"}
+          style={{ marginLeft: "48px" }}
+        />
       </div>
     </div>
   );

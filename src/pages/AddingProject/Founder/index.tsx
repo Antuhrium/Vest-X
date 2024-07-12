@@ -5,13 +5,14 @@ import { StepProps } from "../../../components/StepList/StepList";
 import { useEffect, useState } from "react";
 import ArrowBack from "/images/arrow-back.svg";
 import ArrowNext from "/images/arrow-next.svg";
-import RightBg from "/images/right-bg.png";
 import BasicInformation from "./ProjectDetails/BasicInformation/BasicInformation";
 import SocialChannels from "./ProjectDetails/SocialChannels";
 import TeamDetails from "./ProjectDetails/TeamDetails";
 import Images from "./ProjectDetails/Images";
 import VestingSchedule from "./VestingSchedule";
 import Chat from "./SAFT";
+import RightBg from "/images/right-bg.png";
+import Traction from "./ProjectDetails/Traction";
 
 export default function AddingProjectFounder() {
   const [step, setStep] = useState(1);
@@ -113,22 +114,34 @@ export default function AddingProjectFounder() {
         style={{
           paddingTop: "30px",
           background: "#0a0f1a",
+          height: "100vh",
+          width: "435px",
+          position: "fixed",
+          top: 0,
+          left: "140px",
         }}
       >
         <StepList
           steps={steps}
-          style={{ height: "100vh", width: "435px" }}
+          style={{
+            height: "100vh",
+            width: "435px",
+            position: "fixed",
+            top: 0,
+            left: "140px",
+          }}
           header="Create a project"
         />
       </div>
       <div className={styles.contentContainer}>
+        <img className={styles.rightBg} src={RightBg} alt="right bg" />
         {step === 1 && subStep === 1 && <BasicInformation />}
         {step === 1 && subStep === 2 && <SocialChannels />}
         {step === 1 && subStep === 3 && <TeamDetails />}
         {step === 1 && subStep === 4 && <Images />}
+        {step === 1 && subStep === 5 && <Traction />}
         {step === 2 && <VestingSchedule />}
         {(step === 3 || step === 4) && <Chat setStep={setStep} />}
-        <img className={styles.rightBg} src={RightBg} alt="right bg" />
         <div
           className={styles.formButtons}
           style={
