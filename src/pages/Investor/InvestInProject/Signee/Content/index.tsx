@@ -104,7 +104,7 @@ const FourthStep: React.FC = () => {
           download
         >
           <img src={DownloadIcon} alt="Download Icon" />
-          Download
+          <span>Download</span>
         </a>
       </div>
       <Sign />
@@ -196,6 +196,7 @@ const SecondStep: React.FC = () => {
             display: "flex",
             gap: "1rem",
           }}
+          className={styles.secFormContainer}
         >
           <div className={styles.bigFormGroup}>
             <label htmlFor="twitterLink">Twitter link *</label>
@@ -360,13 +361,13 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
         }
       >
         <button type="button" onClick={handlePreviousStep}>
-          <img src={ArrowBack} alt="arrow back" /> Previous Step
+          <img src={ArrowBack} alt="arrow back" /> <span>Previous Step</span>
         </button>
-        <button type="button" onClick={handleSaveAndFinishLater}>
+        <button type="button" className={styles.saveButton} onClick={handleSaveAndFinishLater}>
           Save and finish later
         </button>
         <button type="button" onClick={handleNextStep}>
-          {step === 5 ? "Complete Payment" : "Next Step"}{" "}
+          <span>{step === 5 ? "Complete Payment" : "Next Step"}</span>{" "}
           <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
         </button>
       </div>

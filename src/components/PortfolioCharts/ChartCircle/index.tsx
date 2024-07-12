@@ -60,6 +60,7 @@ const CircularProgressChart = () => {
   const renderLegend = () => {
     return (
       <ul
+        className={styles.container}
         style={{
           listStyleType: "none",
           padding: 0,
