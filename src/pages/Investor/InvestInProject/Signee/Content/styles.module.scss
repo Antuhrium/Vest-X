@@ -2,11 +2,13 @@
   padding: 3rem;
   width: 100%;
   position: relative;
+  margin-left: calc(435px + 140px);
 }
 
 .container {
   position: relative;
   z-index: 1000;
+  width: 90%;
 }
 
 .formContainer {
@@ -15,7 +17,7 @@
   padding: 20px;
   position: relative;
   z-index: 1000;
-  width: 80%;
+  width: 90%;
 }
 
 h2 {
@@ -57,7 +59,7 @@ textarea {
 .formButtons {
   display: flex;
   margin-top: 48px;
-  width: 80%;
+  width: 90%;
   z-index: 1000;
   position: relative;
 }
@@ -241,7 +243,7 @@ textarea::placeholder {
   position: relative;
   z-index: 1000;
   padding: 32px;
-  max-width: 80%;
+  width: 90%;
 }
 
 .paymentTitle {

@@ -9,7 +9,6 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white;
 }
 
@@ -78,7 +77,7 @@
     linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%)
   );
   background-clip: text;
-  font-weight: 600;
+  font-weight: 400;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
@@ -87,4 +86,20 @@
 
 input {
   padding: 11px !important;
+}
+
+.completion {
+  display: flex;
+  padding: 12px 16px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--Gray-600, #1d283a);
+  background: #111827;
+  width: 15rem;
+}
+
+.completion > span {
+  margin-left: auto;
+  color: #676e76;
 }

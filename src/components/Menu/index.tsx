@@ -14,97 +14,100 @@ import { shortenWallet } from "../../utils/shortenWallet";
 const wallet = "OxbrRcKQtfjjLuQxFYCeMXcth77m51257";
 
 const investorLinks = [
-    {
-        icon: PieChart,
-        to: "/investor",
-        label: "Dashboard",
-    },
-    {
-        icon: GraphUp,
-        to: "/investor/invest-in-project",
-        label: "Investing",
-    },
-    {
-        icon: Briefcase,
-        to: "/investor/admin",
-        label: "Admin",
-    },
+  {
+    icon: PieChart,
+    to: "/investor",
+    label: "Dashboard",
+  },
+  {
+    icon: GraphUp,
+    to: "/investor/invest-in-project",
+    label: "Investing",
+  },
+  {
+    icon: Briefcase,
+    to: "/investor/admin",
+    label: "Admin",
+  },
 ];
 
 const founderLinks = [
-    {
-        icon: Plus,
-        to: "/founder",
-        label: "Add project",
-    },
-    {
-        icon: Briefcase,
-        to: "/founder/admin",
-        label: "Admin",
-    },
+  {
+    icon: Plus,
+    to: "/founder",
+    label: "Add project",
+  },
+  {
+    icon: Briefcase,
+    to: "/founder/admin",
+    label: "Admin",
+  },
 ];
 
 interface CustomStyles {
-    menuStyle?: Record<string, string>;
-    wrapperStyle?: Record<string, string>;
+  menuStyle?: Record<string, string>;
+  wrapperStyle?: Record<string, string>;
 }
 
 const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
-    const { pathname } = useLocation();
+  console.log("menuStyle", menuStyle);
+  const { pathname } = useLocation();
 
-    const links = pathname.includes("/investor") ? investorLinks : founderLinks;
+  const links = pathname.includes("/investor") ? investorLinks : founderLinks;
 
-    const linkStyle = (link: string) => {
-        if (link === links[0].to && pathname === links[0].to) {
-            return "";
-        } else if (link !== links[0].to && pathname.includes(link)) {
-            return "";
-        } else {
-            return styles.notActive;
-        }
-    };
+  const linkStyle = (link: string) => {
+    if (link === links[0].to && pathname === links[0].to) {
+      return "";
+    } else if (link !== links[0].to && pathname.includes(link)) {
+      return "";
+    } else {
+      return styles.notActive;
+    }
+  };
 
-    return (
-        <>
-            <aside className={styles.mobileMenu}>
-                {links.map((link) => (
-                    <Link
-                        key={link.to}
-                        to={link.to}
-                        className={`${styles.mobileLink} ${pathname === link.to ? styles.active : ""}`}
-                    >
-                        <img src={link.icon} alt={link.label} />
-                        <span>{link.label}</span>
-                    </Link>
-                ))}
-                <Link to={""} className={styles.mobileLink}>
-                    <img src={Group} alt="Group" />
-                    <span>Group</span>
-                </Link>
-            </aside>
-            <aside className={styles.menu} style={{ ...menuStyle }}>
-                <img src={Logo} alt="logo" className={styles.logoImg} />
-                <div className={styles.wrapper} style={{ ...wrapperStyle }}>
-                    {links.map((link) => (
-                        <Link
-                            key={link.to}
-                            to={link.to}
-                            className={`${styles.link} ${linkStyle(link.to)}`}
-                        >
-                            <img src={link.icon} alt="" />
-                        </Link>
-                    ))}
+  return (
+    <>
+      <aside className={styles.mobileMenu}>
+        {links.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={`${styles.mobileLink} ${
+              pathname === link.to ? styles.active : ""
+            }`}
+          >
+            <img src={link.icon} alt={link.label} />
+            <span>{link.label}</span>
+          </Link>
+        ))}
+        <Link to={""} className={styles.mobileLink}>
+          <img src={Group} alt="Group" />
+          <span>Group</span>
+        </Link>
+      </aside>
+      <aside className={styles.menu} style={{ ...menuStyle }}>
+        <img src={Logo} alt="logo" className={styles.logoImg} />
+        <div className={styles.wrapper} style={{ ...wrapperStyle }}>
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`${styles.link} ${linkStyle(link.to)}`}
+            >
+              <img src={link.icon} alt="" />
+            </Link>
+          ))}
 
-                    <button className={styles.walletButton}>
-                        {shortenWallet(wallet)}
-                    </button>
-                </div>
-                <Link to={""} className={styles.link}>
-                    <img src={Group} alt="Group" />
-                </Link>
-            </aside>
-        </>
-    );
+          <button className={styles.walletButton}>
+            {shortenWallet(wallet)}
+          </button>
+        </div>
+        <Link to={""} className={styles.link}>
+          <img src={Group} alt="Group" />
+        </Link>
+      </aside>
+    </>
+  );
 };
 
 export default Menu;
