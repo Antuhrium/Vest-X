@@ -7,14 +7,11 @@ import Content from "./Content";
 const Signee: React.FC = () => {
   const [step, setStep] = useState(1);
   const [steps, setSteps] = useState<StepProps[]>([
-    {
-      title: "Signee",
-      status: "in_progress",
-    },
-    { title: "Contact Details", status: "pending" },
-    { title: "Receivable Wallet", status: "pending" },
-    { title: "Sign SAFT", status: "pending" },
-    { title: "Finalize Payment", status: "pending" },
+    { order: 1, title: "Signee", mobileTitle: "Signee", status: "in_progress" },
+    { order: 2, title: "Contact Details", mobileTitle: "Contact", status: "pending" },
+    { order: 3, title: "Receivable Wallet", mobileTitle: "Wallet", status: "pending" },
+    { order: 4, title: "Sign SAFT", mobileTitle: "SAFT", status: "pending" },
+    { order: 5, title: "Finalize Payment", mobileTitle: "Payment", status: "pending" },
   ]);
 
   useEffect(() => {
