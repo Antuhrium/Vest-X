@@ -41,10 +41,17 @@ export default function ProjectIntroduction() {
       <div className={styles.container}>
         <Menu
           menuStyle={{
-            height: "105vh",
+            height: "133vh",
+            position: "relative",
           }}
         />
-        <AdminMenu />
+        <AdminMenu
+          style={{
+            height: "133vh",
+            position: "relative",
+            left: "0",
+          }}
+        />
         <div className={styles.rightPartContainer}>
           <div className={styles.textSection}>
             <h2 className={styles.gradientHeader}>Summary</h2>

@@ -2,16 +2,19 @@
   padding: 3rem;
   width: 100%;
   position: relative;
-
+  margin-left: calc(435px + 140px);
+  
   @media screen and (max-width: 1280px) {
     padding: 2rem 0;
   }
+
 }
 
 .container {
   position: relative;
   z-index: 1000;
-
+  width: 90%;
+  
   @media screen and (max-width: 1280px) {
     padding: 16px;
   }
@@ -23,7 +26,7 @@
   padding: 20px;
   position: relative;
   z-index: 1000;
-  width: 80%;
+  width: 90%;
 
   @media screen and (max-width: 1280px) {
     width: 100%;
@@ -92,7 +95,7 @@ textarea {
 .formButtons {
   display: flex;
   margin-top: 48px;
-  width: 80%;
+  width: 90%;
   z-index: 1000;
   position: relative;
 
@@ -314,9 +317,8 @@ textarea::placeholder {
   position: relative;
   z-index: 1000;
   padding: 32px;
-  max-width: 80%;
-
-
+  width: 90%;
+  
   @media screen and (max-width: 1280px) {
     max-width: none;
     align-items: start;

@@ -4,6 +4,11 @@
   width: 435px;
   padding: 80px 56px 40px;
   background-color: #0a0f1a;
+  position: fixed;
+  left: 140px;
+  top: 0;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .headerTitle {

@@ -44,6 +44,9 @@ const Signee: React.FC = () => {
         style={{
           width: "435px",
           height: "100vh",
+          position: "fixed",
+          top: 0,
+          left: "140px",
         }}
         header="Invest in project"
       />

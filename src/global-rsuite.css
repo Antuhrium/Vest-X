@@ -13,3 +13,7 @@
 .rs-calendar-panel .rs-calendar-header .rs-calendar-btn-today {
     display: none !important;
 }
+
+#root {
+    height: 100%
+}

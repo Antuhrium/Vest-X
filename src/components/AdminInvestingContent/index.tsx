@@ -152,21 +152,24 @@ const FounderComponent = () => {
 };
 interface AdminInvestingContentProps {
   roundTitle?: string;
+  style?: Record<string, string>;
 }
 
 const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
   roundTitle = "Arkham | Seed round",
+  style = {},
 }: {
   roundTitle?: string;
+  style?: Record<string, string>;
 }) => {
   const [isModal, setIsModal] = useState(false);
   const [afterInvest, setAfterInvest] = useState(false);
   const [checkboxValue, setCheckboxValue] = useState("");
 
   const { pathname } = useLocation();
-
+  console.log("style", style);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ ...style }}>
       <SeedRoundModalButton isModalOpen={isModal} setIsModalOpen={setIsModal} />
 
       <div className={styles.topCard}>
