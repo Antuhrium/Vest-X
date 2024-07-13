@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./style.module.scss";
+import SearchIcon from "/images/tdesign_search.png";
 
 interface SearchProps {
   onSearch: (query: string) => void;
@@ -23,7 +24,9 @@ const Search: React.FC<SearchProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className={styles.searchForm}>
-      <i className={styles.searchIcon}></i>
+      <i className={styles.searchIcon}>
+        <img src={SearchIcon} alt="search" />
+      </i>
       <input
         type="text"
         value={query}

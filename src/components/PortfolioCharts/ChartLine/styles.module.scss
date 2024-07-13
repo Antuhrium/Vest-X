@@ -32,6 +32,18 @@
 }
 
 .button.active {
-  background-color: #0F62FE; /* Adjust as needed */
+  background-color: #0f62fe; /* Adjust as needed */
   border-radius: 5px;
+}
+
+.customTooltip {
+  background: #111827;
+  border: 1px solid #1b2531;
+  border-radius: 4px;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }

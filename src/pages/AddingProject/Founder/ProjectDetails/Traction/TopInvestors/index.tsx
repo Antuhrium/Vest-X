@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface Investor {
   id: number;
@@ -15,7 +17,7 @@ export default function TopInvestors() {
       id: 1,
       fullName: "",
       linkedin: "",
-      projectName: "Microsoft",
+      projectName: "",
       projectLogo: null,
     },
   ]);
@@ -54,7 +56,12 @@ export default function TopInvestors() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Top Investors (optional)</h2>
         <button className={styles.addLinkButton} onClick={addInvestor}>
-          <span className={styles.blueCircle}>+</span> Add investor
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          Add investor
         </button>
       </div>
       {investors.map((investor) => (
@@ -123,7 +130,12 @@ export default function TopInvestors() {
             onClick={() => deleteInvestor(investor.id)}
             className={styles.deleteButton}
           >
-            <span className={styles.deleteCircle}>✕</span> Delete this member
+            <img
+              src={DeleteCircle}
+              alt="delete circle"
+              style={{ marginRight: "0.5rem" }}
+            />{" "}
+            Delete this member
           </button>
         </div>
       ))}

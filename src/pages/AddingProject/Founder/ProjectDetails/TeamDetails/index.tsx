@@ -3,6 +3,8 @@ import styles from "./styles.module.scss";
 import SocialChannelDropdown from "../../../../../components/SocialChannelDropdown";
 import PositionDropdown from "../../../../../components/PositionDropdown";
 import UploadFile from "/images/upload-file.svg";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface TeamMember {
   id: number;
@@ -17,12 +19,11 @@ export default function TeamDetails() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([
     {
       id: 1,
-      fullName: "Anel Askarkyzy",
+      fullName: "",
       position: "UX / UI designer",
       socialChannel: "Twitter",
-      link: "linktr.com/ProjectName",
-      description:
-        "Experienced UX/UI designer with over a year of experience in creating intuitive and attractive interfaces. Recognized for implementing a design system that improved development consistency and efficiency. Ready to bring creativity and user-centricity to your team by delivering innovative interfaces to improve user experience and achieve business goals.",
+      link: "",
+      description: "",
     },
   ]);
 
@@ -61,7 +62,14 @@ export default function TeamDetails() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Team Details</h2>
         <button className={styles.addLinkButton} onClick={addTeamMember}>
-          <span className={styles.blueCircle}>+</span> Add member
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{
+              marginRight: "0.5rem",
+            }}
+          />{" "}
+          Add member
         </button>
       </div>
       {teamMembers.map((member, index) => (
@@ -77,7 +85,7 @@ export default function TeamDetails() {
                 onChange={(e) =>
                   updateTeamMember(member.id, "fullName", e.target.value)
                 }
-                placeholder="Enter full name"
+                placeholder="Anel Askarkyzy"
               />
             </div>
             <div className={styles.formGroup}>
@@ -115,7 +123,7 @@ export default function TeamDetails() {
                 onChange={(e) =>
                   updateTeamMember(member.id, "link", e.target.value)
                 }
-                placeholder="Enter link"
+                placeholder="linktr.com/ProjectName"
               />
             </div>
           </div>
@@ -142,7 +150,7 @@ export default function TeamDetails() {
               onChange={(e) =>
                 updateTeamMember(member.id, "description", e.target.value)
               }
-              placeholder="Enter description"
+              placeholder="Experienced UX/UI designer with over a year of experience in creating intuitive and attractive interfaces. Recognized for implementing a design system that improved development consistency and efficiency. Ready to bring creativity and user-centricity to your team by delivering innovative interfaces to improve user experience and achieve business goals."
             />
           </div>
           <div className={styles.deleteButtonContainer}>
@@ -150,7 +158,11 @@ export default function TeamDetails() {
               onClick={() => deleteTeamMember(member.id)}
               className={styles.deleteButton}
             >
-              <span className={styles.deleteCircle}>✕</span>{" "}
+              <img
+                src={DeleteCircle}
+                alt="delete circle"
+                style={{ marginRight: "0.5rem" }}
+              />{" "}
               {`Delete this member`}
             </button>
           </div>

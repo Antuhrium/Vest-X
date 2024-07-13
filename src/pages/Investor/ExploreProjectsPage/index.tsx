@@ -17,8 +17,8 @@ import Project4 from "/images/projectsList/4.png";
 const filters: filtersT[] = [
   {
     title: "Status",
-    type: "radio",
-    options: ["Vesting Open", "Active", "Completed", "Africa", "Others"],
+    type: "checkbox",
+    options: ["Vesting Open", "Active", "Completed"],
   },
   {
     title: "Funding Stage",

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface Traction {
   id: number;
@@ -10,8 +12,7 @@ export default function AdditionalTraction() {
   const [tractions, setTractions] = useState<Traction[]>([
     {
       id: 1,
-      description:
-        "Secured additional capital to fuel platform development and expansion.",
+      description: "",
     },
   ]);
 
@@ -44,7 +45,12 @@ export default function AdditionalTraction() {
           Additional Traction (optional)
         </h2>
         <button className={styles.addLinkButton} onClick={addTraction}>
-          <span className={styles.blueCircle}>+</span> Add additional traction
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          Add additional traction
         </button>
       </div>
       {tractions.map((traction) => (
@@ -67,7 +73,12 @@ export default function AdditionalTraction() {
             onClick={() => deleteTraction(traction.id)}
             className={styles.deleteButton}
           >
-            <span className={styles.deleteCircle}>✕</span> Delete a task
+            <img
+              src={DeleteCircle}
+              alt="delete circle"
+              style={{ marginRight: "0.5rem" }}
+            />{" "}
+            Delete a task
           </button>
         </div>
       ))}

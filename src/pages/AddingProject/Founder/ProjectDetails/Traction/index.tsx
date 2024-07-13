@@ -146,7 +146,16 @@ export default function Traction() {
         </div>
       </nav>
       {sections.map(({ id, Component }) => (
-        <section key={id} id={id} className={styles.section}>
+        <section
+          key={id}
+          id={id}
+          className={styles.section}
+          style={
+            {
+              // marginTop: id === "traction" ? "24px" : 0,
+            }
+          }
+        >
           <Component />
         </section>
       ))}

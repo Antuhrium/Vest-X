@@ -1,6 +1,7 @@
 .container {
   background: #030711;
   display: flex;
+  position: relative;
 }
 
 .wrapper {
@@ -38,6 +39,6 @@
 
 .rightBg {
   @apply absolute
-      bottom-[10rem]
+      bottom-0
       left-1/4;
 }

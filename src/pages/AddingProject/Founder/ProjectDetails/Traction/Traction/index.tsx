@@ -50,14 +50,11 @@ const TractionInner = () => {
             <label className={styles.label}>
               Description of current project progress (additional)
             </label>
-            <textarea className={styles.textarea} maxLength={500}>
-              EcoSwap is a decentralized marketplace and community platform that
-              connects environmentally-conscious consumers with sustainable
-              brands and eco-friendly products. Our platform aims to promote
-              sustainability and reduce carbon footprints by offering a wide
-              range of environmentally-friendly alternatives to everyday
-              products.
-            </textarea>
+            <textarea
+              className={styles.textarea}
+              maxLength={500}
+              placeholder=" EcoSwap is a decentralized marketplace and community platform that connects environmentally-conscious consumers with sustainable brands and eco-friendly products. Our platform aims to promote sustainability and reduce carbon footprints by offering a wide range of environmentally-friendly alternatives to everyday products."
+            ></textarea>
           </div>
           <div className={styles.formGroup}>
             <label className={styles.label}>

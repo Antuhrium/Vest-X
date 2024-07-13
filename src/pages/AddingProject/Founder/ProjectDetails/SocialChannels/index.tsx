@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import SocialChannelDropdown from "../../../../../components/SocialChannelDropdown";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface SocialLink {
   id: number;
@@ -14,8 +16,8 @@ export default function SocialChannels() {
     {
       id: 1,
       channel: "Twitter",
-      linkName: "@anel_ask",
-      link: "linktr.com/ProjectName",
+      linkName: "",
+      link: "",
     },
     { id: 2, channel: "Twitter", linkName: "", link: "linktr.com/ProjectName" },
   ]);
@@ -23,7 +25,7 @@ export default function SocialChannels() {
   const addSocialLink = () => {
     setSocialLinks([
       ...socialLinks,
-      { id: Date.now(), channel: "", linkName: "", link: "" },
+      { id: Date.now(), channel: "Twitter", linkName: "", link: "" },
     ]);
   };
 
@@ -48,7 +50,14 @@ export default function SocialChannels() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Social Channels</h2>
         <button className={styles.addLinkButton} onClick={addSocialLink}>
-          <span className={styles.blueCircle}>+</span> Add link
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{
+              marginRight: "0.5rem",
+            }}
+          />{" "}
+          Add link
         </button>
       </div>
       {socialLinks.map((link, index) => (
@@ -93,7 +102,7 @@ export default function SocialChannels() {
               onChange={(e) =>
                 updateSocialLink(link.id, "link", e.target.value)
               }
-              placeholder="Enter link"
+              placeholder="linktr.com/ProjectName"
             />
           </div>
           <div className={styles.deleteButtonContainer}>
@@ -101,7 +110,11 @@ export default function SocialChannels() {
               onClick={() => deleteSocialLink(link.id)}
               className={styles.deleteButton}
             >
-              <span className={styles.deleteCircle}>✕</span>{" "}
+              <img
+                src={DeleteCircle}
+                alt="delete circle"
+                style={{ marginRight: "0.5rem" }}
+              />
               {`Delete ${link.channel.toLowerCase()} link`}
             </button>
           </div>

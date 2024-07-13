@@ -345,33 +345,35 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
   };
 
   return (
-    <div className={styles.contentContainer}>
-      {step === 1 && <FirstStep />}
-      {step === 2 && <SecondStep />}
-      {step === 3 && <ThirdStep />}
-      {step === 4 && <FourthStep />}
-      {step === 5 && <FifthStep />}
-      <div
-        className={styles.formButtons}
-        style={
-          {
-            // marginTop: step === 2 ? "-4rem" : "auto",
+    <>
+      <div className={styles.contentContainer}>
+        {step === 1 && <FirstStep />}
+        {step === 2 && <SecondStep />}
+        {step === 3 && <ThirdStep />}
+        {step === 4 && <FourthStep />}
+        {step === 5 && <FifthStep />}
+        <div
+          className={styles.formButtons}
+          style={
+            {
+              // marginTop: step === 2 ? "-4rem" : "auto",
+            }
           }
-        }
-      >
-        <button type="button" onClick={handlePreviousStep}>
-          <img src={ArrowBack} alt="arrow back" /> Previous Step
-        </button>
-        <button type="button" onClick={handleSaveAndFinishLater}>
-          Save and finish later
-        </button>
-        <button type="button" onClick={handleNextStep}>
-          {step === 5 ? "Complete Payment" : "Next Step"}{" "}
-          <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
-        </button>
+        >
+          <button type="button" onClick={handlePreviousStep}>
+            <img src={ArrowBack} alt="arrow back" /> Previous Step
+          </button>
+          <button type="button" onClick={handleSaveAndFinishLater}>
+            Save and finish later
+          </button>
+          <button type="button" onClick={handleNextStep}>
+            {step === 5 ? "Complete Payment" : "Next Step"}{" "}
+            <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
+          </button>
+        </div>
       </div>
       <img className={styles.rightBg} src={RightBg} alt="right bg" />
-    </div>
+    </>
   );
 };
 

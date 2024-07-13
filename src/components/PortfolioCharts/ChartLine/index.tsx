@@ -8,6 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
   AreaChart,
+  TooltipProps,
 } from "recharts";
 import styles from "./styles.module.scss"; // Adjust the path as necessary
 
@@ -48,6 +49,23 @@ const allData: Record<string, DataPoint[]> = {
   ],
 };
 
+const CustomTooltip: React.FC<TooltipProps<number, string>> = ({
+  active,
+  payload,
+  label,
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className={styles.customTooltip}>
+        <p className={styles.label}>{`Date: ${label}`}</p>
+        <p className={styles.value}>{`Value: $${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
 const ChartLine: React.FC = () => {
   const [selectedRange, setSelectedRange] =
     useState<keyof typeof allData>("30D");
@@ -72,7 +90,7 @@ const ChartLine: React.FC = () => {
   }, [data]);
 
   return (
-    <div className={styles.chartContainer}>
+    <div className={styles.chartContainer} ref={ref}>
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data}>
           <defs>
@@ -93,7 +111,7 @@ const ChartLine: React.FC = () => {
             tick={{ fontSize: 12, fill: "#ffffff" }}
             tickFormatter={(value) => `$${value}`}
           />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <CartesianGrid
             strokeDasharray="3 3"
             strokeOpacity={0.1}

@@ -83,7 +83,13 @@ export default function CategoryDropdown() {
       <div className={styles.dropdown}>
         <div className={styles.selected} onClick={toggleDropdown}>
           {selectedCategories.length === 0 ? (
-            <span>Select a category</span>
+            <span
+              style={{
+                color: "#676E76",
+              }}
+            >
+              Select a category
+            </span>
           ) : (
             <span>{selectedCategories.map((cat) => cat.name).join(", ")}</span>
           )}
