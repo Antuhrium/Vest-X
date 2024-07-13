@@ -126,20 +126,11 @@ const Sign: React.FC = () => {
           onMouseLeave={handleMouseUp}
           style={{
             width: "100%",
+            minHeight: "200px"
           }}
         />
         {mode === "upload" && !uploadedFile && (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "absolute",
-              top: "18%",
-              left: "33%",
-            }}
-          >
+          <div className={styles.uploadContainer} >
             <div className={styles.uploadBox}>
               <img src={UploadFile} alt="Upload file" />
               <input
@@ -172,17 +163,7 @@ const Sign: React.FC = () => {
           </div>
         )}
         {mode === "draw" && isCanvasEmpty && (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "absolute",
-              top: "16%",
-              left: "41%",
-            }}
-          >
+          <div className={styles.signPlaceholderContainer} >
             <img
               src={SignPlaceholder}
               alt="Sign Placeholder"

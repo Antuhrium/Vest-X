@@ -3,7 +3,9 @@ import styles from "./style.module.scss";
 import ChildCheckmark from "/images/child-checkmark.svg";
 
 export interface StepProps {
+  order?: number;
   title: string;
+  mobileTitle?: string;
   status: "completed" | "in_progress" | "pending";
   children?: StepChildrenProps[];
 }
@@ -75,27 +77,66 @@ const StepList: React.FC<StepListProps> = ({
   style = {},
   header = "",
 }) => {
+
+
+  const getMobileStepClass = (status: "completed" | "in_progress" | "pending") => {
+    switch (status) {
+      case "completed":
+        return styles.mobileStepCompleted;
+      case "in_progress":
+        return styles.mobileStepInProgress;
+      case "pending":
+        return styles.mobileStepPending;
+    }
+  };
+
+    const totalSteps = steps.length;
+    const completedSteps = steps.filter(
+      (step) => step.status === "completed"
+    ).length;
+    const inProgressSteps = steps.filter(
+      (step) => step.status === "in_progress"
+    ).length;
+  
+    const innerLineHeightPercentage =
+      ((completedSteps + 0.5 * inProgressSteps) / totalSteps) * 100;
+
   return (
-    <div className={styles.stepList} style={{ ...style }}>
-      {header && <h2 className={styles.gradientHeader}>{header}</h2>}
-      {steps.map((step, index) => (
-        <div key={index} className={styles.stepWrapper}>
-          <div className={styles.stepContent}>
-            <StepHeader {...step} />
-            {step.children && <StepChildren children={step.children} />}
-          </div>
-          {index < steps.length - 1 && (
-            <div className={styles.stepLineWrapper}>
-              <div
-                className={`${styles.stepLine} ${
-                  step.status === "completed" ? styles.completedLine : ""
-                }`}
-              ></div>
+    <>
+      <div className={styles.mobileStepList}>
+        {steps.map((step, index) => {
+          return (
+            <div key={index} className={`${styles.mobileStepWrapper} ${getMobileStepClass(step.status)}`}>
+              <div className={styles.stepOrder}>{index + 1}</div>
+              <div className={styles.stepName}>{step.mobileTitle}</div>
             </div>
-          )}
+          )
+        })}
+        <div className={styles.outerLine}>
+          <div className={styles.innerLine} style={{width: `${innerLineHeightPercentage}%`}}/>
         </div>
-      ))}
-    </div>
+      </div>
+      <div className={styles.stepList} style={{ ...style }}>
+        {header && <h2 className={styles.gradientHeader}>{header}</h2>}
+        {steps.map((step, index) => (
+          <div key={index} className={styles.stepWrapper}>
+            <div className={styles.stepContent}>
+              <StepHeader {...step} />
+              {step.children && <StepChildren children={step.children} />}
+            </div>
+            {index < steps.length - 1 && (
+              <div className={styles.stepLineWrapper}>
+                <div
+                  className={`${styles.stepLine} ${
+                    step.status === "completed" ? styles.completedLine : ""
+                  }`}
+                ></div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 export default StepList;

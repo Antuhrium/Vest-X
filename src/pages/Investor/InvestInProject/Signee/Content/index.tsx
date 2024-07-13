@@ -104,7 +104,7 @@ const FourthStep: React.FC = () => {
           download
         >
           <img src={DownloadIcon} alt="Download Icon" />
-          Download
+          <span>Download</span>
         </a>
       </div>
       <Sign />
@@ -196,6 +196,7 @@ const SecondStep: React.FC = () => {
             display: "flex",
             gap: "1rem",
           }}
+          className={styles.secFormContainer}
         >
           <div className={styles.bigFormGroup}>
             <label htmlFor="twitterLink">Twitter link *</label>

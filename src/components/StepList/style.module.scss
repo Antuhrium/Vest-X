@@ -1,6 +1,10 @@
 .stepList {
   background-color: #0a0f1a;
   padding: 48px;
+
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 }
 
 .stepWrapper {
@@ -148,4 +152,87 @@
   @apply font-igraSans;
   margin-top: 32px;
   margin-bottom: 32px !important;
+}
+
+.mobileStepList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 16px 24px 16px;
+
+  background: #0a0f1a;
+
+  .mobileStepWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    line-height: 16px;
+    color: #676e76;
+  }
+
+  .stepOrder {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100px;
+    border: 0.7px solid #676e76;
+
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .stepName {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .mobileStepInProgress {
+    .stepOrder {
+      border: 1.5px solid #0f62fe;
+      color: #0f62fe;
+      font-weight: 600;
+    }
+    .stepName {
+      color: #fff;
+    }
+  }
+
+  .mobileStepCompleted {
+    .stepOrder {
+      border: 0.7px solid #0f62fe;
+      color: #0f62fe;
+    }
+    .stepName {
+      color: #fff;
+    }
+  }
+
+  .outerLine {
+    position: absolute;
+    overflow: hidden;
+    height: 4px;
+    bottom: 12px;
+    left: 16px;
+    right: 16px;
+    border-radius: 20px;
+    background: #1d283a;
+  }
+
+  .innerLine {
+    height: 4px;
+    border-radius: 20px;
+    background-color: #0f62fe;
+  }
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
 }
