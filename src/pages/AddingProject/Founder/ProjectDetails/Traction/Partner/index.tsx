@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import UploadFile from "/images/upload-file.svg";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface Partner {
   id: number;
@@ -49,7 +51,12 @@ export default function Partner() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Partner (optional)</h2>
         <button className={styles.addLinkButton} onClick={addPartner}>
-          <span className={styles.blueCircle}>+</span> Add partner
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          Add partner
         </button>
       </div>
       {partners.map((partner) => (
@@ -92,7 +99,12 @@ export default function Partner() {
             onClick={() => deletePartner(partner.id)}
             className={styles.deleteButton}
           >
-            <span className={styles.deleteCircle}>✕</span> Delete partner
+            <img
+              src={DeleteCircle}
+              alt="delete circle"
+              style={{ marginRight: "0.5rem" }}
+            />{" "}
+            Delete partner
           </button>
         </div>
       ))}

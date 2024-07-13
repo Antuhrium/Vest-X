@@ -106,7 +106,13 @@ export default function TokenNetworkDropdown() {
       <div className={styles.dropdown}>
         <div className={styles.selected} onClick={toggleDropdown}>
           {selectedNetwork === null ? (
-            <span>Select a network</span>
+            <span
+              style={{
+                color: "#676E76",
+              }}
+            >
+              Select a network
+            </span>
           ) : (
             <>
               <img

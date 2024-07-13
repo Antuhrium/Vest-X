@@ -37,7 +37,17 @@ export default function CustomDropdown({
     <div className={styles.dropdownContainer}>
       <div className={styles.dropdown} onClick={toggleDropdown}>
         <div className={styles.selected}>
-          <span>{value || initText}</span>
+          <span>
+            {value || (
+              <span
+                style={{
+                  color: "gray",
+                }}
+              >
+                {initText}
+              </span>
+            )}
+          </span>
           <span
             className={`${styles.arrow} ${open ? styles.up : styles.down}`}
           ></span>

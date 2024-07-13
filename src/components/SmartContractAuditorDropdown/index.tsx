@@ -90,7 +90,13 @@ export default function SmartContractAuditorDropdown() {
       <div className={styles.dropdown}>
         <div className={styles.selected} onClick={toggleDropdown}>
           {selectedAuditor === null ? (
-            <span>Select a smart contract auditor</span>
+            <span
+              style={{
+                color: "#676E76",
+              }}
+            >
+              Select a smart contract auditor
+            </span>
           ) : (
             <>
               <img

@@ -13,6 +13,7 @@ import VestingSchedule from "./VestingSchedule";
 import Chat from "./SAFT";
 import RightBg from "/images/right-bg.png";
 import Traction from "./ProjectDetails/Traction";
+import CheckMark from "/images/check.svg";
 
 export default function AddingProjectFounder() {
   const [step, setStep] = useState(1);
@@ -91,7 +92,7 @@ export default function AddingProjectFounder() {
   useEffect(() => {
     if (step === 1 && subStep === 6) {
       setStep(2);
-      setSubStep(4);
+      setSubStep(5);
     }
   }, [step, subStep]);
 
@@ -133,8 +134,8 @@ export default function AddingProjectFounder() {
           header="Create a project"
         />
       </div>
+      <img className={styles.rightBg} src={RightBg} alt="right bg" />
       <div className={styles.contentContainer}>
-        <img className={styles.rightBg} src={RightBg} alt="right bg" />
         {step === 1 && subStep === 1 && <BasicInformation />}
         {step === 1 && subStep === 2 && <SocialChannels />}
         {step === 1 && subStep === 3 && <TeamDetails />}
@@ -157,7 +158,8 @@ export default function AddingProjectFounder() {
             Save and finish later
           </button>
           <button type="button" onClick={handleNextStep}>
-            Next Step <img src={ArrowNext} alt="arrow next" />
+            {step === 4 ? "Complete" : "Next Step"}{" "}
+            <img src={step === 4 ? CheckMark : ArrowNext} alt="arrow next" />
           </button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .stepList {
   background-color: #0a0f1a;
-  padding: 20px;
+  padding: 48px;
 
   @media screen and (max-width: 1280px) {
     display: none;
@@ -150,6 +150,8 @@
   font-weight: 400;
   line-height: 32px;
   @apply font-igraSans;
+  margin-top: 32px;
+  margin-bottom: 32px !important;
 }
 
 .mobileStepList {
@@ -197,7 +199,6 @@
       border: 1.5px solid #0f62fe;
       color: #0f62fe;
       font-weight: 600;
-
     }
     .stepName {
       color: #fff;
@@ -222,16 +223,16 @@
     left: 16px;
     right: 16px;
     border-radius: 20px;
-    background: #1D283A;
+    background: #1d283a;
   }
 
   .innerLine {
     height: 4px;
     border-radius: 20px;
-    background-color: #0F62FE;
+    background-color: #0f62fe;
   }
 
   @media screen and (min-width: 1280px) {
-      display: none;
+    display: none;
   }
 }

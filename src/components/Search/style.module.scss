@@ -2,10 +2,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #0A0F1A;
+  background-color: #0a0f1a;
   border-radius: 4px;
   padding: 8px;
-  border: 1px solid #1D283A;
+  border: 1px solid #1d283a;
 
   &:focus-within {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -18,20 +18,19 @@
     font-size: 16px;
     padding: 8px;
     outline: none;
-    color: #676E76;
+    color: #676e76;
   }
 
-  
-    .searchIcon {
-      margin-left: 20px;
-      display: flex; // Changed to flex
-      align-items: center; // Center vertically
-      justify-content: center; // Center horizontally
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-image: url('images/tdesign_search.png');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  .searchIcon {
+    margin-left: 20px;
+    display: flex; // Changed to flex
+    align-items: center; // Center vertically
+    justify-content: center; // Center horizontally
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("images/tdesign_search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

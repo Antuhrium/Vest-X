@@ -5,6 +5,8 @@ import SmallTokenDropdown from "../../../../components/SmallTokenDropdown";
 import { Calendar } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import DeleteConfirmationModal from "../../../../components/DeletePoolConfirmationModal";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface VestingPool {
   id: number;
@@ -23,10 +25,10 @@ export default function VestingSchedule() {
   const [vestingPools, setVestingPools] = useState<VestingPool[]>([
     {
       id: 1,
-      poolName: "Assa",
-      tokenAmount: "567,900",
+      poolName: "",
+      tokenAmount: "",
       tokenType: "USDT",
-      tokenPrice: "0.50",
+      tokenPrice: "",
       cliffPeriodValue: "6",
       cliffPeriodUnit: "month",
       vestingPeriodValue: "6",
@@ -79,7 +81,12 @@ export default function VestingSchedule() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Vesting Schedule</h2>
         <button className={styles.addPoolButton} onClick={addVestingPool}>
-          <span className={styles.blueCircle}>+</span> Add pool
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          Add pool
         </button>
       </div>
       <p className={styles.description}>
@@ -285,7 +292,11 @@ export default function VestingSchedule() {
               className={styles.deleteButton}
               onClick={() => setDeleteModalOpen(true)}
             >
-              <span className={styles.deleteCircle}>✕</span>{" "}
+              <img
+                src={DeleteCircle}
+                alt="delete circle"
+                style={{ marginRight: "0.5rem" }}
+              />{" "}
               {`Delete this pool`}
             </button>
           </div>

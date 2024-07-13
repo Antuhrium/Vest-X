@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import CustomDropdown from "../../../../../../components/CustomDropdown";
+import AddCircle from "/images/add-circle.svg";
+import DeleteCircle from "/images/delete-circle.svg";
 
 interface Task {
   id: number;
@@ -25,7 +27,7 @@ export default function Roadmap() {
       tasks: [
         {
           id: 1,
-          description: "Launch DeFi features like liquidity pools.",
+          description: "",
         },
       ],
     },
@@ -119,7 +121,12 @@ export default function Roadmap() {
       <div className={styles.header}>
         <h2 className={styles.gradientHeader}>Roadmap</h2>
         <button className={styles.addLinkButton} onClick={addRoadmap}>
-          <span className={styles.blueCircle}>+</span> Add quarter
+          <img
+            src={AddCircle}
+            alt="add circle"
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          Add quarter
         </button>
       </div>
       {roadmaps.map((roadmap) => (
@@ -167,7 +174,7 @@ export default function Roadmap() {
             <div key={task.id} className={styles.flexRow}>
               <div className={styles.formGroupFull}>
                 <label>
-                  {task.id + 1}. Task to this quarter{" "}
+                  {task.id}. Task to this quarter{" "}
                   <span className={styles.requiredStar}>*</span>
                 </label>
                 <input
@@ -183,7 +190,12 @@ export default function Roadmap() {
                 onClick={() => deleteTask(roadmap.id, task.id)}
                 className={styles.deleteButton}
               >
-                <span className={styles.deleteCircle}>✕</span> Delete a task
+                <img
+                  src={DeleteCircle}
+                  alt="delete circle"
+                  style={{ marginRight: "0.5rem" }}
+                />{" "}
+                Delete a task
               </button>
             </div>
           ))}
@@ -194,8 +206,12 @@ export default function Roadmap() {
               fontSize: "14px",
             }}
           >
-            <span className={styles.blueCircle}>+</span> Add one more task to
-            this quarter
+            <img
+              src={AddCircle}
+              alt="add circle"
+              style={{ marginRight: "0.5rem" }}
+            />{" "}
+            Add one more task to this quarter
           </button>
         </div>
       ))}

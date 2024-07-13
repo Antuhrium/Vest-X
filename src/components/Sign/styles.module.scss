@@ -129,9 +129,9 @@
   background-color: transparent;
   border-bottom: 1px solid #676e76;
   padding: 4px !important;
-  width: 55%;
+  width: 50%;
 
-  @media screen and (max-width: 1280px){
+  @media screen and (max-width: 1280px) {
     width: 100%;
   }
 }
@@ -156,7 +156,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .signPlaceholderText {
   color: #676e76;
