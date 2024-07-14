@@ -243,6 +243,18 @@ textarea::placeholder {
   gap: 5px;
 }
 
+.iframePDF {
+  width: 74%;
+  height: 100vh;
+  border: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .iframePDF {
+    width: 100%;
+  }
+}
+
 .fileContainer {
   display: flex;
   align-items: center;
@@ -252,6 +264,7 @@ textarea::placeholder {
   padding: 10px 20px;
   border-radius: 8px;
   max-width: 600px;
+  margin-top: 24px;
 
   @media screen and (max-width: 1280px) {
     max-width: none;

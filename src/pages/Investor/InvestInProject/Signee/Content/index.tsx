@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import ArrowBack from "/images/arrow-back.svg";
 import ArrowNext from "/images/arrow-next.svg";
@@ -20,13 +20,7 @@ import CopyIcon from "/images/copy-file.svg";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
-import { Document, Page, pdfjs } from "react-pdf";
 import Sign from "../../../../../components/Sign";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
 
 const FifthStep: React.FC = () => {
   return (
@@ -68,26 +62,18 @@ const FifthStep: React.FC = () => {
 };
 
 const FourthStep: React.FC = () => {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setNumPages(numPages);
-  }
-
-  useEffect(() => {
-    setPageNumber(1);
-  }, []);
-
   return (
     <div className={styles.container}>
-      <div>
-        <Document file={SimplePDF} onLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p className={styles.pageNumber}>
-          Page {pageNumber} of {numPages}
-        </p>
+      <div
+        style={{
+          height: "100%",
+        }}
+      >
+        <iframe
+          src={SimplePDF}
+          className={styles.iframePDF}
+          title="PDF Viewer"
+        ></iframe>
       </div>
       <div className={styles.fileContainer}>
         <div className={styles.fileInfo}>
@@ -98,11 +84,7 @@ const FourthStep: React.FC = () => {
           </div>
         </div>
 
-        <a
-          href="/path/to/SAFT_updated.pdf"
-          className={styles.downloadLink}
-          download
-        >
+        <a href={SimplePDF} className={styles.downloadLink} download>
           <img src={DownloadIcon} alt="Download Icon" />
           <span>Download</span>
         </a>

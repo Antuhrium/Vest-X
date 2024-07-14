@@ -5,6 +5,7 @@
       pb-[48px]
       ml-[120px]
       mr-auto
+      pr-[1.8rem]
       flex
       flex-col
       w-full min-h-full
@@ -18,7 +19,7 @@
       items-center
       gap-[52px]
       
-      py-[22px] pl-[20px];
+      py-[22px] pl-[20px] pr-[10px];
 
   border-radius: 4px;
   border: 1px solid var(--Gray-600, #1d283a);
@@ -57,6 +58,7 @@
 
 .investButton,
 .claimButton {
+  margin-top: 16px;
   padding: 14px 24px;
   width: fit-content;
 
@@ -85,8 +87,14 @@
   background: #101322;
 }
 
+@media screen and (max-width: 1600px) {
+  .privateRound {
+    width: 60%;
+  }
+}
+
 .title {
-  @apply w-fit
+  @apply w-max
     font-igraSans text-[24px]
     font-normal mt-[56px] mb-[20px];
   background: linear-gradient(
@@ -101,7 +109,7 @@
 .vesting,
 .analitics {
   @apply flex flex-col gap-[44px]
-    py-[44px] pl-[48px] pr-[214px]
+    py-[44px] pl-[48px] pr-[100px]
     text-white relative transition-all;
   border-radius: 4px;
   border: 1px solid var(--Gray-600, #1d283a);

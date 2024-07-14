@@ -109,6 +109,7 @@ export default function AddingProjectFounder() {
       <Menu
         wrapperStyle={{
           margin: "68px 0 auto",
+          height: "100vh",
         }}
       />
       <div
@@ -145,11 +146,9 @@ export default function AddingProjectFounder() {
         {(step === 3 || step === 4) && <Chat setStep={setStep} />}
         <div
           className={styles.formButtons}
-          style={
-            {
-              // marginTop: step === 2 ? "-4rem" : "auto",
-            }
-          }
+          style={{
+            width: step === 1 && subStep === 5 ? "100%" : "90%",
+          }}
         >
           <button type="button" onClick={handlePreviousStep}>
             <img src={ArrowBack} alt="arrow back" /> Previous Step

@@ -42,12 +42,11 @@ export default function Traction() {
           newScrollProgress[section.id] = (scrolled / height) * 100;
         }
       });
-      console.log("window.innerHeight", window.innerHeight);
-      console.log("window.scrollY", window.scrollY);
+
       const containerHeight = Array.from(
         document.getElementsByTagName("div")
       ).filter((x) => x.className.includes("_container_"))[0].clientHeight;
-      console.log("document.body.clientHeight", containerHeight);
+
       const isBottom = window.innerHeight + window.scrollY >= containerHeight;
 
       if (isBottom) {
@@ -109,14 +108,7 @@ export default function Traction() {
   return (
     <div className={styles.tractionContainer}>
       <nav className={styles.navbar}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "1rem",
-            width: "65%",
-          }}
-        >
+        <div className={styles.sectionLinksContainer} style={{}}>
           {sections.map((section) => (
             <a
               key={section.id}
@@ -126,15 +118,13 @@ export default function Traction() {
               ${activeSection === section.id ? styles.active : ""} 
             `}
             >
-              {
-                <span
-                  style={{
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {section.label}
-                </span>
-              }
+              <span
+                style={{
+                  marginBottom: "0.5rem",
+                }}
+              >
+                {section.label}
+              </span>
               <div className={styles.progressBarContainer}>
                 <div
                   className={styles.progressBar}
@@ -146,16 +136,7 @@ export default function Traction() {
         </div>
       </nav>
       {sections.map(({ id, Component }) => (
-        <section
-          key={id}
-          id={id}
-          className={styles.section}
-          style={
-            {
-              // marginTop: id === "traction" ? "24px" : 0,
-            }
-          }
-        >
+        <section key={id} id={id} className={styles.section}>
           <Component />
         </section>
       ))}

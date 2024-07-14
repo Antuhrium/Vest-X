@@ -12,11 +12,12 @@
 }
 
 .modal {
-  background: #1c1c1e;
+  background: #101322;
   border-radius: 8px;
-  width: 400px;
+  width: 593px;
+  height: max-content;
   max-width: 100%;
-  padding: 20px;
+  padding: 32px;
   color: #fff;
   text-align: center;
   position: relative;
@@ -30,12 +31,16 @@
 }
 
 .icon {
-  font-size: 36px;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px; /* 100% */
+  letter-spacing: -1.2px;
   background-color: #0f62fe;
   color: #fff;
   border-radius: 100%;
-  width: 36px;
-  height: 36px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,4 +97,9 @@
 
 .bigMessage {
   font-size: 48px !important;
+  @apply font-igraSans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px; /* 125% */
+  letter-spacing: -0.96px;
 }

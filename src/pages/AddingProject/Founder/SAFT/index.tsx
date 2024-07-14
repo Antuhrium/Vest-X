@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import UserProfilePic from "/images/chat/user-profile-pic.svg";
 import BotProfilePic from "/images/chat/bot-profile-pic.svg";
@@ -96,6 +96,7 @@ export default function Chat({ setStep }: StepAction) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
 
   const handleFileClick = (fileName: string) => {
     setSelectedFile(fileName);
@@ -123,10 +124,29 @@ export default function Chat({ setStep }: StepAction) {
     setStep((prev) => (prev < 4 ? prev + 1 : prev));
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const chatContainer = Array.from(
+        document.getElementsByTagName("div")
+      ).filter((x) => x.className.includes("chatContainer"))[0];
+      const scrollTop = document.documentElement.scrollTop;
+      console.log(chatContainer.scrollHeight, scrollTop);
+      console.log(chatContainer.clientHeight);
+      const isAtBottom = scrollTop >= chatContainer.scrollHeight / 3;
+      setIsScrolledToBottom(isAtBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className={styles.chatContainer}>
       {messages.map((message) => (
         <div
+          key={message.id}
           style={{
             display: "flex",
             alignItems: "flex-start",
@@ -137,7 +157,6 @@ export default function Chat({ setStep }: StepAction) {
             <img src={BotProfilePic} alt="bot profile pic" />
           )}
           <div
-            key={message.id}
             className={`${styles.message} ${
               message.role === "bot" ? styles.botMessage : styles.userMessage
             }`}
@@ -195,7 +214,11 @@ export default function Chat({ setStep }: StepAction) {
           )}
         </div>
       ))}
-      <div className={styles.inputWithIcons}>
+      <div
+        className={`${styles.inputWithIcons} ${styles.messageInputContainer} ${
+          isScrolledToBottom ? styles.relative : styles.fixed
+        }`}
+      >
         <img
           src={AttachFile}
           alt="attach file"

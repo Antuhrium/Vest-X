@@ -67,7 +67,11 @@ const ExploreProjectsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <section className={styles.container}>
-      <Menu />
+      <Menu
+        menuStyle={{
+          height: "100vh",
+        }}
+      />
 
       <Filter title={"Filter"} buttonTitle="Apply" filters={filters} />
       <div className={styles.wrapper}>

@@ -116,7 +116,11 @@ const FounderInvestors: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Menu />
+      <Menu
+        menuStyle={{
+          height: "100vh",
+        }}
+      />
       <Filter
         filters={filters}
         style={{ height: "100vh", overflowY: "hidden" }}

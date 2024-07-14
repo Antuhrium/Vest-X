@@ -25,7 +25,13 @@ const founderLinks = [
   "Investor database",
 ];
 
-const AdminMenu = ({ style = {} }: { style?: Record<string, string> }) => {
+const AdminMenu = ({
+  style = {},
+  ref,
+}: {
+  style?: React.CSSProperties;
+  ref?: React.RefObject<HTMLDivElement> | undefined;
+}) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -44,7 +50,7 @@ const AdminMenu = ({ style = {} }: { style?: Record<string, string> }) => {
   }
 
   return (
-    <div className={styles.leftWrapper} style={{ ...style }}>
+    <div className={styles.leftWrapper} style={{ ...style }} ref={ref}>
       <Link
         to={"/investor/admin/project-introduction"}
         className={styles.leftCard}
@@ -116,14 +122,39 @@ const AdminMenu = ({ style = {} }: { style?: Record<string, string> }) => {
 
       <div className={styles.rounds}>
         <span className={styles.title}>Investment Rounds</span>
-        <button className={`${styles.roundBtn}`}>
-          Seed round <GrayArrow color="#1D283A" />
+        <button
+          className={`${styles.roundBtn}`}
+          onClick={() => navigate("/investor/admin")}
+          style={{
+            border:
+              pathname === "/investor/admin"
+                ? "1px solid rgba(255, 255, 255, 0.25)"
+                : "",
+            color: pathname === "/investor/admin" ? "#fff" : "",
+          }}
+        >
+          Seed round{" "}
+          <GrayArrow
+            color={pathname === "/investor/admin" ? "white" : "#1D283A"}
+          />
         </button>
         <button
           className={styles.roundBtn}
           onClick={() => navigate("/investor/admin/private-round")}
+          style={{
+            border:
+              pathname === "/investor/admin/private-round"
+                ? "1px solid rgba(255, 255, 255, 0.25)"
+                : "",
+            color: pathname === "/investor/admin/private-round" ? "#fff" : "",
+          }}
         >
-          Private round <GrayArrow color="#1D283A" />
+          Private round{" "}
+          <GrayArrow
+            color={
+              pathname === "/investor/admin/private-round" ? "white" : "#1D283A"
+            }
+          />
         </button>
       </div>
       <div className={styles.socials}>

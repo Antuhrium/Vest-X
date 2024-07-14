@@ -1,8 +1,7 @@
 .leftWrapper {
-  position: fixed;
   left: 140px;
   @apply min-w-[555px]
-    h-[105vh] w-fit
+     w-fit
     flex flex-col
     gap-[24px]
     bg-[#0A0F1A]

@@ -41,13 +41,11 @@ export default function ProjectIntroduction() {
       <div className={styles.container}>
         <Menu
           menuStyle={{
-            height: "133vh",
             position: "relative",
           }}
         />
         <AdminMenu
           style={{
-            height: "133vh",
             position: "relative",
             left: "0",
           }}
@@ -112,8 +110,8 @@ export default function ProjectIntroduction() {
               ))}
             </div>
           </div>
-          <img className={styles.rightBg} src={RightBg} alt="right bg" />
         </div>
+        <img className={styles.rightBg} src={RightBg} alt="right bg" />
       </div>
     </div>
   );
