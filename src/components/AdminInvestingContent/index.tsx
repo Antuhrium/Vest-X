@@ -217,7 +217,11 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
           )}
 
           <h3 className={styles.topCardTitle}>
-            <HeaderTitle className={styles.topCardTitle}>
+            <HeaderTitle
+              className={`${styles.topCardTitle} ${
+                roundTitle.includes("Private") ? styles.privateRound : ""
+              }`}
+            >
               {roundTitle}
             </HeaderTitle>
             <HeaderTitle className={styles.topCardTitle}>(ARKM)</HeaderTitle>

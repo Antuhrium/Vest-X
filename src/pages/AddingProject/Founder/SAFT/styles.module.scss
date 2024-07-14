@@ -5,8 +5,8 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
-  margin-left: calc(435px + 140px);
   width: 90%;
+  position: relative;
 }
 
 .message {
@@ -84,6 +84,22 @@
 .messageInput {
   padding-left: 36px !important;
   color: white;
+}
+
+.messageInputContainer {
+}
+
+.fixed {
+  position: fixed;
+  width: 54%;
+  bottom: 0;
+  z-index: 100000;
+  margin-left: -32px;
+}
+
+.relative {
+  position: relative;
+  width: 100%;
 }
 
 .filePreview {

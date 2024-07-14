@@ -135,10 +135,17 @@ export default function TeamDetails() {
             <div className={styles.uploadContainer}>
               <div className={styles.uploadBox}>
                 <img src={UploadFile} alt="Upload file" />
-                <span>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    textAlign: "center",
+                  }}
+                >
                   <span className={styles.blueText}>Click to Upload</span> or
                   drag and drop
-                </span>
+                </div>
                 <span>Max File size: 25MB</span>
               </div>
             </div>

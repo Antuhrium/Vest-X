@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
 import SimplePDF from "/pdf/simple_pdf.pdf";
 import FileIcon from "/images/file-icon.svg";
 import DownloadFile from "/images/chat/file-download.svg";
 
-import { Document, Page, pdfjs } from "react-pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
 interface File {
   name: string;
   size: string;
@@ -27,16 +18,6 @@ export default function PDFFileModal({
   onClose,
   file,
 }: PDFFileModalProps) {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setNumPages(numPages);
-  }
-
-  useEffect(() => {
-    setPageNumber(1);
-  }, []);
   if (!isOpen) return null;
 
   return (
@@ -57,7 +38,7 @@ export default function PDFFileModal({
             <div className={styles.fileHeader}>
               <img
                 src={FileIcon}
-                alt="download file"
+                alt="file icon"
                 style={{
                   marginRight: "8px",
                 }}
@@ -69,12 +50,15 @@ export default function PDFFileModal({
                 Download
               </button>
             </div>
-            <Document file={SimplePDF} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page pageNumber={pageNumber} />
-            </Document>
-            <p>
-              Page {pageNumber} of {numPages}
-            </p>
+            <iframe
+              src={SimplePDF}
+              style={{
+                width: "100%",
+                height: "calc(100% - 50px)",
+                border: "none",
+              }}
+              title="PDF Viewer"
+            ></iframe>
           </div>
         </div>
       </div>

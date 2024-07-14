@@ -150,17 +150,17 @@ export default function VestingSchedule() {
           <div className={styles.flexRow}>
             <button className={styles.actionButton}>
               <div className={styles.actionButtonInner}>
-                <span className={styles.smallBlueCircle}>+</span> Add to cliff
+                <img src={AddCircle} alt="add circle" /> Add to cliff
               </div>
             </button>
             <button className={styles.actionButton}>
               <div className={styles.actionButtonInner}>
-                <span className={styles.smallBlueCircle}>+</span> Add to vesting
+                <img src={AddCircle} alt="add circle" /> Add to vesting
               </div>
             </button>
             <button className={styles.actionButton}>
               <div className={styles.actionButtonInner}>
-                <span className={styles.smallBlueCircle}>+</span> Add to TGE
+                <img src={AddCircle} alt="add circle" /> Add to TGE
               </div>
             </button>
           </div>

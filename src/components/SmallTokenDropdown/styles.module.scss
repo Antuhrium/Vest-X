@@ -27,6 +27,7 @@
   position: relative;
   width: 25%;
   cursor: pointer;
+  min-width: max-content;
 }
 
 .selectedToken {

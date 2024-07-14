@@ -2,7 +2,6 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
-  margin-left: calc(435px + 140px);
   width: 90%;
 }
 
@@ -10,13 +9,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: calc(435px + 140px);
   color: white;
 }
 
 .formButtons {
   display: flex;
   justify-content: space-between;
-  margin-left: calc(435px + 140px);
   width: 80% !important;
 }
 
@@ -70,6 +69,7 @@
 .textarea {
   height: 6rem;
   margin-bottom: 0.5rem;
+  color: white !important;
 }
 
 .gradientHeader {

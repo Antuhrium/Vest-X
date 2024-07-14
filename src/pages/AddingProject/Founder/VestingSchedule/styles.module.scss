@@ -4,7 +4,6 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
-  margin-left: calc(435px + 140px);
   width: 90%;
 }
 
@@ -183,6 +182,19 @@ input {
   background-color: #101322;
   width: max-content;
   height: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.actionButtonInner:hover {
+  background: linear-gradient(90deg, lighten(#101322, 20) 0%, #101322 79%);
+}
+
+.actionButtonInner > img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .smallBlueCircle {

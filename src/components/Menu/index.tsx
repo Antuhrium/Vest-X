@@ -47,9 +47,14 @@ const founderLinks = [
 interface CustomStyles {
   menuStyle?: Record<string, string>;
   wrapperStyle?: Record<string, string>;
+  ref?: React.RefObject<HTMLDivElement> | undefined;
 }
 
-const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
+const Menu: React.FC<CustomStyles> = ({
+  menuStyle,
+  wrapperStyle,
+  ref = undefined,
+}) => {
   console.log("menuStyle", menuStyle);
   const { pathname } = useLocation();
 
@@ -67,7 +72,7 @@ const Menu: React.FC<CustomStyles> = ({ menuStyle, wrapperStyle }) => {
 
   return (
     <>
-      <aside className={styles.mobileMenu}>
+      <aside className={styles.mobileMenu} ref={ref}>
         {links.map((link) => (
           <Link
             key={link.to}
