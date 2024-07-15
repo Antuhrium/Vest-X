@@ -21,11 +21,12 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
 import Sign from "../../../../../components/Sign";
+import PopupMessage from "../../../../../components/PopupMessage";
 
 const FifthStep: React.FC = () => {
   return (
     <div className={styles.paymentContainer}>
-      <h2 className={styles.gradientHeaderMedium}>Finalize Payment</h2>
+      <h2 className={styles.gradientHeaderFinalizePayment}>Finalize Payment</h2>
       <p className={styles.paymentDescription}>
         Please send the funds to this address or click on "Connect Wallet" to
         provide transaction automatically
@@ -319,8 +320,12 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
     setStep((prev) => (prev > 1 ? prev - 1 : prev));
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleNextStep = () => {
     setStep((prev) => (prev < 5 ? prev + 1 : prev));
+    if (step === 5) {
+      setIsModalOpen(true);
+    }
   };
 
   const handleSaveAndFinishLater = () => {
@@ -356,6 +361,17 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
         </div>
       </div>
       <img className={styles.rightBg} src={RightBg} alt="right bg" />
+      {isModalOpen && (
+        <PopupMessage
+          title="Congratulations!"
+          description={{
+            text: "Your payment has been successfully recorded. For any help contact our",
+            link: "24/7 support chat.",
+          }}
+          setIsModalOpen={setIsModalOpen}
+          type="success"
+        />
+      )}
     </>
   );
 };
