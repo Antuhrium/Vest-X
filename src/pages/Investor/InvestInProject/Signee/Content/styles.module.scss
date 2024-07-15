@@ -514,6 +514,19 @@ textarea::placeholder {
   @apply font-igraSans;
 }
 
+.gradientHeaderFinalizePayment {
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 80%)
+  );
+  background-clip: text;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  @apply font-igraSans;
+}
+
 .formGroup > label {
   margin-bottom: 16px;
 }

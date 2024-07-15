@@ -14,6 +14,7 @@ import Chat from "./SAFT";
 import RightBg from "/images/right-bg.png";
 import Traction from "./ProjectDetails/Traction";
 import CheckMark from "/images/check.svg";
+import PopupMessage from "../../../components/PopupMessage";
 
 export default function AddingProjectFounder() {
   const [step, setStep] = useState(1);
@@ -87,6 +88,9 @@ export default function AddingProjectFounder() {
     } else {
       setStep((prev) => (prev < 4 ? prev + 1 : prev));
     }
+    if (step === 4) {
+      setIsModalOpen(true);
+    }
   };
 
   useEffect(() => {
@@ -103,6 +107,8 @@ export default function AddingProjectFounder() {
   const handleSaveAndFinishLater = () => {
     console.log("Save and finish later");
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -159,6 +165,17 @@ export default function AddingProjectFounder() {
           <button type="button" onClick={handleNextStep}>
             {step === 4 ? "Complete" : "Next Step"}{" "}
             <img src={step === 4 ? CheckMark : ArrowNext} alt="arrow next" />
+            {isModalOpen && (
+              <PopupMessage
+                title="Congratulations!"
+                description={{
+                  text: "Your project has been successfully published. For any help contact our",
+                  link: "24/7 support chat.",
+                }}
+                setIsModalOpen={setIsModalOpen}
+                type="success"
+              />
+            )}
           </button>
         </div>
       </div>
