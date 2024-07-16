@@ -65,11 +65,7 @@ const FifthStep: React.FC = () => {
 const FourthStep: React.FC = () => {
   return (
     <div className={styles.container}>
-      <div
-        style={{
-          height: "100%",
-        }}
-      >
+      <div className={styles.pdfContainer}>
         <iframe
           src={SimplePDF}
           className={styles.iframePDF}
@@ -349,13 +345,13 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
           }
         >
           <button type="button" onClick={handlePreviousStep}>
-            <img src={ArrowBack} alt="arrow back" /> Previous Step
+            <img src={ArrowBack} alt="arrow back" /> {<p>Previous Step</p>}
           </button>
           <button type="button" onClick={handleSaveAndFinishLater}>
-            Save and finish later
+            <p>Save and finish later</p>
           </button>
           <button type="button" onClick={handleNextStep}>
-            {step === 5 ? "Complete Payment" : "Next Step"}{" "}
+            {step === 5 ? <p>Complete Payment</p> : <p>Next Step</p>}{" "}
             <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
           </button>
         </div>
