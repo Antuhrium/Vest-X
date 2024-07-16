@@ -171,7 +171,12 @@ const KeyFeaturesPage: React.FC = () => {
 
   return (
     <div className={styles.containerWithPic}>
-      <img src={ArkhamTopBg} alt="arkham top bg" />
+      <div
+        style={{
+          background: `url(${ArkhamTopBg})`,
+        }}
+        className={styles.bgContainer}
+      ></div>
       <div className={styles.container}>
         <Menu
           ref={menuRef}

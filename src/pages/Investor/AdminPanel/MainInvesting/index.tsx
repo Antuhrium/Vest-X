@@ -28,7 +28,12 @@ const MainInvesting = () => {
 
   return (
     <div>
-      <img src={ArkhamTopBg} alt="arkham top bg" />
+      <div
+        style={{
+          background: `url(${ArkhamTopBg})`,
+        }}
+        className={styles.bgContainer}
+      ></div>
       <div className={styles.container}>
         <Menu
           ref={menuRef}
@@ -44,7 +49,7 @@ const MainInvesting = () => {
             height: "100%",
           }}
         />
-        <AdminInvestingContent style={{ marginLeft: "44px" }} />
+        <AdminInvestingContent style={{ margin: "48px auto" }} />
       </div>
     </div>
   );

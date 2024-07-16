@@ -31,7 +31,13 @@ const FounderAdminPanel: React.FC = () => {
 
   return (
     <div>
-      <img src={ArkhamTopBg} alt="arkham top bg" />
+      <div
+        style={{
+          background: `url(${ArkhamTopBg})`,
+        }}
+        className={styles.bgContainer}
+      ></div>
+      {/* <img src={ArkhamTopBg} alt="arkham top bg" /> */}
       {isModalOpen && (
         <PopupMessage
           title="Congratulations!"
