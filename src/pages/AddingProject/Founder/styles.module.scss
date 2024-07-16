@@ -2,11 +2,17 @@
   display: flex;
   width: 100%;
   background-color: #030711;
+
+  @media screen and (max-width: 1280px) {
+    > div {
+      flex-direction: column;
+    }
+  }
 }
 
 .contentContainer {
   padding: 3rem;
-  width: 65%;
+  width: 100%;
   display: flex;
   margin-left: calc(435px + 140px);
   // margin-left: 3rem;
@@ -15,6 +21,17 @@
   position: relative;
   // background-color: #0a0f1a;
   // z-index: 1000;
+  @media screen and (max-width: 1280px) {
+    padding: 2rem 1rem;
+    margin-left: 0px;
+    min-height: 83vh;
+    margin-top: 2rem;
+    height: 100%;
+    width: 100%;
+    > * {
+      width: 100% !important;
+    }
+  }
 }
 
 .formButtons {
@@ -23,7 +40,6 @@
   width: 100%;
   z-index: 1000;
   position: relative;
-  width: 90%;
 }
 
 .rightBg {
@@ -35,5 +51,11 @@
 @media screen and (max-width: 640px) {
   .rightBg {
     @apply left-0;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .rightBg {
+    @apply hidden;
   }
 }

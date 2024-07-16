@@ -4,6 +4,7 @@ import Menu from "../../../../components/Menu";
 import styles from "./styles.module.scss";
 import ArkhamTopBg from "/images/arkham-top-bg.png";
 import AdminInvestingContent from "../../../../components/AdminInvestingContent";
+import RightBg from "/images/right-bg.png";
 
 const MainInvesting = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -27,31 +28,39 @@ const MainInvesting = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <img className={styles.rightBg} src={RightBg} alt="" />
       <div
         style={{
-          background: `url(${ArkhamTopBg})`,
+          position: "relative",
+          height: "100%",
         }}
-        className={styles.bgContainer}
-      ></div>
-      <div className={styles.container}>
-        <Menu
-          ref={menuRef}
-          menuStyle={{
-            position: "relative",
-          }}
-        />
-        <AdminMenu
-          ref={adminMenuRef}
+      >
+        <div
           style={{
-            position: "relative",
-            left: "0",
-            height: "100%",
+            background: `url(${ArkhamTopBg})`,
           }}
-        />
-        <AdminInvestingContent style={{ margin: "48px auto" }} />
+          className={styles.bgContainer}
+        ></div>
+        <div className={styles.container}>
+          <Menu
+            ref={menuRef}
+            menuStyle={{
+              position: "relative",
+            }}
+          />
+          <AdminMenu
+            ref={adminMenuRef}
+            style={{
+              position: "relative",
+              left: "0",
+              height: "100%",
+            }}
+          />
+          <AdminInvestingContent style={{ margin: "48px auto" }} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

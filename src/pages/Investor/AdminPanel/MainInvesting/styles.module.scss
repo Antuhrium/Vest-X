@@ -10,3 +10,15 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
+
+.rightBg {
+  @apply absolute
+      bottom-0
+      left-[50%];
+}
+
+@media screen and (max-width: 640px) {
+  .rightBg {
+    @apply left-0;
+  }
+}

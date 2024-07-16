@@ -170,39 +170,41 @@ const KeyFeaturesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.containerWithPic}>
-      <div
-        style={{
-          background: `url(${ArkhamTopBg})`,
-        }}
-        className={styles.bgContainer}
-      ></div>
-      <div className={styles.container}>
-        <Menu
-          ref={menuRef}
-          menuStyle={{
-            position: "relative",
-          }}
-        />
-        <AdminMenu
-          ref={adminMenuRef}
+    <>
+      <div className={styles.containerWithPic}>
+        <div
           style={{
-            position: "relative",
-            left: "0",
+            background: `url(${ArkhamTopBg})`,
           }}
-        />
-        <div className={styles.wrapper}>
-          <CurrentBackers
-            topBackers={topBakers}
-            generalBackers={generalBackers}
+          className={styles.bgContainer}
+        ></div>
+        <div className={styles.container}>
+          <Menu
+            ref={menuRef}
+            menuStyle={{
+              position: "relative",
+            }}
           />
-          <CentralizedExchanges exchanges={exchanges} />
-          <Roadmap />
-          <AdditionalTraction />
-          <img className={styles.rightBg} src={RightBg} alt="" />
+          <AdminMenu
+            ref={adminMenuRef}
+            style={{
+              position: "relative",
+              left: "0",
+            }}
+          />
+          <div className={styles.wrapper}>
+            <CurrentBackers
+              topBackers={topBakers}
+              generalBackers={generalBackers}
+            />
+            <CentralizedExchanges exchanges={exchanges} />
+            <Roadmap />
+            <AdditionalTraction />
+          </div>
         </div>
       </div>
-    </div>
+      <img className={styles.rightBg} src={RightBg} alt="" />
+    </>
   );
 };
 

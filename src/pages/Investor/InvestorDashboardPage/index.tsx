@@ -16,13 +16,13 @@ const InvestorDashboardPage = () => {
           height: "115vh",
         }}
       />
+      <img className={styles.rightBg} src={RightBg} alt="" />
       <div className={styles.wrapper}>
         <HeaderTitle className={styles.title}>Portfolio</HeaderTitle>
         <PortfolioCharts />
         <div className={styles.projList}>
           <ProjectsList />
         </div>
-        <img className={styles.rightBg} src={RightBg} alt="" />
         <div className={styles.pagination}>
           <Pagination
             totalPages={10}

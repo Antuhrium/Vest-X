@@ -271,8 +271,8 @@ const FounderInvestors: React.FC = () => {
             onPageChange={setPages}
           />
         </footer>
-        <img className={styles.rightBg} src={RightBg} alt="" />
       </div>
+      <img className={styles.rightBg} src={RightBg} alt="" />
     </div>
   );
 };
