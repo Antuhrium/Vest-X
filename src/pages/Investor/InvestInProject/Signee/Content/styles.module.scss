@@ -2,10 +2,19 @@
   padding: 3rem;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
   margin-left: calc(435px + 140px);
 
   @media screen and (max-width: 1280px) {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    margin-left: 0px;
+    min-height: 83vh;
+    height: 100%;
+
+    > * {
+      width: 100% !important;
+    }
   }
 }
 
@@ -101,8 +110,29 @@ textarea {
   @media screen and (max-width: 1280px) {
     position: relative;
     width: 100%;
-    padding: 32px 16px 120px;
-    margin-top: 0;
+    padding: 32px 16px;
+    margin-top: auto;
+
+    button:first-of-type p,
+    button:last-of-type p {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    button:nth-of-type(2) {
+      position: absolute;
+      bottom: 2rem;
+      margin-left: -1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    button:first-of-type,
+    button:last-of-type {
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -249,9 +279,23 @@ textarea::placeholder {
   border: none;
 }
 
+.pdfContainer {
+  height: 100vh;
+}
+
 @media screen and (max-width: 1600px) {
   .iframePDF {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .iframePDF {
+    height: 50vh;
+  }
+
+  .pdfContainer {
+    height: 50vh;
   }
 }
 
@@ -291,6 +335,9 @@ textarea::placeholder {
 .fileName {
   font-size: 16px;
   color: #ffffff;
+  @media screen and (max-width: 400px) {
+    font-size: 12px;
+  }
 }
 
 .fileSize {
