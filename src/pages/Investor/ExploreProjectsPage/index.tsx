@@ -66,45 +66,47 @@ const ExploreProjectsPage = () => {
   const [, onSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   return (
-    <section className={styles.container}>
-      <Menu
-        menuStyle={{
-          height: "100vh",
-        }}
-      />
+    <>
+      <img className={styles.rightBg} src={RightBg} alt="" />
+      <section className={styles.container}>
+        <Menu
+          menuStyle={{
+            height: "100vh",
+          }}
+        />
 
-      <Filter title={"Filter"} buttonTitle="Apply" filters={filters} />
-      <div className={styles.wrapper}>
-        <img className={styles.rightBg} src={RightBg} alt="" />
-        <HeaderTitle className={styles.title}>Explore Projects</HeaderTitle>
-        <div className={styles.searchWrapper}>
-          <Search onSearch={onSearch} />
-          <SortDropdownMenu />
-        </div>
-        <div className={styles.tags}>
-          <Tags />
-        </div>
-        <div className={styles.projectsWrapper}>
-          {projects.map((project, index) => (
-            <ProjectCard
-              projectName={project.projectName}
-              vestingStatus="Vesting open"
-              tokenName="EcoSwap"
-              imageSrc={getProjectImage(index)}
-              description="EcoSwap is a decentralized marketplace and community platform..."
-              tags={["Defi", "Paytech", "AI"]}
+        <Filter title={"Filter"} buttonTitle="Apply" filters={filters} />
+        <div className={styles.wrapper}>
+          <HeaderTitle className={styles.title}>Explore Projects</HeaderTitle>
+          <div className={styles.searchWrapper}>
+            <Search onSearch={onSearch} />
+            <SortDropdownMenu />
+          </div>
+          <div className={styles.tags}>
+            <Tags />
+          </div>
+          <div className={styles.projectsWrapper}>
+            {projects.map((project, index) => (
+              <ProjectCard
+                projectName={project.projectName}
+                vestingStatus="Vesting open"
+                tokenName="EcoSwap"
+                imageSrc={getProjectImage(index)}
+                description="EcoSwap is a decentralized marketplace and community platform..."
+                tags={["Defi", "Paytech", "AI"]}
+              />
+            ))}
+          </div>
+          <div className={styles.paginationWrapper}>
+            <Pagination
+              totalPages={24}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
             />
-          ))}
+          </div>
         </div>
-        <div className={styles.paginationWrapper}>
-          <Pagination
-            totalPages={24}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

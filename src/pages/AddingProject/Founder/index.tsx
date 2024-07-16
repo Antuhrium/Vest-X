@@ -150,12 +150,7 @@ export default function AddingProjectFounder() {
         {step === 1 && subStep === 5 && <Traction />}
         {step === 2 && <VestingSchedule />}
         {(step === 3 || step === 4) && <Chat setStep={setStep} />}
-        <div
-          className={styles.formButtons}
-          style={{
-            width: step === 1 && subStep === 5 ? "100%" : "90%",
-          }}
-        >
+        <div className={styles.formButtons}>
           <button type="button" onClick={handlePreviousStep}>
             <img src={ArrowBack} alt="arrow back" /> Previous Step
           </button>

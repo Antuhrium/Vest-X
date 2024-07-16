@@ -350,7 +350,13 @@ const Content: React.FC<StepAction> = ({ step, setStep }) => {
           <button type="button" onClick={handleSaveAndFinishLater}>
             <p>Save and finish later</p>
           </button>
-          <button type="button" onClick={handleNextStep}>
+          <button
+            type="button"
+            onClick={handleNextStep}
+            style={{
+              textWrap: "nowrap",
+            }}
+          >
             {step === 5 ? <p>Complete Payment</p> : <p>Next Step</p>}{" "}
             <img src={step === 5 ? CheckMark : ArrowNext} alt="arrow next" />
           </button>

@@ -36,88 +36,91 @@ export default function ProjectIntroduction() {
     ]);
   }, []);
   return (
-    <div className={styles.containerWithPic}>
-      <div
-        style={{
-          background: `url(${ArkhamTopBg})`,
-        }}
-        className={styles.bgContainer}
-      ></div>
-      <div className={styles.container}>
-        <Menu
-          menuStyle={{
-            position: "relative",
-          }}
-        />
-        <AdminMenu
+    <>
+      <div className={styles.containerWithPic}>
+        <div
           style={{
-            position: "relative",
-            left: "0",
+            background: `url(${ArkhamTopBg})`,
           }}
-        />
-        <div className={styles.rightPartContainer}>
-          <div className={styles.textSection}>
-            <h2 className={styles.gradientHeader}>Summary</h2>
-            <p>
-              VestX is a specialized platform designed for managing and
-              automating token vesting schedules. It offers a robust and
-              customizable framework suitable for projects and organizations of
-              all sizes. VestX ensures transparent and timely token releases,
-              supporting various use cases such as employee incentives,
-              community rewards, and investor distributions. The platform's
-              native token, VEST, provides dual utilities: staking to access
-              premium features and renting to earn passive income. Retail token
-              holders can pool their VEST tokens to generate rental (yield)
-              income, making the platform inclusive and beneficial for all
-              participants in the ecosystem.
-            </p>
-          </div>
-          <div
-            className={styles.textSection}
-            style={{
-              marginTop: "-0.5rem",
-              zIndex: "1000",
-              backgroundColor: "#030711",
+          className={styles.bgContainer}
+        ></div>
+        <div className={styles.container}>
+          <Menu
+            menuStyle={{
+              position: "relative",
             }}
-          >
-            <h2 className={styles.gradientHeader}>Overview</h2>
-            <p>
-              VestX caters to two main categories of users: crypto-native
-              DAOs/projects and professional organizations transitioning to Web3
-              (Web2.5). For the crypto-native sector, VestX supports key use
-              cases such as influencer and KOL fundraising, risk control, and
-              distribution; DeFi liquidity pooling; and gaming treasury asset
-              management. In the Web2.5 space, the platform enables RWA
-              originators to mint asset tokens and pool investors with enhanced
-              transparency and compliance. VestX's native token, VEST, has two
-              utilities: stake-to-use and rent-to-use. Retail token holders can
-              pool VEST tokens for lending and generate rental income, offering
-              customized yield opportunities for participants.
-            </p>
-          </div>
-          <div className={styles.teamSection}>
-            <h2
-              className={styles.gradientHeader}
+          />
+          <AdminMenu
+            style={{
+              position: "relative",
+              left: "0",
+            }}
+          />
+          <div className={styles.rightPartContainer}>
+            <div className={styles.textSection}>
+              <h2 className={styles.gradientHeader}>Summary</h2>
+              <p>
+                VestX is a specialized platform designed for managing and
+                automating token vesting schedules. It offers a robust and
+                customizable framework suitable for projects and organizations
+                of all sizes. VestX ensures transparent and timely token
+                releases, supporting various use cases such as employee
+                incentives, community rewards, and investor distributions. The
+                platform's native token, VEST, provides dual utilities: staking
+                to access premium features and renting to earn passive income.
+                Retail token holders can pool their VEST tokens to generate
+                rental (yield) income, making the platform inclusive and
+                beneficial for all participants in the ecosystem.
+              </p>
+            </div>
+            <div
+              className={styles.textSection}
               style={{
                 marginTop: "-0.5rem",
+                zIndex: "1000",
+                backgroundColor: "#030711",
               }}
             >
-              Team
-            </h2>
-            <div className={styles.teamContainer}>
-              {teamMembers.map((member, index) => (
-                <div key={index} className={styles.teamMemberCard}>
-                  <img src={picPaths[index]} alt="person pic" />
-                  <h3 className={styles.name}>{member.name}</h3>
-                  <p className={styles.role}>{member.role}</p>
-                  <p className={styles.description}>{member.description}</p>
-                </div>
-              ))}
+              <h2 className={styles.gradientHeader}>Overview</h2>
+              <p>
+                VestX caters to two main categories of users: crypto-native
+                DAOs/projects and professional organizations transitioning to
+                Web3 (Web2.5). For the crypto-native sector, VestX supports key
+                use cases such as influencer and KOL fundraising, risk control,
+                and distribution; DeFi liquidity pooling; and gaming treasury
+                asset management. In the Web2.5 space, the platform enables RWA
+                originators to mint asset tokens and pool investors with
+                enhanced transparency and compliance. VestX's native token,
+                VEST, has two utilities: stake-to-use and rent-to-use. Retail
+                token holders can pool VEST tokens for lending and generate
+                rental income, offering customized yield opportunities for
+                participants.
+              </p>
+            </div>
+            <div className={styles.teamSection}>
+              <h2
+                className={styles.gradientHeader}
+                style={{
+                  marginTop: "-0.5rem",
+                }}
+              >
+                Team
+              </h2>
+              <div className={styles.teamContainer}>
+                {teamMembers.map((member, index) => (
+                  <div key={index} className={styles.teamMemberCard}>
+                    <img src={picPaths[index]} alt="person pic" />
+                    <h3 className={styles.name}>{member.name}</h3>
+                    <p className={styles.role}>{member.role}</p>
+                    <p className={styles.description}>{member.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <img className={styles.rightBg} src={RightBg} alt="right bg" />
       </div>
-    </div>
+      <img className={styles.rightBg} src={RightBg} alt="right bg" />
+    </>
   );
 }

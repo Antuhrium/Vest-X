@@ -5,7 +5,7 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
-  width: 90%;
+  width: 100%;
   position: relative;
 }
 
@@ -90,15 +90,15 @@
 }
 
 .fixed {
-  position: fixed;
-  width: 54%;
+  position: sticky;
+  width: calc(100% + 4rem);
   bottom: 0;
   z-index: 100000;
   margin-left: -32px;
 }
 
 .relative {
-  position: relative;
+  position: sticky;
   width: 100%;
 }
 

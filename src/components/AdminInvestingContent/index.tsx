@@ -3,7 +3,6 @@ import ChartCircle from "../ChartCircle";
 import GrayArrow from "../GrayArrow";
 import styles from "./style.module.scss";
 import ArkhamBg from "/images/arkham-bg.png";
-import RightBg from "/images/right-bg.png";
 import CountUpComponent from "../CountUpComponent";
 import HeaderTitle from "../HeaderTitle";
 import { useState } from "react";
@@ -73,7 +72,6 @@ const InvestingComponent = () => {
           <ChartLine />
         </div>
       </div>
-      <img className={styles.rightBg} src={RightBg} alt="" />
     </>
   );
 };
@@ -146,7 +144,6 @@ const FounderComponent = () => {
           <ChartLine />
         </div>
       </div>
-      <img className={styles.rightBg} src={RightBg} alt="" />
     </>
   );
 };

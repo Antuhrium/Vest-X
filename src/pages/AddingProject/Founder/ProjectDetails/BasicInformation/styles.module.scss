@@ -2,7 +2,7 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
-  width: 90%;
+  width: 100%;
 }
 
 .contentContainer {
@@ -54,6 +54,7 @@
 .textarea {
   background-color: #111827;
   border: 1px solid #1b2531;
+  color: white !important;
 }
 
 .formGroup,

@@ -153,12 +153,6 @@
   @apply absolute bottom-10 right-10;
 }
 
-.rightBg {
-  @apply absolute
-      bottom-0
-      left-1/4;
-}
-
 .graph {
   @apply flex gap-2 text-white mt-[56px] z-10;
 }
