@@ -11,6 +11,10 @@ interface SocialLink {
   link: string;
 }
 
+// const NormalSizedSocialChannels = () => {};
+
+// const PhoneSizedSocialChannels = () => {};
+
 export default function SocialChannels() {
   const [socialLinks, setSocialLinks] = useState<SocialLink[]>([
     {
@@ -90,8 +94,8 @@ export default function SocialChannels() {
             </div>
           </div>
           <div
-            className={styles.formGroup}
-            style={{ width: "calc(50% - 1rem)", marginTop: "1rem" }}
+            className={`${styles.formGroup} ${styles.halfContainer}`}
+            style={{}}
           >
             <label>
               Link <span className={styles.requiredStar}>*</span>

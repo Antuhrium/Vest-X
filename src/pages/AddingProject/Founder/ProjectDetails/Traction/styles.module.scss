@@ -14,8 +14,9 @@
   z-index: 1001;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 680px) {
   .navbar {
+    top: 4rem;
   }
 }
 
@@ -44,7 +45,22 @@
   }
 
   .sectionLinksContainer {
-    width: 56.5%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .sectionLinksContainer {
+    width: 100%;
+    // justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navLink {
+    font-size: 10px;
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -62,6 +78,10 @@
   background-color: rgba(255, 255, 255, 0.2);
   position: relative;
   margin-top: 4px;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .progressBar {

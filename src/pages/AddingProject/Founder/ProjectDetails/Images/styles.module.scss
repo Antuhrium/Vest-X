@@ -4,6 +4,9 @@
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .header {
@@ -15,6 +18,11 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .uploadContainer {

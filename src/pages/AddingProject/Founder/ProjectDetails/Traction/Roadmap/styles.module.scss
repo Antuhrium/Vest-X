@@ -5,6 +5,9 @@
   z-index: 1000;
   padding: 2rem;
   width: 100%;
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .header {
@@ -79,6 +82,11 @@ textarea {
   gap: 2rem;
   position: relative;
   margin-bottom: 4rem;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 .flexRow > * {

@@ -22,6 +22,7 @@ export default function AddingProjectFounder() {
   const [steps, setSteps] = useState<StepProps[]>([
     {
       title: "Project Details",
+      mobileTitle: "Project",
       status: "in_progress",
       children: [
         { title: "Basic Information", status: "pending" },
@@ -31,9 +32,17 @@ export default function AddingProjectFounder() {
         { title: "Traction", status: "pending" },
       ],
     },
-    { title: "Vesting Schedule", status: "pending" },
-    { title: "SAFT", status: "pending" },
-    { title: "Additional Questions", status: "pending" },
+    {
+      title: "Vesting Schedule",
+      mobileTitle: "Vesting Data",
+      status: "pending",
+    },
+    { title: "SAFT", mobileTitle: "SAFT", status: "pending" },
+    {
+      title: "Additional Questions",
+      mobileTitle: "Questions",
+      status: "pending",
+    },
   ]);
   useEffect(() => {
     setSteps((prev) =>
@@ -118,17 +127,7 @@ export default function AddingProjectFounder() {
           height: "100vh",
         }}
       />
-      <div
-        style={{
-          paddingTop: "30px",
-          background: "#0a0f1a",
-          height: "100vh",
-          width: "435px",
-          position: "fixed",
-          top: 0,
-          left: "140px",
-        }}
-      >
+      <div style={{}} className={styles.stepListContainer}>
         <StepList
           steps={steps}
           style={{
@@ -152,13 +151,13 @@ export default function AddingProjectFounder() {
         {(step === 3 || step === 4) && <Chat setStep={setStep} />}
         <div className={styles.formButtons}>
           <button type="button" onClick={handlePreviousStep}>
-            <img src={ArrowBack} alt="arrow back" /> Previous Step
+            <img src={ArrowBack} alt="arrow back" /> <p>Previous Step</p>
           </button>
           <button type="button" onClick={handleSaveAndFinishLater}>
-            Save and finish later
+            <p>Save and finish later</p>
           </button>
           <button type="button" onClick={handleNextStep}>
-            {step === 4 ? "Complete" : "Next Step"}{" "}
+            {step === 4 ? <p>Complete</p> : <p>Next Step</p>}
             <img src={step === 4 ? CheckMark : ArrowNext} alt="arrow next" />
             {isModalOpen && (
               <PopupMessage

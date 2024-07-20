@@ -148,17 +148,17 @@ export default function VestingSchedule() {
             <p className={styles.helperText}>Helper text goes here</p>
           </div>
           <div className={styles.flexRow}>
-            <button className={styles.actionButton}>
+            <button className={`${styles.actionButton} hidden lg:block`}>
               <div className={styles.actionButtonInner}>
                 <img src={AddCircle} alt="add circle" /> Add to cliff
               </div>
             </button>
-            <button className={styles.actionButton}>
+            <button className={`${styles.actionButton} hidden lg:block`}>
               <div className={styles.actionButtonInner}>
                 <img src={AddCircle} alt="add circle" /> Add to vesting
               </div>
             </button>
-            <button className={styles.actionButton}>
+            <button className={`${styles.actionButton} hidden lg:block`}>
               <div className={styles.actionButtonInner}>
                 <img src={AddCircle} alt="add circle" /> Add to TGE
               </div>
@@ -166,6 +166,11 @@ export default function VestingSchedule() {
           </div>
           <div className={styles.flexRow}>
             <div className={styles.formGroup}>
+              <button className={`${styles.actionButton} block lg:hidden mb-2`}>
+                <div className={styles.actionButtonInner}>
+                  <img src={AddCircle} alt="add circle" /> Add to cliff
+                </div>
+              </button>
               <label
                 style={{
                   display: "flex",
@@ -179,6 +184,7 @@ export default function VestingSchedule() {
                   ✕
                 </span>
               </label>
+
               <div className={styles.inputWithUnit}>
                 <PeriodDropdown
                   periodValue={pool.cliffPeriodValue}
@@ -196,6 +202,12 @@ export default function VestingSchedule() {
               </p>
             </div>
             <div className={styles.formGroup}>
+              <button className={`${styles.actionButton} block lg:hidden mb-2`}>
+                <div className={styles.actionButtonInner}>
+                  <img src={AddCircle} alt="add circle" /> Add to vesting
+                </div>
+              </button>
+
               <label
                 style={{
                   display: "flex",
@@ -228,12 +240,12 @@ export default function VestingSchedule() {
               </p>
             </div>
             <div className={styles.formGroup}>
-              <label
-                style={{
-                  display: "flex",
-                  marginTop: "-1.5rem",
-                }}
-              >
+              <button className={`${styles.actionButton} block lg:hidden mb-2`}>
+                <div className={styles.actionButtonInner}>
+                  <img src={AddCircle} alt="add circle" /> Add to TGE
+                </div>
+              </button>
+              <label className="flex mt-0 lg:-mt-[1.5rem]">
                 Token Generation Event (TGE){" "}
                 <span className={styles.requiredStar}>*</span>
                 <span

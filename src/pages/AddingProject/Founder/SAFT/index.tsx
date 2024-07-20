@@ -154,7 +154,11 @@ export default function Chat({ setStep }: StepAction) {
           }}
         >
           {message.role === "bot" && (
-            <img src={BotProfilePic} alt="bot profile pic" />
+            <img
+              src={BotProfilePic}
+              alt="bot profile pic"
+              className={styles.profilePic}
+            />
           )}
           <div
             className={`${styles.message} ${
@@ -210,7 +214,11 @@ export default function Chat({ setStep }: StepAction) {
             )}
           </div>
           {message.role === "user" && (
-            <img src={UserProfilePic} alt="user profile pic" />
+            <img
+              src={UserProfilePic}
+              alt="user profile pic"
+              className={styles.profilePic}
+            />
           )}
         </div>
       ))}

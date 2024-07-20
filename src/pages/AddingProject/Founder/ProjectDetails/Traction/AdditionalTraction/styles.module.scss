@@ -5,6 +5,9 @@
   z-index: 1000;
   padding: 2rem;
   width: 100%;
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .header {

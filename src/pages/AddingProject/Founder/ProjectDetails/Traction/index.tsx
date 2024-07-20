@@ -15,7 +15,7 @@ const sections = [
   { id: "roadmap", label: "Roadmap", Component: Roadmap },
   {
     id: "additional-traction",
-    label: "Addit Traction",
+    label: "Additional",
     Component: AdditionalTraction,
   },
 ];
@@ -115,7 +115,7 @@ export default function Traction() {
               href={`#${section.id}`}
               className={`
               ${styles.navLink} 
-              ${activeSection === section.id ? styles.active : ""} 
+              ${activeSection === section.id ? styles.active : ""}
             `}
             >
               <span
@@ -136,7 +136,15 @@ export default function Traction() {
         </div>
       </nav>
       {sections.map(({ id, Component }) => (
-        <section key={id} id={id} className={styles.section}>
+        <section
+          key={id}
+          id={id}
+          className={styles.section}
+          style={{
+            marginTop: id === "traction" ? "0" : "24px",
+            padding: id === "traction" ? "0" : "24px 0px",
+          }}
+        >
           <Component />
         </section>
       ))}
