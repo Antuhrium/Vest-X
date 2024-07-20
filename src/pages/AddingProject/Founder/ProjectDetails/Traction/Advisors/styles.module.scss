@@ -5,6 +5,9 @@
   z-index: 1000;
   padding: 2rem;
   width: 100%;
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .header {
@@ -60,12 +63,19 @@ textarea {
   background: none;
   border: none;
   margin-left: auto;
+  @media screen and (max-width: 640px) {
+    margin-right: auto;
+  }
 }
 
 .flexRow {
   display: flex;
   align-items: center;
   gap: 2rem;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .flexRow > * {
@@ -104,6 +114,9 @@ textarea::placeholder {
   padding: 20px;
   cursor: pointer;
   width: 30%;
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .uploadBox {

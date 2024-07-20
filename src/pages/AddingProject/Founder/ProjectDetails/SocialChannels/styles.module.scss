@@ -1,10 +1,12 @@
 .socialChannelsContainer {
-  width: 100%;
   color: #fff;
   background-color: #0a0f1a;
   z-index: 1000;
   padding: 2rem;
   width: 100%;
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .header {
@@ -31,6 +33,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 640px) {
+    flex: 1 1 100%;
+  }
 }
 
 label {
@@ -132,6 +138,10 @@ label {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+
+  @media screen and (max-width: 640px) {
+    justify-content: center;
+  }
 }
 
 .deleteButton {
@@ -150,10 +160,23 @@ label {
   margin-bottom: 20px;
 }
 
+.halfContainer {
+  width: calc(50% - 1rem);
+  margin-top: 1rem;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+}
+
 .flexRow {
   display: flex;
-  align-items: center;
+  // align-items: center;
   gap: 2rem;
+
+  @media screen and (max-width: 640px) {
+    display: block;
+  }
 }
 
 .flexRow > * {

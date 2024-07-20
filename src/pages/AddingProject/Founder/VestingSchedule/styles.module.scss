@@ -49,6 +49,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 640px) {
+    width: 100% !important;
+  }
 }
 
 .label {
@@ -106,6 +110,11 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .flexRow > * {

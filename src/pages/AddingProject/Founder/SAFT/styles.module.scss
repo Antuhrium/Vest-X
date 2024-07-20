@@ -7,6 +7,10 @@
   padding: 2rem;
   width: 100%;
   position: relative;
+
+  @media screen and (max-width: 640px) {
+    padding: 24px;
+  }
 }
 
 .message {
@@ -18,10 +22,17 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media screen and (max-width: 640px) {
+    font-size: 14px;
+  }
 }
 
 .date {
   font-size: 14px;
+  @media screen and (max-width: 640px) {
+    font-size: 10px;
+  }
 }
 
 .botMessage {
@@ -58,6 +69,10 @@
   align-items: center;
   color: #0f62fe;
   cursor: pointer;
+
+  @media screen and (max-width: 640px) {
+    padding: 0 !important;
+  }
 }
 
 .inputWithIcons {
@@ -104,8 +119,20 @@
 
 .filePreview {
   margin-right: 1rem;
+
+  @media screen and (max-width: 640px) {
+    width: 58px;
+    height: 58px;
+  }
 }
 
 .greyText {
   color: #676e76;
+  text-wrap: nowrap;
+}
+
+.profilePic {
+  @media screen and (max-width: 640px) {
+    height: 2rem;
+  }
 }

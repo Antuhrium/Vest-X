@@ -32,6 +32,12 @@
       width: 100% !important;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 4rem;
+    padding: 0;
+    padding-bottom: 2rem;
+  }
 }
 
 .formButtons {
@@ -40,6 +46,34 @@
   width: 100%;
   z-index: 1000;
   position: relative;
+
+  @media screen and (max-width: 1280px) {
+    position: relative;
+    width: 100%;
+    padding: 32px 16px;
+    margin-top: auto;
+
+    button:first-of-type p,
+    button:last-of-type p {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    button:nth-of-type(2) {
+      position: absolute;
+      bottom: 2rem;
+      margin-left: -1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    button:first-of-type,
+    button:last-of-type {
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 .rightBg {
@@ -57,5 +91,23 @@
 @media screen and (max-width: 1280px) {
   .rightBg {
     @apply hidden;
+  }
+}
+
+.stepListContainer {
+  padding-top: 30px;
+  background-color: #0a0f1a;
+  height: 100vh;
+  width: 435px;
+  position: fixed;
+  top: 0;
+  left: 140px;
+
+  @media screen and (max-width: 640px) {
+    left: 0;
+    width: 100%;
+    height: max-content;
+    padding-top: 0px;
+    z-index: 10000000;
   }
 }
