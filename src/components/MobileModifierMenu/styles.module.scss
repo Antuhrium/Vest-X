@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+
+.element {
+  background-color: #111827;
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  gap: 0.25rem;
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+}
+
+.actionCircleContainer {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.actionCircle {
+  width: 24px;
+  height: 24px;
+}
+
+.addOneMoreButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 16px;
+}
+
+.optionalText {
+  color: #7f8ea3;
+}

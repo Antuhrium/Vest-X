@@ -35,16 +35,18 @@ export default function SocialChannelDropdown({
           <span>
             {(
               <div className={styles.flexRow}>
-                <img
-                  src={
-                    socialOptions.filter((option) => option.value === value)[0]
-                      ? socialOptions.filter(
-                          (option) => option.value === value
-                        )[0].icon
-                      : undefined
-                  }
-                  alt={value}
-                />{" "}
+                {socialOptions.filter((option) => option.value === value)[0] ? (
+                  <img
+                    src={
+                      socialOptions.filter(
+                        (option) => option.value === value
+                      )[0].icon
+                    }
+                    alt={value}
+                  />
+                ) : (
+                  <></>
+                )}{" "}
                 {value}
               </div>
             ) || "Select a social channel"}
