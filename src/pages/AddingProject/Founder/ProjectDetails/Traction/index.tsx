@@ -3,7 +3,7 @@ import TractionInner from "./Traction";
 import styles from "./styles.module.scss";
 import TopInvestors from "./TopInvestors";
 import Advisors from "./Advisors";
-import Partner from "./Partner";
+import Partner from "./Partners";
 import Roadmap from "./Roadmap";
 import AdditionalTraction from "./AdditionalTraction";
 

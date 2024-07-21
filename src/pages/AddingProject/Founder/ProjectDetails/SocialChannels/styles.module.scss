@@ -14,6 +14,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 640px) {
+    margin-bottom: 0;
+  }
 }
 
 .addLinkButton {
@@ -234,4 +238,20 @@ textarea::placeholder {
 .formGroup > label,
 .formGroupFull > label {
   margin-bottom: 16px;
+}
+
+.grayText {
+  color: #7f8ea3;
+}
+
+.selectedElementText {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  background: var(
+    --Primary-Gradient-White-to-black,
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
