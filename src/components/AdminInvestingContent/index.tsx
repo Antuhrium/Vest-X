@@ -25,31 +25,62 @@ const vestingTopInf = [
 ];
 
 const InvestingComponent = () => {
+  const [chart, setChart] = useState<"line" | "circular">("line");
   return (
-    <>
+    <div className="bg-[#0A0F1A] mt-4 p-4">
       <span className={styles.title}>Vesting Schedule</span>
       <div className={styles.vesting}>
         <div className={styles.vestingWrapper}>
           {vestingTopInf.map((vesting, i) => (
             <div key={i} className={styles.vestingItem}>
               <div className={styles.vestingNumber}>{i + 1}</div>
-              <span className={styles.vestingTopInfo}>{vesting.title}</span>
-              <span className={styles.vestingTopInfo}>{vesting.value}</span>
+              <div className="flex flex-col lg:flex-row gap-2 lg:gap-0">
+                <span
+                  className={styles.vestingTopInfo}
+                  style={{
+                    color: "#7F8EA3",
+                    fontSize: "14px",
+                  }}
+                >
+                  {vesting.title}
+                </span>
+                <span className={styles.vestingTopInfo}>{vesting.value}</span>
+              </div>
             </div>
           ))}
         </div>
         <div className={styles.vestingWrapper}>
           <div className={styles.vestingItem}>
-            <span className={styles.vestingBottomInfo}>Allocation</span>
-            <span className={styles.vestingBottomInfo}>
-              <CountUpComponent end={1000000} /> tokens
-            </span>
+            <div className="flex flex-col lg:flex-row">
+              <span
+                className={styles.vestingBottomInfo}
+                style={{
+                  color: "#7F8EA3",
+                  fontSize: "14px",
+                }}
+              >
+                Allocation
+              </span>
+              <span className={styles.vestingBottomInfo}>
+                <CountUpComponent end={1000000} /> tokens
+              </span>
+            </div>
           </div>
           <div className={styles.vestingItem}>
-            <span className={styles.vestingBottomInfo}>Token price</span>
-            <span className={styles.vestingBottomInfo}>
-              <CountUpComponent end={0.04} /> USD
-            </span>
+            <div className="flex flex-col lg:flex-row">
+              <span
+                className={styles.vestingBottomInfo}
+                style={{
+                  color: "#7F8EA3",
+                  fontSize: "14px",
+                }}
+              >
+                Token price
+              </span>
+              <span className={styles.vestingBottomInfo}>
+                <CountUpComponent end={0.04} /> USD
+              </span>
+            </div>
           </div>
         </div>
         <div className={styles.vestingButton}>
@@ -57,22 +88,36 @@ const InvestingComponent = () => {
         </div>
       </div>
       <div className={styles.graph}>
-        <div className={styles.leftGraphWrapper}>
-          <span className={styles.graphTitle}>Total Supply Weight</span>
-          <div className={styles.leftGraph}>
-            <div className={styles.CircleGraph}>
-              <ChartCircle />
+        <div
+          className={styles.chartsSwitch}
+          onClick={() => setChart(chart === "line" ? "circular" : "line")}
+        >
+          {chart === "line" ? (
+            <img src="/images/switch-line.svg" alt="switch" />
+          ) : (
+            <img src="/images/switch-circular.svg" alt="switch" />
+          )}
+        </div>
+        {chart === "circular" && (
+          <div className={styles.leftGraphWrapper}>
+            <span className={styles.graphTitle}>Total Supply Weight</span>
+            <div className={styles.leftGraph}>
+              <div className={styles.CircleGraph}>
+                <ChartCircle />
+              </div>
+              <span className={styles.graphPercent}>15%</span>
+              <span className={styles.graphText}>Supply</span>
             </div>
-            <span className={styles.graphPercent}>15%</span>
-            <span className={styles.graphText}>Supply</span>
           </div>
-        </div>
-        <div className={styles.chartWrapper}>
-          <span className={styles.graphTitle}>Vesting</span>
-          <ChartLine />
-        </div>
+        )}
+        {chart === "line" && (
+          <div className={styles.chartWrapper}>
+            <span className={styles.graphTitle}>Vesting</span>
+            <ChartLine customWidth={"214px"} customHeight="214px" />
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -170,7 +215,11 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
       <SeedRoundModalButton isModalOpen={isModal} setIsModalOpen={setIsModal} />
 
       <div className={styles.topCard}>
-        <img className={styles.topCardImg} src={ArkhamBg} alt="Arkham" />
+        <img
+          className={`${styles.topCardImg} hidden lg:block`}
+          src={ArkhamBg}
+          alt="Arkham"
+        />
         <div className={styles.topCardWrapper}>
           {pathname.includes("/investor") && afterInvest && (
             <div className={styles.checkboxWrapper}>
@@ -219,7 +268,18 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
                 roundTitle.includes("Private") ? styles.privateRound : ""
               }`}
             >
-              {roundTitle}
+              <div
+                style={{
+                  display: "flex",
+                }}
+              >
+                <p style={{ width: "70%" }}>{roundTitle}</p>
+                <img
+                  className={`${styles.topCardImg} block lg:hidden w-16 h-16`}
+                  src={ArkhamBg}
+                  alt="Arkham"
+                />
+              </div>
             </HeaderTitle>
             <HeaderTitle className={styles.topCardTitle}>(ARKM)</HeaderTitle>
           </h3>

@@ -74,12 +74,7 @@ export default function ProjectIntroduction() {
               </p>
             </div>
             <div
-              className={styles.textSection}
-              style={{
-                marginTop: "-0.5rem",
-                zIndex: "1000",
-                backgroundColor: "#030711",
-              }}
+              className={`${styles.textSection} mt-6 lg:-mt-[0.5rem] lg:z-[1000] lg:bg-[#030711]`}
             >
               <h2 className={styles.gradientHeader}>Overview</h2>
               <p>
@@ -97,15 +92,8 @@ export default function ProjectIntroduction() {
                 participants.
               </p>
             </div>
-            <div className={styles.teamSection}>
-              <h2
-                className={styles.gradientHeader}
-                style={{
-                  marginTop: "-0.5rem",
-                }}
-              >
-                Team
-              </h2>
+            <div className={`${styles.textSection} mt-6 lg:-mt-[0.5rem]`}>
+              <h2 className={styles.gradientHeader}>Team</h2>
               <div className={styles.teamContainer}>
                 {teamMembers.map((member, index) => (
                   <div key={index} className={styles.teamMemberCard}>

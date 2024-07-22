@@ -41,13 +41,7 @@ const SeedRoundModal: React.FC<ModalProps> = ({
 const SeedRoundDetails: React.FC = () => {
   return (
     <div className={styles.detailsContainer}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "2rem",
-        }}
-      >
+      <div className="flex flex-col gap-[0.5rem] lg:flex-row lg:space-between lg:gap-[2rem]">
         <div className={styles.detailItem}>
           <span className={styles.propNameText}>
             <img
@@ -71,14 +65,7 @@ const SeedRoundDetails: React.FC = () => {
           <span className={styles.igraSans}>500,000</span>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "2rem",
-          marginTop: "1.5rem",
-        }}
-      >
+      <div className="flex flex-col gap-[0.5rem] lg:flex-row lg:space-between lg:gap-[2rem] mt-[1.5rem]">
         <div className={styles.detailItem}>
           <span className={styles.propNameText}>
             <img src={NextClaim} alt="next claim" className={styles.propIcon} />

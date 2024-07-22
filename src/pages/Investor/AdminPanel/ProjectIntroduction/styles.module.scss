@@ -3,6 +3,10 @@
   width: 100%;
   height: 100%;
   position: relative;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
 }
 
 .rightPartContainer {
@@ -13,6 +17,11 @@
   height: 100%;
   padding: 3rem 6rem;
   position: relative;
+
+  @media screen and (max-width: 640px) {
+    padding: 1rem;
+    @apply pb-24;
+  }
 }
 
 .textSection {
@@ -23,6 +32,11 @@
   padding: 2rem;
   border: 1px solid #1d283a;
   border-radius: 0.5rem;
+
+  @media screen and (max-width: 640px) {
+    border: none;
+    background-color: #0a0f1a;
+  }
 }
 
 .teamSection {
@@ -45,12 +59,21 @@
   border: 1px solid #1d283a;
   border-radius: 0.5rem;
   width: 100%;
+
+  @media screen and (max-width: 640px) {
+    min-width: 74vw;
+    flex-grow: 1;
+  }
 }
 
 .teamContainer {
   margin-top: -2rem;
   display: flex;
   gap: 24px;
+
+  @media screen and (max-width: 640px) {
+    overflow: scroll;
+  }
 }
 
 .name,

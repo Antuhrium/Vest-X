@@ -3,7 +3,8 @@
       mt-[44px]
       ml-[120px]
       mr-auto
-      p-[48px]
+      p-[18px]
+      lg:p-[48px]
       flex
       flex-col
       w-full min-h-full
@@ -36,13 +37,19 @@
 
 .topCardTitle {
   @apply flex
-  gap-3 text-[30px] font-normal leading-[38px];
+  gap-3 text-[24px] lg:text-[30px] font-normal leading-[38px];
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
 }
 
 .topCardText {
   @apply text-[#C0C0C0]
-    text-[18px] leading-[24px]
+    text-[12px] lg:text-[18px] leading-[24px]
     font-normal
+    w-[90%]
+    lg:w-full
     max-w-[432px];
 
   font-family: "Inter", sans-serif;
@@ -107,7 +114,7 @@
 .vesting,
 .analitics {
   @apply flex flex-col gap-[44px]
-    py-[44px] pl-[48px] pr-[100px]
+    p-4 lg:py-[44px] lg:pl-[48px] lg:pr-[100px]
     text-white relative transition-all;
   border-radius: 4px;
   border: 1px solid var(--Gray-600, #1d283a);
@@ -116,11 +123,15 @@
     @apply transition-transform translate-x-2 translate-y-2;
   }
 }
+
+.vesting {
+  @apply mt-4 lg:mt-0;
+}
 .analitics {
   @apply gap-[24px];
 }
 .vestingWrapper {
-  @apply flex justify-between items-center;
+  @apply flex flex-col md:flex-row gap-4 lg:gap-0 justify-between lg:items-center;
 }
 
 .vestingItem,
@@ -128,8 +139,12 @@
   @apply flex gap-[8px] items-center;
 }
 
+.vestingItem {
+  @apply bg-[#101322] p-4 lg:p-0 w-full lg:w-auto lg:bg-none;
+}
+
 .vestingNumber {
-  @apply w-[28px] h-[28px] mr-[12px]
+  @apply w-[40px] h-[40px] lg:w-[28px] lg:h-[28px] mr-[12px]
       rounded-full bg-white
       flex items-center justify-center
       text-[20px] font-normal text-[#3F3F3F];
@@ -154,7 +169,7 @@
 }
 
 .graph {
-  @apply flex gap-2 text-white mt-[56px] z-10;
+  @apply flex gap-2 text-white mt-[56px] z-10 relative;
 }
 
 .leftGraphWrapper {
@@ -261,5 +276,17 @@ input[type="checkbox"]:checked {
   & + .checkmark {
     content: url("images/white-checkmark.svg");
     margin-bottom: 2px;
+  }
+}
+
+.chartsSwitch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .chartsSwitch {
+    display: none;
   }
 }

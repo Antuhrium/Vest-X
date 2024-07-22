@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import ArkhamTopBg from "/images/arkham-top-bg.png";
 import Menu from "../../../components/Menu";
@@ -31,6 +31,8 @@ import OKX from "/logos/okx.png";
 import KuCoin from "/logos/kucoin.png";
 import Gateio from "/logos/gateio.png";
 import CoinW from "/logos/coinw.png";
+import ArrowBack from "/images/arrow-back-chevron-white.svg";
+import ArrowBackDefault from "/images/arrow-back-chevron.svg";
 
 const topBakers = [
   {
@@ -148,6 +150,126 @@ const exchanges = [
   },
 ];
 
+const NormalSizedKeyFeaturesPage: React.FC = () => {
+  return (
+    <div className={`${styles.wrapper} hidden lg:flex`}>
+      <CurrentBackers topBackers={topBakers} generalBackers={generalBackers} />
+      <CentralizedExchanges exchanges={exchanges} />
+      <Roadmap />
+      <AdditionalTraction />
+    </div>
+  );
+};
+
+const PhoneSizedKeyFeaturesPage: React.FC = () => {
+  const [tab, setTab] = useState(0);
+  return (
+    <div
+      className={`${styles.wrapper} w-full min-h-screen text-white text-[18px] gap-3 py-1 px-3 pb-24 mt-6`}
+    >
+      {tab === 0 && (
+        <>
+          <div
+            className="bg-[#0A0F1A] w-full px-[32px] py-[20px] flex items-center"
+            onClick={() => setTab(1)}
+          >
+            Current Backers
+            <img
+              src={ArrowBack}
+              className="w-4 h-4 ml-auto rotate-180 text-white"
+              alt="arrow next"
+            />
+          </div>
+          <div
+            className="bg-[#0A0F1A] w-full px-[32px] py-[20px] flex items-center"
+            onClick={() => setTab(2)}
+          >
+            Centralized Exchanges
+            <img
+              src={ArrowBack}
+              className="w-4 h-4 ml-auto rotate-180 text-white"
+              alt="arrow next"
+            />
+          </div>
+          <div
+            className="bg-[#0A0F1A] w-full px-[32px] py-[20px] flex items-center"
+            onClick={() => setTab(3)}
+          >
+            Roadmap
+            <img
+              src={ArrowBack}
+              className="w-4 h-4 ml-auto rotate-180 text-white"
+              alt="arrow next"
+            />
+          </div>
+          <div
+            className="bg-[#0A0F1A] w-full px-[32px] py-[20px] flex items-center"
+            onClick={() => setTab(4)}
+          >
+            Additional Traction
+            <img
+              src={ArrowBack}
+              className="w-4 h-4 ml-auto rotate-180 text-white"
+              alt="arrow next"
+            />
+          </div>
+        </>
+      )}
+      {tab === 1 && (
+        <>
+          <span
+            className="flex gap-1 items-center text-[#7F8EA3]"
+            onClick={() => setTab(0)}
+          >
+            <img src={ArrowBack} className="w-4 h-4 mr-2" alt="arrow back" />
+            Back Key Features and Highlights
+          </span>
+          <CurrentBackers
+            topBackers={topBakers}
+            generalBackers={generalBackers}
+          />
+        </>
+      )}
+      {tab === 2 && (
+        <>
+          <span
+            className="flex gap-1 items-center text-[#7F8EA3]"
+            onClick={() => setTab(0)}
+          >
+            <img src={ArrowBack} className="w-4 h-4 mr-2" alt="arrow back" />
+            Back Key Features and Highlights
+          </span>
+          <CentralizedExchanges exchanges={exchanges} />
+        </>
+      )}
+      {tab === 3 && (
+        <>
+          <span
+            className="flex gap-1 items-center text-[#7F8EA3]"
+            onClick={() => setTab(0)}
+          >
+            <img src={ArrowBack} className="w-4 h-4 mr-2" alt="arrow back" />
+            Back Key Features and Highlights
+          </span>
+          <Roadmap />
+        </>
+      )}
+      {tab === 4 && (
+        <>
+          <span
+            className="flex gap-1 items-center text-[#7F8EA3]"
+            onClick={() => setTab(0)}
+          >
+            <img src={ArrowBack} className="w-4 h-4 mr-2" alt="arrow back" />
+            Back Key Features and Highlights
+          </span>
+          <AdditionalTraction />
+        </>
+      )}
+    </div>
+  );
+};
+
 const KeyFeaturesPage: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const adminMenuRef = useRef<HTMLDivElement>(null);
@@ -192,15 +314,10 @@ const KeyFeaturesPage: React.FC = () => {
               left: "0",
             }}
           />
-          <div className={styles.wrapper}>
-            <CurrentBackers
-              topBackers={topBakers}
-              generalBackers={generalBackers}
-            />
-            <CentralizedExchanges exchanges={exchanges} />
-            <Roadmap />
-            <AdditionalTraction />
-          </div>
+          <>
+            <NormalSizedKeyFeaturesPage />
+            <PhoneSizedKeyFeaturesPage />
+          </>
         </div>
       </div>
       <img className={styles.rightBg} src={RightBg} alt="" />
