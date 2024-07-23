@@ -1,120 +1,123 @@
 .container {
-  display: flex;
-  width: 100%;
-  background-color: #030711;
+	display: flex;
+	width: 100%;
+	background-color: #030711;
 
-  @media screen and (max-width: 1280px) {
-    > div {
-      flex-direction: column;
-    }
-  }
+	@media screen and (max-width: 1280px) {
+		> div {
+			flex-direction: column;
+		}
+	}
 }
 
 .contentContainer {
-  padding: 3rem;
-  width: 100%;
-  display: flex;
-  margin-left: calc(435px + 140px);
-  // margin-left: 3rem;
-  // margin-top: 3rem;
-  flex-direction: column;
-  position: relative;
-  // background-color: #0a0f1a;
-  // z-index: 1000;
-  @media screen and (max-width: 1280px) {
-    padding: 2rem 1rem;
-    margin-left: 0px;
-    min-height: 83vh;
-    margin-top: 6rem;
-    height: 100%;
-    width: 100%;
-    > * {
-      width: 100% !important;
-    }
-  }
+	padding: 3rem;
+	width: 100%;
+	display: flex;
+	margin-left: calc(435px + 140px);
+	// margin-left: 3rem;
+	// margin-top: 3rem;
+	flex-direction: column;
+	position: relative;
+	// background-color: #0a0f1a;
+	// z-index: 1000;
+	@media screen and (max-width: 1280px) {
+		padding: 2rem 1rem;
+		margin-left: 0px;
+		min-height: 83vh;
+		margin-top: 6rem;
+		height: 100%;
+		width: 100%;
+		> * {
+			width: 100% !important;
+		}
+	}
 
-  @media screen and (max-width: 640px) {
-    margin-top: 4rem;
-    padding: 0;
-    padding-bottom: 2rem;
-  }
+	@media screen and (max-width: 640px) {
+		margin-top: 4rem;
+		padding: 0;
+		padding-bottom: 2rem;
+	}
 }
 
 .formButtons {
-  display: flex;
-  margin-top: 48px;
-  width: 100%;
-  z-index: 999;
-  position: relative;
+	display: flex;
+	margin-top: 48px;
+	width: 100%;
+	z-index: 999;
+	position: relative;
+	> button {
+		padding: 10px 20px;
+	}
 
-  @media screen and (max-width: 1280px) {
-    position: relative;
-    width: 100%;
-    padding: 32px 16px;
-    margin-top: auto;
+	@media screen and (max-width: 1280px) {
+		position: relative;
+		width: 100%;
+		padding: 32px 16px;
+		margin-top: auto;
 
-    button:first-of-type p,
-    button:last-of-type p {
-      display: none;
-    }
-  }
+		button:first-of-type p,
+		button:last-of-type p {
+			display: none;
+		}
+	}
 
-  @media screen and (max-width: 600px) {
-    button:nth-of-type(2) {
-      position: absolute;
-      bottom: 2rem;
-      margin-left: -1rem;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
+	@media screen and (max-width: 600px) {
+		button:nth-of-type(2) {
+			position: absolute;
+			bottom: 2rem;
+			margin-left: -1rem;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
 
-    button:first-of-type,
-    button:last-of-type {
-      margin-bottom: 3rem;
-    }
-  }
+		button:first-of-type,
+		button:last-of-type {
+			margin-bottom: 3rem;
+		}
+	}
 }
 
 .rightBg {
-  @apply absolute
+	@apply absolute
       bottom-0
       left-[50%];
 }
 
 @media screen and (max-width: 640px) {
-  .rightBg {
-    @apply left-0;
-  }
+	.rightBg {
+		@apply left-0;
+	}
 }
 
 @media screen and (max-width: 1280px) {
-  .rightBg {
-    @apply hidden;
-  }
+	.rightBg {
+		@apply hidden;
+	}
 }
 
 .stepListContainer {
-  padding-top: 30px;
-  background-color: #0a0f1a;
-  height: 100vh;
-  width: 435px;
-  position: fixed;
-  top: 0;
-  left: 140px;
+	padding-top: 30px;
+	background-color: #0a0f1a;
+	height: 100vh;
+	width: 435px;
+	position: fixed;
+	top: 0;
+	left: 140px;
 
-  @media screen and (max-width: 1280px) {
-    left: 0;
-    height: max-content;
-    width: 100%;
-    z-index: 10000;
-  }
+	@media screen and (max-width: 1280px) {
+		left: 0;
+		height: max-content;
+		width: 100%;
+		z-index: 10000;
+	}
 
-  @media screen and (max-width: 640px) {
-    left: 0;
-    width: 100%;
-    height: max-content;
-    padding-top: 0px;
-    z-index: 10000000;
-  }
+	@media screen and (max-width: 640px) {
+		left: 0;
+		width: 100%;
+		height: max-content;
+		padding-top: 0px;
+		z-index: 10000000;
+	}
 }

@@ -1,290 +1,291 @@
 .teamDetailsContainer {
-  width: 100%;
-  color: #fff;
-  background-color: #0a0f1a;
-  z-index: 1000;
-  padding: 2rem;
-  width: 100%;
-  @media screen and (max-width: 640px) {
-    padding: 24px;
-  }
+	width: 100%;
+	color: #fff;
+	background-color: #0a0f1a;
+	z-index: 1000;
+	padding: 2rem;
+	width: 100%;
+	@media screen and (max-width: 640px) {
+		padding: 24px;
+	}
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .addLinkButton {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 18px;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
 }
 
 .teamMember {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .formGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 22px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 22px;
 }
 
 .formGroupFull {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 22px;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 22px;
+	width: 100%;
 }
 
 label {
-  margin-bottom: 5px;
-  font-size: 14px;
+	margin-bottom: 5px;
+	font-size: 14px;
 }
 
 .input,
 .selectPicker,
 textarea {
-  background: #111827 !important;
-  border: 1px solid #1b2531 !important;
-  border-radius: 4px;
-  color: #fff;
-  padding: 10px;
+	background: #111827 !important;
+	border: 1px solid #1b2531 !important;
+	border-radius: 4px;
+	color: #fff;
+	padding: 10px;
 }
 
 textarea {
-  height: 100px;
-  resize: none;
+	height: 100px;
+	resize: none;
 }
 
 .deleteButtonContainer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
 
-  @media screen and (max-width: 640px) {
-    justify-content: center;
-  }
+	@media screen and (max-width: 640px) {
+		justify-content: center;
+	}
 }
 
 .deleteButton {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  background: none;
-  border: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background: none;
+	border: none;
 }
 
 .divider {
-  border: 1px solid #0f62fe;
-  opacity: 0.5;
-  margin-top: 20px;
-  margin-bottom: 20px;
+	border: 1px solid #0f62fe;
+	opacity: 0.5;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .flexRow {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 
-  @media screen and (max-width: 640px) {
-    display: block;
-  }
+	@media screen and (max-width: 640px) {
+		display: block;
+	}
 }
 
 .flexRow > * {
-  width: 100%;
+	width: 100%;
 }
 
 .requiredStar {
-  color: #0f62fe;
+	color: #0f62fe;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #676e76;
+	color: #676e76;
 }
 
 .gradientHeader {
-  background: var(
-    --Primary-Gradient-White-to-black,
-    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
-  );
-  background-clip: text;
-  font-weight: 600;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 24px;
-  @apply font-igraSans;
+	background: var(
+		--Primary-Gradient-White-to-black,
+		linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
+	);
+	background-clip: text;
+	font-weight: 600;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 24px;
+	@apply font-igraSans;
+	margin-bottom: 20px;
 }
 
 .uploadContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #111827;
-  border: 1px solid #1b2531;
-  border-radius: 4px;
-  padding: 20px;
-  cursor: pointer;
-  width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #111827;
+	border: 1px solid #1b2531;
+	border-radius: 4px;
+	padding: 20px;
+	cursor: pointer;
+	width: 30%;
 
-  @media screen and (max-width: 640px) {
-    width: 100%;
-  }
+	@media screen and (max-width: 640px) {
+		width: 100%;
+	}
 }
 
 .uploadBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-  color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	justify-content: center;
+	color: #fff;
 }
 
 .dropdownContainer {
-  position: relative;
-  width: 100%;
-  margin-bottom: 0.5rem;
+	position: relative;
+	width: 100%;
+	margin-bottom: 0.5rem;
 }
 
 .label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 16px;
-  color: #fff;
+	display: block;
+	margin-bottom: 8px;
+	font-size: 16px;
+	color: #fff;
 }
 
 .dropdown {
-  position: relative;
-  width: 100%;
-  background: #1c1c1e;
-  border: 1px solid #1b2531;
-  border-radius: 4px;
-  cursor: pointer;
+	position: relative;
+	width: 100%;
+	background: #1c1c1e;
+	border: 1px solid #1b2531;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .selected {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: 16px;
-  color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
 }
 
 .arrow {
-  margin-left: auto;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
+	margin-left: auto;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 3px;
 }
 
 .arrow.up {
-  transform: rotate(-135deg);
+	transform: rotate(-135deg);
 }
 
 .arrow.down {
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .dropdownList {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-height: 200px;
-  overflow-y: auto;
-  background: #1c1c1e;
-  border: 1px solid #1b2531;
-  border-radius: 4px;
-  z-index: 10;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-height: 200px;
+	overflow-y: auto;
+	background: #1c1c1e;
+	border: 1px solid #1b2531;
+	border-radius: 4px;
+	z-index: 10;
 }
 
 .searchInput {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid #333;
-  background: #1c1c1e;
-  color: #fff;
-  font-size: 16px;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid #333;
+	background: #1c1c1e;
+	color: #fff;
+	font-size: 16px;
 }
 
 .dropdownItem {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
 }
 
 .dropdownItem:hover {
-  background: #333;
+	background: #333;
 }
 
 .blueText {
-  color: #0f62fe;
+	color: #0f62fe;
 }
 
 input,
 textarea {
-  background-color: #111827;
+	background-color: #111827;
 }
 
 .blueCircle {
-  background: #0f62fe;
-  border-radius: 100%;
-  width: 24px;
-  height: 24px;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  justify-content: center;
+	background: #0f62fe;
+	border-radius: 100%;
+	width: 24px;
+	height: 24px;
+	font-size: 22px;
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	justify-content: center;
 }
 
 .deleteCircle {
-  background: #cd3636;
-  border-radius: 100%;
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  justify-content: center;
-  color: white;
+	background: #cd3636;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	justify-content: center;
+	color: white;
 }
 
 .formGroup > label,
 .formGroupFull > label {
-  margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 
 .grayText {
-  color: #7f8ea3;
+	color: #7f8ea3;
 }
 
 .selectedElementText {
-  font-size: 18px;
-  margin-bottom: 1rem;
-  background: var(
-    --Primary-Gradient-White-to-black,
-    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	font-size: 18px;
+	margin-bottom: 1rem;
+	background: var(
+		--Primary-Gradient-White-to-black,
+		linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 79%)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

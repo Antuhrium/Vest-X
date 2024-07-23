@@ -1,5 +1,5 @@
 .container {
-  @apply relative
+	@apply relative
       mt-[44px]
       ml-[120px]
       mr-auto
@@ -10,283 +10,288 @@
       w-full min-h-full
       text-white;
 
-  margin-left: calc(435px + 140px + 120px);
+	margin-left: calc(435px + 140px + 120px);
 }
 
 .topCard {
-  @apply flex
+	@apply flex
       items-center
       gap-[52px]
       
       py-[22px] pl-[20px] pr-[10px];
 
-  border-radius: 4px;
-  border: 1px solid var(--Gray-600, #1d283a);
+	border-radius: 4px;
+	border: 1px solid var(--Gray-600, #1d283a);
 }
 
 .topCardImg {
-  max-width: 218px;
-  max-height: 218px;
+	max-width: 218px;
+	max-height: 218px;
 
-  border-radius: 4px;
+	border-radius: 4px;
 }
 
 .topCardWrapper {
-  @apply flex flex-col gap-4;
+	@apply flex flex-col gap-4;
 }
 
 .topCardTitle {
-  @apply flex
+	@apply flex
   gap-3 text-[24px] lg:text-[30px] font-normal leading-[38px];
 
-  @media screen and (max-width: 640px) {
-    flex-direction: column;
-  }
+	@media screen and (max-width: 640px) {
+		flex-direction: column;
+	}
 }
 
 .topCardText {
-  @apply text-[#C0C0C0]
+	@apply text-[#C0C0C0]
     text-[12px] lg:text-[18px] leading-[24px]
     font-normal
     w-[90%]
     lg:w-full
     max-w-[432px];
 
-  font-family: "Inter", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .buttonContainer {
-  display: flex;
-  gap: 24px;
-  align-items: center;
+	display: flex;
+	gap: 24px;
+	align-items: center;
 }
 
 .investButton,
 .claimButton {
-  margin-top: 16px;
-  padding: 14px 24px;
-  width: fit-content;
+	margin-top: 16px;
+	padding: 14px 24px;
+	width: fit-content;
 
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 24px;
+	font-family: "Inter", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
 
-  border-radius: 4px;
-  background: #0f62fe;
-  transition: 0.2s;
+	border-radius: 4px;
+	background: #0f62fe;
+	transition: 0.2s;
 
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 1;
-  }
+	&:hover {
+		opacity: 0.8;
+	}
+	&:active {
+		opacity: 1;
+	}
+
+	@media screen and (max-width: 640px) {
+		padding: 8px;
+	}
 }
 
 .investButton {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .claimButton {
-  background: #101322;
+	background: #101322;
 }
 
 @media screen and (max-width: 1600px) {
-  .privateRound {
-    width: 60%;
-  }
+	.privateRound {
+		width: 100%;
+	}
 }
 
 .title {
-  @apply w-max
+	@apply w-max
     font-igraSans text-[24px]
     font-normal mt-[56px] mb-[20px];
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.3)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0.3)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .vesting,
 .analitics {
-  @apply flex flex-col gap-[44px]
-    p-4 lg:py-[44px] lg:pl-[48px] lg:pr-[100px]
+	@apply flex flex-col gap-[44px]
+    p-4 lg:py-[44px] lg:pl-[24px] lg:pr-[100px]
     text-white relative transition-all;
-  border-radius: 4px;
-  border: 1px solid var(--Gray-600, #1d283a);
+	border-radius: 4px;
+	border: 1px solid var(--Gray-600, #1d283a);
 
-  &:hover svg {
-    @apply transition-transform translate-x-2 translate-y-2;
-  }
+	&:hover svg {
+		@apply transition-transform translate-x-2 translate-y-2;
+	}
 }
 
 .vesting {
-  @apply mt-4 lg:mt-0;
+	@apply mt-4 lg:mt-0;
 }
 .analitics {
-  @apply gap-[24px];
+	@apply gap-[24px];
 }
 .vestingWrapper {
-  @apply flex flex-col md:flex-row gap-4 lg:gap-0 justify-between lg:items-center;
+	@apply flex flex-col md:flex-row gap-4 lg:gap-0 justify-between lg:items-center;
 }
 
 .vestingItem,
 .analiticsItem {
-  @apply flex gap-[8px] items-center;
+	@apply flex gap-[8px] items-center;
 }
 
 .vestingItem {
-  @apply bg-[#101322] p-4 lg:p-0 w-full lg:w-auto lg:bg-none;
+	@apply bg-[#101322] p-4 lg:p-0 w-full lg:w-auto lg:bg-[transparent];
 }
 
 .vestingNumber {
-  @apply w-[40px] h-[40px] lg:w-[28px] lg:h-[28px] mr-[12px]
+	@apply w-[40px] h-[40px] lg:w-[28px] lg:h-[28px] mr-[4px] ml-1
       rounded-full bg-white
       flex items-center justify-center
       text-[20px] font-normal text-[#3F3F3F];
-  font-family: "Inter", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .vestingTopInfo,
 .vestingBottomInfo,
 .analiticsInfo {
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
+	text-wrap: nowrap;
+	font-family: "Inter", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 .vestingBottomInfo {
-  @apply text-[#E1E7EF];
+	@apply text-[#E1E7EF] mr-2;
 }
 
 .vestingButton {
-  @apply absolute bottom-10 right-10;
+	@apply absolute bottom-10 right-10;
 }
 
 .graph {
-  @apply flex gap-2 text-white mt-[56px] z-10 relative;
+	@apply flex gap-2 text-white mt-[56px] z-10 relative;
 }
 
 .leftGraphWrapper {
-  @apply max-w-[326px]
+	@apply max-w-[326px]
       w-full h-full
       p-[30px]
       flex flex-col
       items-center justify-center
       gap-[40px];
-  border-radius: 4px;
-  border: 1px solid #1d283a;
-  background: #030711;
+	border-radius: 4px;
+	border: 1px solid #1d283a;
+	background: #030711;
 }
 
 .graphTitle {
-  @apply text-[20px] font-normal leading-[24px] text-nowrap;
-  font-family: "Inter", sans-serif;
+	@apply text-[20px] font-normal leading-[24px] text-nowrap;
+	font-family: "Inter", sans-serif;
 }
 
 .noActive {
-  @apply text-[#676E76];
+	@apply text-[#676E76];
 }
 
 .founderGraphTitle {
-  @apply flex items-center justify-center gap-[14px];
+	@apply flex items-center justify-center gap-[14px];
 }
 
 .leftGraph {
-  @apply relative 
+	@apply relative 
     flex flex-col
     justify-center items-center
     w-[214px] h-[214px];
 }
 
 .CircleGraph {
-  @apply absolute top-0
+	@apply absolute top-0
     left-0 w-[214px] h-[214px];
 }
 
 .graphPercent {
-  @apply font-igraSans text-[48px] font-normal leading-[60px];
+	@apply font-igraSans text-[48px] font-normal leading-[60px];
 }
 
 .graphText {
-  @apply text-[20px] leading-[24px] text-[#7F8EA3];
-  font-family: "Inter", sans-serif;
+	@apply text-[20px] leading-[24px] text-[#7F8EA3];
+	font-family: "Inter", sans-serif;
 }
 
 .chartWrapper {
-  @apply flex flex-col
+	@apply flex flex-col
       gap-[24px]
       px-[26px]
       pt-[32px] pl-[20px]
       w-full h-full;
 
-  border-radius: 4px;
-  border: 1px solid #1d283a;
-  background: #030711;
+	border-radius: 4px;
+	border: 1px solid #1d283a;
+	background: #030711;
 }
 
 .checkboxWrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
+	display: flex;
+	align-items: flex-start;
+	gap: 24px;
 }
 
 .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  color: #ffffff;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	color: #ffffff;
 
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
+	font-family: "Inter", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 input[type="checkbox"] {
-  display: none;
+	display: none;
 }
 
 .checkboxCheckmark {
-  width: 24px;
-  height: 24px;
+	width: 24px;
+	height: 24px;
 
-  border: 1px solid #1d283a;
-  border-radius: 50%;
-  position: relative;
+	border: 1px solid #1d283a;
+	border-radius: 50%;
+	position: relative;
 }
 
 .checkboxCheckmark {
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 input[type="checkbox"]:checked {
-  & + .checkboxCheckmark {
-    background-color: #007bff;
-  }
-  & + .checkmark {
-    content: url("images/white-checkmark.svg");
-    margin-bottom: 2px;
-  }
+	& + .checkboxCheckmark {
+		background-color: #007bff;
+	}
+	& + .checkmark {
+		content: url("images/white-checkmark.svg");
+		margin-bottom: 2px;
+	}
 }
 
 .chartsSwitch {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
 }
 
 @media screen and (min-width: 1280px) {
-  .chartsSwitch {
-    display: none;
-  }
+	.chartsSwitch {
+		display: none;
+	}
 }

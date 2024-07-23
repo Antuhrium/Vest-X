@@ -1,64 +1,111 @@
 import React from "react";
 import styles from "./style.module.scss";
+import Pagination from "../Pagination/Pagination";
 
 interface Backer {
-  name: string;
-  amount: number;
-  avatar: string;
+	name: string;
+	amount: number;
+	avatar: string;
 }
 
 interface CurrentBackersProps {
-  topBackers: Backer[];
-  generalBackers: Backer[];
+	topBackers: Backer[];
+	generalBackers: Backer[];
 }
 
-const CurrentBackers: React.FC<CurrentBackersProps> = ({
-  topBackers,
-  generalBackers,
+const MobileVersion: React.FC<CurrentBackersProps> = ({
+	topBackers,
+	generalBackers,
 }) => {
-  return (
-    <div className={styles.currentBackers}>
-      <h2 className={styles.title}>Current Backers</h2>
-      <div className={styles.topBackersGrid}>
-        {topBackers.map((backer, index) => (
-          <div key={`top-${index}`} className={styles.topBacker}>
-            <div className={styles.avatarContainer}>
-              <img
-                src={backer.avatar}
-                alt={backer.name}
-                className={styles.avatar}
-              />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.name}>{backer.name}</div>
-              <div
-                className={styles.amount}
-              >{`${backer.amount.toLocaleString()} USD`}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className={styles.generalBackersGrid}>
-        {generalBackers.map((backer, index) => (
-          <div key={`general-${index}`} className={styles.backer}>
-            <div className={styles.avatarContainer}>
-              <img
-                src={backer.avatar}
-                alt={backer.name}
-                className={styles.avatar}
-              />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.name}>{backer.name}</div>
-              <div
-                className={styles.amount}
-              >{`${backer.amount.toLocaleString()} USD`}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+	const [page, setPage] = React.useState(1);
+	return (
+		<div className={`${styles.currentBackers} block lg:hidden`}>
+			<h2 className={styles.title}>Current Backers</h2>
+			<div className="flex flex-col ">
+				{[...topBackers, ...generalBackers].map((backer, index) => (
+					<div className="bg-[#101322] border-[1px] border-[#1D283A]">
+						<div
+							key={`general-${index}`}
+							className={`${styles.backer} justify-start p-2`}
+						>
+							<div className={styles.avatarContainer}>
+								<img
+									src={backer.avatar}
+									alt={backer.name}
+									className={styles.avatar}
+								/>
+							</div>
+							<div className={styles.info}>
+								<div className={styles.name}>{backer.name}</div>
+								<div
+									className={styles.amount}
+								>{`${backer.amount.toLocaleString()} USD`}</div>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+			<div className="mt-8 px-2">
+				<Pagination
+					totalPages={10}
+					currentPage={page}
+					onPageChange={() => setPage((prev) => prev + 1)}
+				/>
+			</div>
+		</div>
+	);
+};
+
+const CurrentBackers: React.FC<CurrentBackersProps> = ({
+	topBackers,
+	generalBackers,
+}) => {
+	return (
+		<>
+			<MobileVersion topBackers={topBackers} generalBackers={generalBackers} />
+			<div className={`${styles.currentBackers} hidden lg:block`}>
+				<h2 className={styles.title}>Current Backers</h2>
+				<div className={styles.topBackersGrid}>
+					{topBackers.map((backer, index) => (
+						<div key={`top-${index}`} className={styles.topBacker}>
+							<div className={styles.avatarContainer}>
+								<img
+									src={backer.avatar}
+									alt={backer.name}
+									className={styles.avatar}
+								/>
+							</div>
+							<div className={styles.info}>
+								<div className={styles.name}>{backer.name}</div>
+								<div
+									className={styles.amount}
+								>{`${backer.amount.toLocaleString()} USD`}</div>
+							</div>
+						</div>
+					))}
+				</div>
+				<div className={styles.generalBackersGrid}>
+					{generalBackers.map((backer, index) => (
+						<div key={`general-${index}`} className={styles.backer}>
+							<div className={styles.avatarContainer}>
+								<img
+									src={backer.avatar}
+									alt={backer.name}
+									className={styles.avatar}
+								/>
+							</div>
+							<div className={styles.info}>
+								<div className={styles.name}>{backer.name}</div>
+								<div
+									className={styles.amount}
+								>{`${backer.amount.toLocaleString()} USD`}</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</>
+	);
 };
 export default CurrentBackers;
 

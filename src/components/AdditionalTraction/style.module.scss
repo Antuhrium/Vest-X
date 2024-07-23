@@ -1,55 +1,80 @@
 .additionalTraction {
-  background-color: #030711;
-  color: #ffffff;
-  border: 1px solid #1d283a;
-  border-radius: 5px;
-  z-index: 1000;
+	background-color: #030711;
+	color: #ffffff;
+	border: 1px solid #1d283a;
+	border-radius: 5px;
+	z-index: 1000;
+
+	@media screen and (max-width: 640px) {
+		border: none;
+	}
 }
 
 .title {
-  font-family: "Igra Sans", sans-serif;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  padding: 20px 32px;
-  border: 1px solid var(--Gray-600, #1d283a);
-  border-bottom: none;
-  margin-bottom: 0 !important;
-  background: var(
-    --Primary-Gradient-White-to-black,
-    linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0.3) 60%)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @apply font-igraSans;
-  border-bottom: 1px solid #1d283a;
+	font-family: "Igra Sans", sans-serif;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	padding: 20px 32px;
+	border: 1px solid var(--Gray-600, #1d283a);
+	border-bottom: none;
+	margin-bottom: 0 !important;
+	background: var(
+		--Primary-Gradient-White-to-black,
+		linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0.3) 60%)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@apply font-igraSans;
+	border-bottom: 1px solid #1d283a;
+
+	@media screen and (max-width: 640px) {
+		font-size: 18px;
+		line-height: 24px;
+		border: none;
+		background: none;
+		background-clip: none;
+		-webkit-background-clip: none;
+		-webkit-text-fill-color: white;
+		color: white;
+		text-align: left;
+		padding-left: 0;
+	}
 }
 
 .tractionGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 30px 40px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	padding: 30px 40px;
+
+	@media screen and (max-width: 640px) {
+		padding: 0;
+	}
 }
 
 .tractionItem {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  border-radius: 0px 0px 4px 4px;
-  border: 1px solid #1d283a;
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border-radius: 0px 0px 4px 4px;
+	border: 1px solid #1d283a;
+
+	@media screen and (max-width: 640px) {
+		background-color: #101322;
+	}
 }
 
 .rocketIcon {
-  margin-right: 15px;
-  width: 24px;
-  height: 24px;
+	margin-right: 15px;
+	width: 24px;
+	height: 24px;
 }
 
 .tractionDescription {
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  color: #fff;
+	font-family: Inter, sans-serif;
+	font-size: 16px;
+	color: #fff;
 }

@@ -1,79 +1,86 @@
 .paginationContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // background-color: #1a1a1a;
-  // padding: 8px 16px;
-  border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	// background-color: #1a1a1a;
+	// padding: 8px 16px;
+	border-radius: 8px;
 
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  @media screen and (max-width: 768px) {
-    justify-content: center;
-  }
+	font-family: Inter;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	@media screen and (max-width: 768px) {
+		justify-content: center;
+	}
 }
 
 .pagination {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 
-  .paginationItem, .nextButton, .prevButton {
-    color: #fff;
-    border: #1D283A;
-    padding: 8px 12px;
-    // margin: 0 5px;
-    cursor: pointer;
-    border-radius: 8px;
-    min-width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #030711;
+	.paginationItem,
+	.nextButton,
+	.prevButton {
+		color: #fff;
+		border: #1d283a;
+		padding: 8px 12px;
+		// margin: 0 5px;
+		cursor: pointer;
+		border-radius: 8px;
+		min-width: 56px;
+		height: 56px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #030711;
 
-    &:hover, &.active {
-      background-color: #1D283A;
-    }
-  }
+		&:hover,
+		&.active {
+			background-color: #1d283a;
+		}
 
-  .paginationEllipsis {
-    color: #fff;
-    padding: 0 5px;
-  }
+		@media screen and (max-width: 640px) {
+			padding: 8px;
+		}
+	}
 
-  .nextButton {
-    margin-left: 8px;
-  }
+	.paginationEllipsis {
+		color: #fff;
+		padding: 0 5px;
+	}
 
-  @media screen and (min-width: 768px) {
-    .prevButton {
-      display: none;
-    }
-  }
+	.nextButton {
+		margin-left: 8px;
+	}
+
+	@media screen and (min-width: 768px) {
+		.prevButton {
+			display: none;
+		}
+	}
 }
 
 .showItems {
-  display: flex;
-  align-items: center;
-  background-color: #030711;
-  color: #fff;
-  padding: 16px;
-  min-width: 100px;
-  border-radius: 8px;
-  border: #1D283A;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	background-color: #030711;
+	color: #fff;
+	padding: 16px;
+	min-width: 100px;
+	border-radius: 8px;
+	border: #1d283a;
+	cursor: pointer;
 
-  .itemsNumber {
-    margin-left: 10px
-  }
-  .arrowDown {
-    margin-left: 10px;
-  }
+	.itemsNumber {
+		margin-left: 10px;
+	}
+	.arrowDown {
+		margin-left: 10px;
+	}
 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 }
