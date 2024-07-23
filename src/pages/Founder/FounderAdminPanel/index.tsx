@@ -20,11 +20,9 @@ const FounderAdminPanel: React.FC = () => {
       }
     };
 
-    // Adjust height on mount and whenever the window is resized
     adjustMenuHeight();
     window.addEventListener("resize", adjustMenuHeight);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", adjustMenuHeight);
     };

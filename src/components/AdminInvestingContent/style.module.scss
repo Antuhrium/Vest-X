@@ -133,6 +133,10 @@
 }
 .analitics {
 	@apply gap-[24px];
+
+	@media screen and (max-width: 1020px) {
+		@apply pb-[71px] p-2 mt-8 border-none bg-[#0A0F1A];
+	}
 }
 .vestingWrapper {
 	@apply flex flex-col md:flex-row gap-4 lg:gap-0 justify-between lg:items-center;
@@ -141,6 +145,11 @@
 .vestingItem,
 .analiticsItem {
 	@apply flex gap-[8px] items-center;
+}
+@media screen and (max-width: 1020px) {
+	.analiticsItem {
+		@apply py-2 px-3 flex-col items-start bg-[#101322] rounded-sm;
+	}
 }
 
 .vestingItem {
@@ -165,12 +174,23 @@
 	line-height: 24px;
 }
 
+@media screen and (max-width: 1020px) {
+	.vestingTopInfo {
+		font-size: 14px;
+		color: #7F8EA3;
+	}
+}
+
 .vestingBottomInfo {
 	@apply text-[#E1E7EF] mr-2;
 }
 
 .vestingButton {
 	@apply absolute bottom-10 right-10;
+
+	@media screen and (max-width: 1020px) {
+		@apply bottom-4 right-2;
+	}
 }
 
 .graph {
@@ -228,7 +248,7 @@
       gap-[24px]
       px-[26px]
       pt-[32px] pl-[20px]
-      w-full h-full;
+      w-full min-h-full;
 
 	border-radius: 4px;
 	border: 1px solid #1d283a;

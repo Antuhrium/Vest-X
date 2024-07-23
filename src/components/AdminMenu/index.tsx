@@ -26,35 +26,32 @@ const founderLinks = [
 	"Investor database",
 ];
 
-const MobileAdminMenu = ({}) => {
+const MobileAdminMenu = ({ }) => {
 	const [tab, setTab] = useState(0);
 	useEffect(() => {
 		setTab(0);
 	}, []);
 	return (
-		<ul className="flex lg:hidden justify-center gap-4 text-[12px] text-[#676E76]">
+		<ul className="flex lg:hidden overflow-scroll sm:justify-center gap-4 text-[12px] text-[#676E76] no-scrollbar pl-[15px] pt-8">
 			<li
-				className={`border-b-2 px-[0.1rem] pb-1 ${
-					tab !== 1 ? "border-[#1D283A] " : "border-[#0F62FE]"
-				}`}
+				className={`border-b-2 px-[0.1rem] pb-1 text-nowrap ${tab !== 1 ? "border-[#1D283A]" : "border-[#0F62FE]"
+					}`}
 			>
 				<Link to={"/investor/admin/project-introduction"}>
 					Project Introduction
 				</Link>
 			</li>
 			<li
-				className={`border-b-2 px-[0.1rem] pb-1 ${
-					tab !== 2 ? "border-[#1D283A] " : "border-[#0F62FE]"
-				}`}
+				className={`border-b-2 px-[0.1rem] pb-1 text-nowrap ${tab !== 2 ? "border-[#1D283A] " : "border-[#0F62FE]"
+					}`}
 			>
 				<Link to={"/investor/admin/key-features-highlights"}>
 					Key Features and Highlights
 				</Link>
 			</li>
 			<li
-				className={`border-b-2 px-[0.1rem] pb-1 ${
-					tab !== 2 ? "border-[#1D283A] " : "border-[#0F62FE]"
-				}`}
+				className={`border-b-2 px-[0.1rem] pb-1 text-nowrap ${tab !== 2 ? "border-[#1D283A] " : "border-[#0F62FE]"
+					}`}
 			>
 				Investments
 			</li>
@@ -74,15 +71,18 @@ const AdminMenu = ({
 
 	if (pathname.includes("/founder")) {
 		return (
-			<div className={styles.leftWrapper}>
-				<div className={styles.rounds}>
-					{founderLinks.map((link) => (
-						<button key={link} className={`${styles.roundBtn}`}>
-							{link} <GrayArrow color="#7F8EA3" />
-						</button>
-					))}
+			<>
+				<MobileAdminMenu />
+				<div className={`${styles.leftWrapper} hidden lg:flex w-full xl:w-fit`} style={{ ...style }} ref={ref}>
+					<div className={styles.rounds}>
+						{founderLinks.map((link) => (
+							<button key={link} className={`${styles.roundBtn}`}>
+								{link} <GrayArrow color="#7F8EA3" />
+							</button>
+						))}
+					</div>
 				</div>
-			</div>
+			</>
 		);
 	}
 

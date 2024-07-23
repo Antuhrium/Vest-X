@@ -27,6 +27,12 @@
   padding: 32px;
 
   background: #101322;
+
+  @media screen and (max-width: 768px) {
+    left: 16px;
+    right: 16px;
+    transform: translate(0%, -50%);
+  }
 }
 
 .closeButton {
@@ -65,6 +71,12 @@
   line-height: 60px;
   letter-spacing: -0.96px;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+  }
 }
 
 .desc {
@@ -86,6 +98,12 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 

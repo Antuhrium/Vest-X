@@ -123,22 +123,25 @@ const InvestingComponent = () => {
 const FounderComponent = () => {
 	const [typeRoundGraph, setTypeRoundGraph] = useState<0 | 1>(0);
 
+	const [isCircleGraph, setIsCircleGraph] = useState(true);
+
 	return (
 		<>
-			<span className={styles.title}>Analytics</span>
+			<span className={`${styles.title} hidden lg:flex`}>Analytics</span>
 			<div className={styles.analitics}>
+				<span className={`${styles.title} lg:hidden my-0`}>Analytics</span>
 				<div className={styles.analiticsItem}>
 					<div className={styles.vestingTopInfo}>Number of investors:</div>
-					<span className={styles.vestingTopInfo}>234</span>
+					<span className={styles.analiticsInfo}>234</span>
 				</div>
 				<div className={styles.analiticsItem}>
-					<div className={styles.analiticsInfo}>Have vesting begun:</div>
+					<div className={styles.vestingTopInfo}>Have vesting begun:</div>
 					<span className={styles.analiticsInfo} style={{ color: "#29E185" }}>
 						Vesting open
 					</span>
 				</div>
 				<div className={styles.analiticsItem}>
-					<div className={styles.analiticsInfo}>Total amount raised:</div>
+					<div className={styles.vestingTopInfo}>Total amount raised:</div>
 					<span className={styles.analiticsInfo}>2,500,000 USD</span>
 				</div>
 
@@ -147,21 +150,26 @@ const FounderComponent = () => {
 				</div>
 			</div>
 			<div className={styles.graph}>
-				<div className={styles.leftGraphWrapper}>
+				<button className={`${styles.chartsSwitch} sm:hidden block`} onClick={() => setIsCircleGraph(!isCircleGraph)}>
+					{isCircleGraph ? (
+						<img src="/images/switch-line.svg" alt="switch" />
+					) : (
+						<img src="/images/switch-circular.svg" alt="switch" />
+					)}
+				</button>
+				<div className={`${styles.leftGraphWrapper} ${isCircleGraph ? "" : "hidden sm:flex"} min-w-full sm:min-w-0 pt-[80px] sm:pt-[30px]`}>
 					<span className={styles.founderGraphTitle}>
 						<div
 							onClick={() => setTypeRoundGraph(0)}
-							className={`${styles.graphTitle} ${
-								typeRoundGraph === 0 ? "" : styles.noActive
-							}`}
+							className={`${styles.graphTitle} ${typeRoundGraph === 0 ? "" : styles.noActive
+								}`}
 						>
 							Seed round
 						</div>
 						<div
 							onClick={() => setTypeRoundGraph(1)}
-							className={`${styles.graphTitle} ${
-								typeRoundGraph === 1 ? "" : styles.noActive
-							}`}
+							className={`${styles.graphTitle} ${typeRoundGraph === 1 ? "" : styles.noActive
+								}`}
 						>
 							Private round
 						</div>
@@ -183,7 +191,7 @@ const FounderComponent = () => {
 						)}
 					</div>
 				</div>
-				<div className={styles.chartWrapper}>
+				<div className={`${styles.chartWrapper} ${isCircleGraph ? "hidden sm:flex" : ""} min-h-[390px] sm:min-h-0 pt-[80px] sm:pt-[30px]`}>
 					<span className={styles.graphTitle}>Vesting</span>
 					<ChartLine />
 				</div>
@@ -263,9 +271,8 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
 
 					<h3 className={styles.topCardTitle}>
 						<HeaderTitle
-							className={`${styles.topCardTitle} ${
-								roundTitle.includes("Private") ? styles.privateRound : ""
-							}`}
+							className={`${styles.topCardTitle} ${roundTitle.includes("Private") ? styles.privateRound : ""
+								}`}
 						>
 							<div
 								style={{
@@ -274,7 +281,7 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
 							>
 								<p style={{ width: "70%" }}>{roundTitle}</p>
 								<img
-									className={`${styles.topCardImg} block lg:hidden w-16 h-16 ml-auto`}
+									className={`${styles.topCardImg} block lg:hidden w-16 h-16`}
 									src={ArkhamBg}
 									alt="Arkham"
 								/>

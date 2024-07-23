@@ -86,8 +86,8 @@ const Menu: React.FC<CustomStyles> = ({
           </Link>
         ))}
         <Link to={""} className={styles.mobileLink}>
-          <img src={Group} alt="Group" />
-          <span>Group</span>
+          <img src={Group} alt="Profile" />
+          <span>Profile</span>
         </Link>
       </aside>
       <aside className={styles.menu} style={{ ...menuStyle }}>
