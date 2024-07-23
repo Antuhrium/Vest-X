@@ -24,6 +24,68 @@ const vestingTopInf = [
 	},
 ];
 
+const NormalGraph = () => {
+	return (
+		<div className="hidden lg:flex w-full">
+			<div className={styles.leftGraphWrapper}>
+				<span className={styles.graphTitle}>Total Supply Weight</span>
+				<div className={styles.leftGraph}>
+					<div className={styles.CircleGraph}>
+						<ChartCircle />
+					</div>
+					<span className={styles.graphPercent}>15%</span>
+					<span className={styles.graphText}>Supply</span>
+				</div>
+			</div>
+			<div className={styles.chartWrapper}>
+				<span className={styles.graphTitle}>Vesting</span>
+				<ChartLine />
+			</div>
+		</div>
+	);
+};
+
+const MobileGraph = ({
+	chart,
+	setChart,
+}: {
+	chart: "line" | "circular";
+	setChart: React.Dispatch<React.SetStateAction<"line" | "circular">>;
+}) => {
+	return (
+		<div className="block lg:hidden h-[403px] w-full pt-4">
+			<div
+				className={`${styles.chartsSwitch} `}
+				onClick={() => setChart(chart === "line" ? "circular" : "line")}
+			>
+				{chart === "line" ? (
+					<img src="/images/switch-line.svg" alt="switch" />
+				) : (
+					<img src="/images/switch-circular.svg" alt="switch" />
+				)}
+			</div>
+			{chart === "circular" && (
+				<div className={styles.leftGraphWrapper}>
+					<span className={styles.graphTitle}>Total Supply Weight</span>
+					<div className={styles.leftGraph}>
+						<div className={styles.CircleGraph}>
+							<ChartCircle />
+						</div>
+						<span className={styles.graphPercent}>15%</span>
+						<span className={styles.graphText}>Supply</span>
+					</div>
+				</div>
+			)}
+			{chart === "line" && (
+				<div className={styles.chartWrapper}>
+					<span className={styles.graphTitle}>Vesting</span>
+					<ChartLine />
+				</div>
+			)}
+		</div>
+	);
+};
+
 const InvestingComponent = () => {
 	const [chart, setChart] = useState<"line" | "circular">("line");
 	return (
@@ -36,7 +98,7 @@ const InvestingComponent = () => {
 							<div className={styles.vestingNumber}>{i + 1}</div>
 							<div className="flex flex-col lg:flex-row gap-2 lg:gap-2">
 								<span
-									className={`${styles.vestingTopInfo} bg-[#7F8EA3] lg:bg-[transparent]`}
+									className={`${styles.vestingTopInfo}`}
 									style={{
 										fontSize: "14px",
 									}}
@@ -87,34 +149,8 @@ const InvestingComponent = () => {
 				</div>
 			</div>
 			<div className={styles.graph}>
-				<div
-					className={styles.chartsSwitch}
-					onClick={() => setChart(chart === "line" ? "circular" : "line")}
-				>
-					{chart === "line" ? (
-						<img src="/images/switch-line.svg" alt="switch" />
-					) : (
-						<img src="/images/switch-circular.svg" alt="switch" />
-					)}
-				</div>
-				{chart === "circular" && (
-					<div className={styles.leftGraphWrapper}>
-						<span className={styles.graphTitle}>Total Supply Weight</span>
-						<div className={styles.leftGraph}>
-							<div className={styles.CircleGraph}>
-								<ChartCircle />
-							</div>
-							<span className={styles.graphPercent}>15%</span>
-							<span className={styles.graphText}>Supply</span>
-						</div>
-					</div>
-				)}
-				{chart === "line" && (
-					<div className={styles.chartWrapper}>
-						<span className={styles.graphTitle}>Vesting</span>
-						<ChartLine customWidth={"214px"} customHeight="214px" />
-					</div>
-				)}
+				<MobileGraph chart={chart} setChart={setChart} />
+				<NormalGraph />
 			</div>
 		</div>
 	);

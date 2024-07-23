@@ -2,11 +2,15 @@
 	left: 140px;
 	@apply min-w-[555px]
      w-fit
-    flex flex-col
-    gap-[24px]
-    bg-[#0A0F1A]
-    pb-[166px]
-    pt-[44px] px-[38px];
+		flex flex-col
+		gap-[24px]
+		bg-[#0A0F1A]
+		pb-[166px]
+		pt-[44px] px-[38px];
+
+	@media screen and (max-width: 1440px) {
+		@apply min-w-max;
+	}
 }
 
 .leftCard {
@@ -23,6 +27,10 @@
 	border-radius: 4px;
 	border: 1px solid #1d283a;
 	background: #0a0f1a;
+
+	@media screen and (max-width: 1440px) {
+		@apply w-[380px];
+	}
 
 	&:hover,
 	&:active,

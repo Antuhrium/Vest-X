@@ -36,7 +36,7 @@
 
 	@media screen and (max-width: 640px) {
 		top: -18px;
-		right: -6px;
+		right: 0px;
 	}
 }
 
@@ -93,6 +93,10 @@
 	font-weight: 400;
 	line-height: 44px; /* 122.222% */
 	letter-spacing: 0.72px;
+
+	@media screen and (max-width: 640px) {
+		font-size: 24px;
+	}
 }
 
 .collapsedSection {
@@ -115,6 +119,10 @@
 	line-height: 44px; /* 122.222% */
 	letter-spacing: -0.72px;
 	@apply font-igraSans;
+
+	@media screen and (max-width: 640px) {
+		font-size: 24px;
+	}
 }
 
 .propNameText {
@@ -155,7 +163,7 @@
 	border: 0.75px solid rgba(255, 255, 255, 0.1);
 
 	@media screen and (max-width: 768px) {
-		padding: 1rem;
+		padding: 1.5rem;
 		margin-top: auto;
 		margin-bottom: auto;
 	}
