@@ -113,6 +113,11 @@ const data = [
 const FounderInvestors: React.FC = () => {
   const [investors, setInvestors] = useState<number[]>([]);
   const [pages, setPages] = useState<number>(1);
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
+
+  const [mobileStatusRadio, setMobileStatusRadio] = useState<string>("")
+  const [mobileDateRadio, setMobileDateRadio] = useState<string>("")
+
 
   return (
     <div className={styles.container}>
@@ -121,18 +126,146 @@ const FounderInvestors: React.FC = () => {
           height: "100vh",
         }}
       />
-      <Filter
-        filters={filters}
-        style={{ height: "100vh", overflowY: "hidden" }}
-      />
+      <div className="hidden xl:flex">
+        <Filter
+          filters={filters}
+          style={{ height: "100vh", overflowY: "hidden" }}
+        />
+      </div>
+
+      {isFilterOpen && (
+        <>
+          <div className={styles.mobileFilterBg} onClick={() => setIsFilterOpen(false)} />
+          <div className={styles.mobileFilter}>
+            <span className={styles.mobileFilterTitle}>Sort and Filter</span>
+            <div className={styles.mobileFilterWrapper}>
+              <div className={styles.mobileFilterItem}>
+                <div className={styles.mobileFilterTop}>
+                  <span>Show:</span>
+                  <span className={styles.mobileFilterArrow}>
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.mobileFilterContent}>
+                  All columns
+                </div>
+              </div>
+              <div className={styles.mobileFilterItem}>
+                <div className={styles.mobileFilterTop}>
+                  <span>Grouped by:</span>
+                  <span className={styles.mobileFilterArrow}>
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.mobileFilterContent}>
+                  All columns
+                </div>
+              </div>
+              <div className={styles.mobileFilterItem}>
+                <div className={styles.mobileFilterTop}>
+                  <span>Round</span>
+                  <span className={styles.mobileFilterArrow}>
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.mobileFilterContent}>
+                  <button className={styles.mobileFilterRoundButton}>Private</button>
+                  <button className={`${styles.mobileFilterRoundButton} ml-3`}>Seed</button>
+                </div>
+              </div>
+              <div className={styles.mobileFilterItem}>
+                <div className={styles.mobileFilterTop}>
+                  <span>Status</span>
+                  <span className={styles.mobileFilterArrow}>
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.mobileFilterContent}>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Any" ? "" : "Any")}>
+                    <label>Any</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileStatusRadio === "Any" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Online" ? "" : "Online")}>
+                    <label>Online</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileStatusRadio === "Online" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Offline" ? "" : "Offline")}>
+                    <label>Offline</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileStatusRadio === "Offline" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.mobileFilterItem}>
+                <div className={styles.mobileFilterTop}>
+                  <span>Date</span>
+                  <span className={styles.mobileFilterArrow}>
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div className={styles.mobileFilterContent}>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last week" ? "" : "Last week")}>
+                    <label>Last week</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileDateRadio === "Last week" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last month" ? "" : "Last month")}>
+                    <label>Last month</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileDateRadio === "Last month" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last 3 months" ? "" : "Last 3 months")}>
+                    <label>Last 3 months</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileDateRadio === "Last 3 months" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last 6 months" ? "" : "Last 6 months")}>
+                    <label>Last 6 months</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileDateRadio === "Last 6 months" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last year" ? "" : "Last year")}>
+                    <label>Last year</label>
+                    <div className={styles.radioButton}>
+                      <div className={mobileDateRadio === "Last year" ? styles.checked : styles.unchecked}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       <div className={styles.wrapper}>
-        <div className={styles.arrows}>
+        <div className={`${styles.arrows} hidden xl:flex`}>
           <Arrow direction="left" /> <Arrow direction="right" />
         </div>
         <header className={styles.header}>
           <div className={styles.topHeader}>
             <h2 className={styles.title}>Investors</h2>
+            <div className={`${styles.arrows} xl:hidden flex`}>
+              <Arrow direction="left" /> <Arrow direction="right" />
+            </div>
             <button className={styles.exportButton}>
               Export or Import
               <svg
@@ -167,6 +300,18 @@ const FounderInvestors: React.FC = () => {
             </button>
           </div>
           <div className={styles.headerControls}>
+            <div className={styles.mobileHeaderSelect}>
+              <div className={styles.mobileSelect}>
+                <button>Add user</button>
+                <button
+                  className={styles.mobileFilterButton}
+                  onClick={() => setIsFilterOpen(!isFilterOpen)}
+                >
+                  Sort by
+                </button>
+              </div>
+              <button className={styles.mobileExportOrImport}>Export or Import</button>
+            </div>
             <input
               type="text"
               placeholder="Search"
@@ -257,10 +402,16 @@ const FounderInvestors: React.FC = () => {
                   alt={item.name}
                   className={styles.avatar}
                 />
-                {item.name}
+                <span className={styles.tableItemName}>
+                  {item.name}
+                  <div className={styles.mobileTableEmail}>{item.email}</div>
+                </span>
               </div>
-              <div>{item.email}</div>
-              <div>{item.investmentAmount}</div>
+              <div className={styles.tableEmail}>{item.email}</div>
+              <div>
+                {item.investmentAmount}
+                <span className={styles.mobileCurrency}>USDT</span>
+              </div>
             </div>
           ))}
         </div>
