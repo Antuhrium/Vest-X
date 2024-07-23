@@ -11,6 +11,11 @@
       text-white;
 
 	margin-left: calc(435px + 140px + 120px);
+
+	@media screen and (max-width: 640px) {
+		margin: 12px auto !important;
+		padding-bottom: 72px;
+	}
 }
 
 .topCard {
@@ -306,7 +311,7 @@ input[type="checkbox"]:checked {
 
 .chartsSwitch {
 	position: absolute;
-	top: 1rem;
+	top: 2rem;
 	right: 1rem;
 }
 

@@ -1,0 +1,49 @@
+.chartContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.button {
+	background-color: transparent;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin: 0 5px;
+	font-size: 14px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+
+		padding: 0px;
+	}
+}
+
+.button.active {
+	background-color: #0f62fe; /* Adjust as needed */
+	border-radius: 5px;
+}
+
+.customTooltip {
+	background: #111827;
+	border: 1px solid #1b2531;
+	border-radius: 4px;
+	padding: 10px;
+	color: #fff;
+	font-size: 14px;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}

@@ -45,6 +45,10 @@
 	border: 1px solid var(--Gray-600, #1d283a);
 	border-bottom: none;
 	padding: 40px 32px;
+
+	@media screen and (max-width: 1350px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 .generalBackersGrid {
@@ -55,6 +59,10 @@
 	border-top: none;
 	padding: 40px 32px;
 	padding-top: 0;
+
+	@media screen and (max-width: 1440px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 .backer,
@@ -93,6 +101,7 @@
 	font-family: Inter, sans-serif;
 	font-size: 18px;
 	color: #fff;
+	text-wrap: nowrap;
 }
 
 /* Top backers specific styles */

@@ -12,6 +12,11 @@
 	height: 340px;
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
+
+	@media screen and (max-width: 640px) {
+		height: 5rem;
+		background-size: contain !important;
+	}
 }
 
 .rightBg {
