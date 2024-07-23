@@ -11,7 +11,15 @@ const data = [
   { name: "May 31" },
 ];
 
-const ChartLine = () => {
+interface ChartLineProps {
+  customWidth?: string;
+  customHeight?: string;
+}
+
+const ChartLine = ({
+  customWidth = "100%",
+  customHeight = "100%",
+}: ChartLineProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [isVisible, setIsVisible] = useState(false);
@@ -21,8 +29,8 @@ const ChartLine = () => {
     }
   }, [isInView]);
   return (
-    <ResponsiveContainer width={"100%"} height={"100%"} ref={ref}>
-      <AreaChart data={data}>
+    <ResponsiveContainer width={customWidth} height={customHeight} ref={ref}>
+      <AreaChart data={data} width={214} height={214}>
         <defs>
           <linearGradient id="colorUv" x1="0" y1="1" x2="0" y2="0">
             <stop offset="0%" stopColor="#030711" stopOpacity={0} />

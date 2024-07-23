@@ -1,98 +1,99 @@
 .container {
-  background-color: #0a0f1a;
-  z-index: 1000;
-  padding: 2rem;
-  width: 100%;
-  @media screen and (max-width: 640px) {
-    padding: 24px;
-  }
+	background-color: #0a0f1a;
+	z-index: 1000;
+	padding: 2rem;
+	width: 100%;
+	@media screen and (max-width: 640px) {
+		padding: 24px;
+	}
 }
 
 .contentContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: calc(435px + 140px);
-  color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: calc(435px + 140px);
+	color: white;
 }
 
 .formButtons {
-  display: flex;
-  justify-content: space-between;
-  width: 80% !important;
+	display: flex;
+	justify-content: space-between;
+	width: 80% !important;
 }
 
 .formContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-color: #0a0f1a;
-  z-index: 1000;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	background-color: #0a0f1a;
+	z-index: 1000;
 }
 
 .formGroup {
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
+	flex: 1 1 45%;
+	display: flex;
+	flex-direction: column;
 
-  @media screen and (max-width: 640px) {
-    flex: 1 1 100%;
-  }
+	@media screen and (max-width: 640px) {
+		flex: 1 1 100%;
+	}
 }
 
 .formGroupFull {
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: column;
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .label {
-  color: white;
-  font-size: 14px;
+	color: white;
+	font-size: 14px;
 }
 
 .requiredStar {
-  color: #0f62fe;
-  margin-left: 0.25rem;
+	color: #0f62fe;
+	margin-left: 0.25rem;
 }
 
 .input,
 .select,
 .textarea {
-  background-color: #111827;
-  border: 1px solid #1b2531;
-  color: white !important;
+	background-color: #111827;
+	border: 1px solid #1b2531;
+	color: white !important;
 }
 
 .formGroup,
 .formGroupFull {
-  margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .formGroup > label,
 .formGroupFull > label {
-  margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 
 .textarea {
-  height: 6rem;
-  margin-bottom: 0.5rem;
-  color: white !important;
+	height: 6rem;
+	margin-bottom: 0.5rem;
+	color: white !important;
 }
 
 .gradientHeader {
-  background: var(
-    --Primary-Gradient-White-to-black,
-    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%)
-  );
-  background-clip: text;
-  font-weight: 600;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 24px;
-  @apply font-igraSans;
+	background: var(
+		--Primary-Gradient-White-to-black,
+		linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.3) 19%)
+	);
+	background-clip: text;
+	font-weight: 600;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 24px;
+	@apply font-igraSans;
+	margin-bottom: 20px;
 }
 
 input {
-  padding: 11px !important;
+	padding: 11px !important;
 }

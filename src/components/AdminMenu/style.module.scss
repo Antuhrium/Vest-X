@@ -1,6 +1,6 @@
 .leftWrapper {
-  left: 140px;
-  @apply min-w-[555px]
+	left: 140px;
+	@apply min-w-[555px]
      w-fit
     flex flex-col
     gap-[24px]
@@ -10,7 +10,7 @@
 }
 
 .leftCard {
-  @apply relative overflow-hidden
+	@apply relative overflow-hidden
       w-[480px]
       min-h-[188px]
       py-[32px]
@@ -20,43 +20,43 @@
       font-igraSans cursor-pointer
       transition-all;
 
-  border-radius: 4px;
-  border: 1px solid #1d283a;
-  background: #0a0f1a;
+	border-radius: 4px;
+	border: 1px solid #1d283a;
+	background: #0a0f1a;
 
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-  }
-  &:hover svg {
-    @apply transition-transform translate-x-2 translate-y-2;
-  }
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+	&:hover svg {
+		@apply transition-transform translate-x-2 translate-y-2;
+	}
 }
 
 .leftCardTitle {
-  @apply font-igraSans text-[#7f8ea3]
+	@apply font-igraSans text-[#7f8ea3]
     text-[30px] font-normal leading-[38px];
 }
 
 .leftCardBg {
-  @apply absolute
+	@apply absolute
       -bottom-[72px] -right-[64px] opacity-10;
 
-  width: 261.53px;
-  height: 261.53px;
+	width: 261.53px;
+	height: 261.53px;
 
-  opacity: 0.1;
+	opacity: 0.1;
 }
 
 .rounds {
-  @apply flex flex-col
+	@apply flex flex-col
       gap-[12px]
       text-white;
 }
 
 .title {
-  @apply mt-3
+	@apply mt-3
     mb-1
     text-[24px]
     font-normal
@@ -66,122 +66,122 @@
 }
 
 .roundBtn {
-  @apply w-full h-[60px]
+	@apply w-full h-[60px]
       px-[32px] py-[12px]
       flex 
       justify-between items-center 
       transition-all;
 
-  border: 1px solid #1d283a;
-  color: #7f8ea3;
+	border: 1px solid #1d283a;
+	color: #7f8ea3;
 
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+	font-family: "Inter", sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
 
-  &:hover svg {
-    @apply transition-all translate-x-2 translate-y-2;
-  }
+	&:hover svg {
+		@apply transition-all translate-x-2 translate-y-2;
+	}
 }
 
 .socials {
-  @apply flex flex-col
+	@apply flex flex-col
       gap-[12px] text-white;
 }
 
 .socialsWrapper {
-  @apply flex
+	@apply flex
     flex-col
     gap-[16px]
     py-[15px]
-    px-0;
+    px-[15px];
 
-  border-radius: 4px;
-  border: 1px solid var(--Gray-600, #1d283a);
+	border-radius: 4px;
+	border: 1px solid var(--Gray-600, #1d283a);
 }
 
 .social {
-  @apply w-full h-[26px] flex 
+	@apply w-full h-[26px] flex 
       items-center justify-between cursor-pointer;
 }
 .social:hover svg {
-  @apply transition-transform translate-x-2 translate-y-2;
+	@apply transition-transform translate-x-2 translate-y-2;
 }
 
 .socialLeft {
-  @apply flex
+	@apply flex
       items-center
       gap-[20px];
 }
 .socialLeft span {
-  @apply font-milligram font-normal
+	@apply font-milligram font-normal
     leading-[24px]
     text-[18px] opacity-70 text-[#7f8ea3];
 
-  font-family: "Inter", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .socialLeft img {
-  @apply h-[21px] w-[21px];
+	@apply h-[21px] w-[21px];
 }
 
 @media screen and (max-width: 640px) {
-  .socialBtn,
-  .socialLeft span {
-    @apply hidden;
-  }
-  .socialsWrapper {
-    @apply flex-row justify-center gap-[60px];
-  }
-  .socialLeft img {
-    @apply h-[36px] w-[36px];
-  }
+	.socialBtn,
+	.socialLeft span {
+		@apply hidden;
+	}
+	.socialsWrapper {
+		@apply flex-row justify-center gap-[60px];
+	}
+	.socialLeft img {
+		@apply h-[36px] w-[36px];
+	}
 }
 
 .rightCard {
-  @apply border
+	@apply border
     border-[#FFFFFF25]
       max-w-[719px]
       p-[32px]
       flex flex-col
       justify-between
       relative overflow-hidden;
-  background: linear-gradient(252deg, #2c2c2c -6.59%, #0f0f0f 35.06%);
+	background: linear-gradient(252deg, #2c2c2c -6.59%, #0f0f0f 35.06%);
 }
 
 .mobileCard {
-  @apply hidden px-[22px];
+	@apply hidden px-[22px];
 }
 
 @media screen and (max-width: 1280px) {
-  .rightCard {
-    @apply hidden;
-  }
-  .mobileCard {
-    @apply flex w-full max-w-none;
-  }
+	.rightCard {
+		@apply hidden;
+	}
+	.mobileCard {
+		@apply flex w-full max-w-none;
+	}
 }
 
 .rightTitle {
-  @apply flex gap-[24px] items-center font-igraSans;
+	@apply flex gap-[24px] items-center font-igraSans;
 }
 
 .rightTitle h3,
 .rightTitle span {
-  @apply text-[20px];
-  background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	@apply text-[20px];
+	background: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .rightTitle span {
-  @apply text-[16px];
+	@apply text-[16px];
 }
 
 .rightText {
-  @apply text-[12px]
+	@apply text-[12px]
       text-[#C0C0C0]
       max-w-[300px]
       mt-[26px]
@@ -189,7 +189,7 @@
 }
 
 .rightBtn {
-  @apply max-w-[167px]
+	@apply max-w-[167px]
       mt-[32px]
       bg-white
       px-[20px] py-[14px]
@@ -199,11 +199,11 @@
 }
 
 .rightBtn:hover {
-  @apply transition-colors bg-gray;
+	@apply transition-colors bg-gray;
 }
 
 .rightCardBg {
-  @apply absolute
+	@apply absolute
       h-full
       -bottom-[18px]
       right-0
@@ -211,19 +211,19 @@
 }
 
 @media screen and (max-width: 640px) {
-  .rightCardBg {
-    @apply -right-[85px] -bottom-[59px];
-  }
+	.rightCardBg {
+		@apply -right-[85px] -bottom-[59px];
+	}
 
-  .mobileCard .rightTitle {
-    @apply flex-col items-start gap-[16px];
-  }
+	.mobileCard .rightTitle {
+		@apply flex-col items-start gap-[16px];
+	}
 
-  .rightBtn {
-    @apply max-w-[111px] px-0;
-  }
+	.rightBtn {
+		@apply max-w-[111px] px-0;
+	}
 
-  .rightText {
-    @apply max-w-[220px];
-  }
+	.rightText {
+		@apply max-w-[220px];
+	}
 }

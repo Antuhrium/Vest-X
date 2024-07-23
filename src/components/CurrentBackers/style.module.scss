@@ -1,109 +1,122 @@
 .currentBackers {
-  background-color: #030711;
-  color: #ffffff;
-  max-width: 100%;
-  border-radius: 10px;
+	background-color: #030711;
+	color: #ffffff;
+	max-width: 100%;
+	border-radius: 10px;
 }
 
 .title {
-  font-family: "Igra Sans", sans-serif;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  padding: 20px 32px;
-  border: 1px solid var(--Gray-600, #1d283a);
-  border-bottom: none;
-  margin-bottom: 0 !important;
-  background: var(
-    --Primary-Gradient-White-to-black,
-    linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0.3) 60%)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @apply font-igraSans;
+	font-family: "Igra Sans", sans-serif;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	padding: 20px 32px;
+	border: 1px solid var(--Gray-600, #1d283a);
+	border-bottom: none;
+	margin-bottom: 0 !important;
+	background: var(
+		--Primary-Gradient-White-to-black,
+		linear-gradient(90deg, #fff 40%, rgba(255, 255, 255, 0.3) 60%)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@apply font-igraSans;
+
+	@media screen and (max-width: 640px) {
+		font-size: 18px;
+		line-height: 24px;
+		border: none;
+		background: none;
+		background-clip: none;
+		-webkit-background-clip: none;
+		-webkit-text-fill-color: white;
+		color: white;
+		text-align: left;
+		padding-left: 0px;
+	}
 }
 
 .topBackersGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  border: 1px solid var(--Gray-600, #1d283a);
-  border-bottom: none;
-  padding: 40px 32px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	border: 1px solid var(--Gray-600, #1d283a);
+	border-bottom: none;
+	padding: 40px 32px;
 }
 
 .generalBackersGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  border: 1px solid var(--Gray-600, #1d283a);
-  border-top: none;
-  padding: 40px 32px;
-  padding-top: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+	border: 1px solid var(--Gray-600, #1d283a);
+	border-top: none;
+	padding: 40px 32px;
+	padding-top: 0;
 }
 
 .backer,
 .topBacker {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	justify-content: center;
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-  object-fit: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+	object-fit: cover;
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 .name {
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	font-family: Inter, sans-serif;
+	font-size: 14px;
+	color: #ccc;
+	margin-bottom: 2px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .amount {
-  font-family: Inter, sans-serif;
-  font-size: 18px;
-  color: #fff;
+	font-family: Inter, sans-serif;
+	font-size: 18px;
+	color: #fff;
 }
 
 /* Top backers specific styles */
 .topBacker {
-  margin-bottom: 48px;
+	margin-bottom: 48px;
 }
 
 .topBacker .avatar {
-  width: 60px;
-  height: 60px;
+	width: 60px;
+	height: 60px;
 }
 
 .topBacker .name {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .topBacker .amount {
-  font-family: "Igra Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
+	font-family: "Igra Sans", sans-serif;
+	font-size: 24px;
+	font-weight: 400;
 }
 
 /* Inset effect for general backers */
 .generalBackersGrid {
-  padding-left: calc(100% / 12);
-  padding-right: calc(100% / 12);
+	padding-left: calc(100% / 12);
+	padding-right: calc(100% / 12);
 }
