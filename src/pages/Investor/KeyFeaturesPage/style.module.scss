@@ -39,8 +39,8 @@
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
 
-	@media screen and (max-width: 640px) {
-		height: 5rem;
-		background-size: contain !important;
+	@media screen and (max-width: 1280px) {
+		height: 100px;
+		background-position: center !important;
 	}
 }

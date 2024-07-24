@@ -182,7 +182,7 @@
 @media screen and (max-width: 1020px) {
 	.vestingTopInfo {
 		font-size: 14px;
-		color: #7F8EA3;
+		color: #7f8ea3;
 	}
 }
 
@@ -200,6 +200,10 @@
 
 .graph {
 	@apply flex gap-2 text-white mt-[56px] z-10 relative;
+
+	@media screen and (max-width: 640px) {
+		@apply mt-[24px];
+	}
 }
 
 .leftGraphWrapper {
@@ -212,6 +216,10 @@
 	border-radius: 4px;
 	border: 1px solid #1d283a;
 	background: #030711;
+
+	@media screen and (max-width: 640px) {
+		@apply max-w-full;
+	}
 }
 
 .graphTitle {
@@ -258,6 +266,10 @@
 	border-radius: 4px;
 	border: 1px solid #1d283a;
 	background: #030711;
+
+	@media screen and (max-width: 640px) {
+		padding-top: 50px;
+	}
 }
 
 .checkboxWrapper {
