@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// @ts-nocheck
+import { MobilePDFReader } from "react-read-pdf";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import ArrowBack from "/images/arrow-back.svg";
 import ArrowNext from "/images/arrow-next.svg";
@@ -63,14 +65,45 @@ const FifthStep: React.FC = () => {
 };
 
 const FourthStep: React.FC = () => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768);
+			console.log("window.innerWidth", window.innerWidth);
+		};
+
+		// Set initial value
+		handleResize();
+
+		// Add event listener
+		window.addEventListener("resize", handleResize);
+
+		// Cleanup event listener
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 	return (
 		<div className={styles.container}>
 			<div className={styles.pdfContainer}>
-				<iframe
-					src={SimplePDF}
-					className={styles.iframePDF}
-					title="PDF Viewer"
-				></iframe>
+				{isMobile ? (
+					<div className="w-full h-[62vh] relative -mt-[5rem]">
+						<MobilePDFReader
+							url={"/pdf/simple_pdf.pdf"}
+							style={{
+								overflow: "scroll",
+								height: "62vh",
+							}}
+						/>
+					</div>
+				) : (
+					<iframe
+						src={SimplePDF}
+						className={styles.iframePDF}
+						title="PDF Viewer"
+					></iframe>
+				)}
 			</div>
 			<div className={styles.fileContainer}>
 				<div className={styles.fileInfo}>

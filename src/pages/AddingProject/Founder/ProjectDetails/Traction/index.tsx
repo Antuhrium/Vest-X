@@ -139,11 +139,10 @@ export default function Traction() {
 				<section
 					key={id}
 					id={id}
-					className={styles.section}
-					style={{
-						marginTop: id === "traction" ? "0" : "24px",
-						padding: id === "traction" ? "0" : "24px 0px",
-					}}
+					className={
+						`${styles.section} mt-0 ` +
+						(id === "traction" ? "p-0" : "p-[24px] px-0")
+					}
 				>
 					<Component />
 				</section>
