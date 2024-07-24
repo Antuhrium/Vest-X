@@ -58,7 +58,7 @@ const Menu: React.FC<CustomStyles> = ({
   console.log("menuStyle", menuStyle);
   const { pathname } = useLocation();
 
-  const links = pathname.includes("/investor") ? investorLinks : founderLinks;
+  const links = pathname.includes("/founder") ? founderLinks : investorLinks;
 
   const linkStyle = (link: string) => {
     if (link === links[0].to && pathname === links[0].to) {

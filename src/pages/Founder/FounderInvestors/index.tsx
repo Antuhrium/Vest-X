@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Menu from "../../../components/Menu";
 import Filter, { filtersT } from "../../../components/Filter";
@@ -110,14 +110,46 @@ const data = [
   },
 ];
 
+const initialOpenSections = [true, true, true, true, true]
+
 const FounderInvestors: React.FC = () => {
   const [investors, setInvestors] = useState<number[]>([]);
   const [pages, setPages] = useState<number>(1);
   const [isFilterOpen, setIsFilterOpen] = useState(false)
 
-  const [mobileStatusRadio, setMobileStatusRadio] = useState<string>("")
-  const [mobileDateRadio, setMobileDateRadio] = useState<string>("")
+  const [mobileStatusRadio, setMobileStatusRadio] = useState<string>("Any")
+  const [mobileDateRadio, setMobileDateRadio] = useState<string>("Last week")
 
+  const [isOpenSections, setIsOpenSections] = useState<boolean[]>(initialOpenSections);
+  const [roundSelect, setRoundSelect] = useState<"Private" | "Seed" | null>(null);
+  const [isMobileButtonsOpen, setIsMobileButtonsOpen] = useState(false);
+
+  const toggleSection = (index: number) => {
+    setIsOpenSections((prevSections) =>
+      prevSections.map((isOpen, i) => (i === index ? !isOpen : isOpen))
+    );
+  };
+
+  const handleClearFilters = () => {
+    setMobileStatusRadio("Any");
+    setMobileDateRadio("Last week");
+    setIsOpenSections(initialOpenSections);
+    setRoundSelect(null);
+    setIsMobileButtonsOpen(false);
+  }
+
+  const handleShowResults = () => {
+    setIsMobileButtonsOpen(false);
+    setIsFilterOpen(false);
+  }
+
+  useEffect(() => {
+    if (roundSelect != null) {
+      setIsMobileButtonsOpen(true);
+    } else {
+      setIsMobileButtonsOpen(false);
+    }
+  }, [roundSelect])
 
   return (
     <div className={styles.container}>
@@ -134,126 +166,130 @@ const FounderInvestors: React.FC = () => {
       </div>
 
       {isFilterOpen && (
-        <>
-          <div className={styles.mobileFilterBg} onClick={() => setIsFilterOpen(false)} />
-          <div className={styles.mobileFilter}>
-            <span className={styles.mobileFilterTitle}>Sort and Filter</span>
-            <div className={styles.mobileFilterWrapper}>
-              <div className={styles.mobileFilterItem}>
-                <div className={styles.mobileFilterTop}>
-                  <span>Show:</span>
-                  <span className={styles.mobileFilterArrow}>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={styles.mobileFilterContent}>
-                  All columns
-                </div>
-              </div>
-              <div className={styles.mobileFilterItem}>
-                <div className={styles.mobileFilterTop}>
-                  <span>Grouped by:</span>
-                  <span className={styles.mobileFilterArrow}>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={styles.mobileFilterContent}>
-                  All columns
-                </div>
-              </div>
-              <div className={styles.mobileFilterItem}>
-                <div className={styles.mobileFilterTop}>
-                  <span>Round</span>
-                  <span className={styles.mobileFilterArrow}>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={styles.mobileFilterContent}>
-                  <button className={styles.mobileFilterRoundButton}>Private</button>
-                  <button className={`${styles.mobileFilterRoundButton} ml-3`}>Seed</button>
-                </div>
-              </div>
-              <div className={styles.mobileFilterItem}>
-                <div className={styles.mobileFilterTop}>
-                  <span>Status</span>
-                  <span className={styles.mobileFilterArrow}>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={styles.mobileFilterContent}>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Any" ? "" : "Any")}>
-                    <label>Any</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileStatusRadio === "Any" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Online" ? "" : "Online")}>
-                    <label>Online</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileStatusRadio === "Online" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio(mobileStatusRadio === "Offline" ? "" : "Offline")}>
-                    <label>Offline</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileStatusRadio === "Offline" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
+        <div className={styles.mobileFilterBg} onClick={() => {setIsFilterOpen(false); setIsMobileButtonsOpen(false)}} />
+      )}
+      <div className={`${styles.mobileFilter} ${isFilterOpen ? "" : styles.mobileFilterClose}`}>
+        <span className={styles.mobileFilterTitle}>Sort and Filter</span>
+        <div className={styles.mobileFilterWrapper}>
+          <div className={styles.mobileFilterItem}>
+            <div className={styles.mobileFilterTop}>
+              <span>Show:</span>
+              <button className={`${styles.mobileFilterArrow} transition-all ${isOpenSections[0] ? "rotate-180" : ""}`} onClick={() => toggleSection(0)}>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={`${styles.mobileFilterContent} ${!isOpenSections[0] ? "hidden" : ""}`}>
+              All columns
+            </div>
+          </div>
+          <div className={styles.mobileFilterItem}>
+            <div className={styles.mobileFilterTop}>
+              <span>Grouped by:</span>
+              <button className={`${styles.mobileFilterArrow} transition-all ${isOpenSections[1] ? "rotate-180" : ""}`} onClick={() => toggleSection(1)}>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={`${styles.mobileFilterContent} ${!isOpenSections[1] ? "hidden" : ""}`}>
+              All columns
+            </div>
+          </div>
+          <div className={styles.mobileFilterItem}>
+            <div className={styles.mobileFilterTop}>
+              <span>Round</span>
+              <button className={`${styles.mobileFilterArrow} transition-all ${isOpenSections[2] ? "rotate-180" : ""}`} onClick={() => toggleSection(2)}>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={`${styles.mobileFilterContent} ${!isOpenSections[2] ? "hidden" : ""}`}>
+              <button className={`${styles.mobileFilterRoundButton} ${roundSelect === "Private" ? "bg-[#7F8EA366]" : ""}`} onClick={() => setRoundSelect(prev => prev === "Private" ? null : "Private")}>Private</button>
+              <button className={`${styles.mobileFilterRoundButton} ${roundSelect === "Seed" ? "bg-[#7F8EA366]" : ""} ml-3`} onClick={() => setRoundSelect(prev => prev === "Private" ? null : "Seed")}>Seed</button>
+            </div>
+          </div>
+          <div className={styles.mobileFilterItem}>
+            <div className={styles.mobileFilterTop}>
+              <span>Status</span>
+              <button className={`${styles.mobileFilterArrow} transition-all ${isOpenSections[3] ? "rotate-180" : ""}`} onClick={() => toggleSection(3)}>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={`${styles.mobileFilterContent} ${!isOpenSections[3] ? "hidden" : ""}`}>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio("Any")}>
+                <label>Any</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileStatusRadio === "Any" ? styles.checked : styles.unchecked}></div>
                 </div>
               </div>
-              <div className={styles.mobileFilterItem}>
-                <div className={styles.mobileFilterTop}>
-                  <span>Date</span>
-                  <span className={styles.mobileFilterArrow}>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio("Online")}>
+                <label>Online</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileStatusRadio === "Online" ? styles.checked : styles.unchecked}></div>
                 </div>
-                <div className={styles.mobileFilterContent}>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last week" ? "" : "Last week")}>
-                    <label>Last week</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileDateRadio === "Last week" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last month" ? "" : "Last month")}>
-                    <label>Last month</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileDateRadio === "Last month" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last 3 months" ? "" : "Last 3 months")}>
-                    <label>Last 3 months</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileDateRadio === "Last 3 months" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last 6 months" ? "" : "Last 6 months")}>
-                    <label>Last 6 months</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileDateRadio === "Last 6 months" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
-                  <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio(mobileDateRadio === "Last year" ? "" : "Last year")}>
-                    <label>Last year</label>
-                    <div className={styles.radioButton}>
-                      <div className={mobileDateRadio === "Last year" ? styles.checked : styles.unchecked}></div>
-                    </div>
-                  </div>
+              </div>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileStatusRadio("Offline")}>
+                <label>Offline</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileStatusRadio === "Offline" ? styles.checked : styles.unchecked}></div>
                 </div>
               </div>
             </div>
           </div>
-        </>
+          <div className={styles.mobileFilterItem}>
+            <div className={styles.mobileFilterTop}>
+              <span>Date</span>
+              <button className={`${styles.mobileFilterArrow} transition-all ${isOpenSections[4] ? "rotate-180" : ""}`} onClick={() => toggleSection(4)}>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6934 1.78711L10.2656 10.2148L1.83789 1.78711" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={`${styles.mobileFilterContent} ${!isOpenSections[4] ? "hidden" : ""}`}>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio("Last week")}>
+                <label>Last week</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileDateRadio === "Last week" ? styles.checked : styles.unchecked}></div>
+                </div>
+              </div>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio("Last month")}>
+                <label>Last month</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileDateRadio === "Last month" ? styles.checked : styles.unchecked}></div>
+                </div>
+              </div>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio("Last 3 months")}>
+                <label>Last 3 months</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileDateRadio === "Last 3 months" ? styles.checked : styles.unchecked}></div>
+                </div>
+              </div>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio("Last 6 months")}>
+                <label>Last 6 months</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileDateRadio === "Last 6 months" ? styles.checked : styles.unchecked}></div>
+                </div>
+              </div>
+              <div className={styles.mobileFilterContentItem} onClick={() => setMobileDateRadio("Last year")}>
+                <label>Last year</label>
+                <div className={styles.radioButton}>
+                  <div className={mobileDateRadio === "Last year" ? styles.checked : styles.unchecked}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {isMobileButtonsOpen && (
+        <div className={styles.mobileFilterButtonContainer}>
+          <button onClick={handleShowResults}>Show 475 Results</button>
+          <button className={styles.mobileFilterClear} onClick={handleClearFilters}>Clear Filters</button>
+        </div>
       )}
 
       <div className={styles.wrapper}>
