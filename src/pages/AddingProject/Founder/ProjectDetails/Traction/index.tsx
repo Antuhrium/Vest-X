@@ -141,7 +141,7 @@ export default function Traction() {
 					id={id}
 					className={
 						`${styles.section} mt-0 ` +
-						(id === "traction" ? "p-0" : "p-[24px] px-0")
+						(id === "traction" ? "p-0" : "lg:mt-[24px] p-[24px] px-0")
 					}
 				>
 					<Component />
