@@ -1,23 +1,37 @@
 .rs-calendar {
-    position: absolute !important;
-    z-index: 100000;
-    background-color: #111827;
-    margin-left: -0.75rem;
-    margin-top: -28rem;
+	position: absolute !important;
+	z-index: 100000;
+	background-color: #111827;
+	margin-left: -0.75rem;
+	margin-top: -28rem;
 }
 
-.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-month-toolbar {
-    display: flex !important;
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time)
+	.rs-calendar-header-month-toolbar {
+	display: flex !important;
 }
 
 .rs-calendar-panel .rs-calendar-header .rs-calendar-btn-today {
-    display: none !important;
+	display: none !important;
 }
 
 #root {
-    height: 100%
+	height: 100%;
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mobile__pdf__container__header {
+	display: none;
+}
+
+.mobile__pdf__container #viewerContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.mobile__pdf__container footer {
+	display: none;
 }

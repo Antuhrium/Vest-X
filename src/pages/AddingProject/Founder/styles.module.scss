@@ -65,7 +65,7 @@
 	@media screen and (max-width: 600px) {
 		button:nth-of-type(2) {
 			position: absolute;
-			bottom: 2rem;
+			bottom: 0.5rem;
 			margin-left: -1rem;
 			width: 100%;
 			display: flex;
@@ -118,6 +118,6 @@
 		width: 100%;
 		height: max-content;
 		padding-top: 0px;
-		z-index: 10000000;
+		z-index: 10000;
 	}
 }

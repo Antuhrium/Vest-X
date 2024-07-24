@@ -1,125 +1,125 @@
 .modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10000;
 
-  @media screen and (max-width: 640px) {
-    padding: 32px;
-  }
+	@media screen and (max-width: 640px) {
+		padding: 32px;
+	}
 }
 
 .modal {
-  background: #101322;
-  border-radius: 8px;
-  width: 593px;
-  height: max-content;
-  max-width: 100%;
-  padding: 32px;
-  color: #fff;
-  text-align: center;
-  position: relative;
+	background: #101322;
+	border-radius: 8px;
+	width: 593px;
+	height: max-content;
+	max-width: 100%;
+	padding: 32px;
+	color: #fff;
+	text-align: center;
+	position: relative;
 }
 
 .modalHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .icon {
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 60px; /* 100% */
-  letter-spacing: -1.2px;
-  background-color: #0f62fe;
-  color: #fff;
-  border-radius: 100%;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 60px; /* 100% */
+	letter-spacing: -1.2px;
+	background-color: #0f62fe;
+	color: #fff;
+	border-radius: 100%;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  @media screen and (max-width: 640px) {
-    display: none;
-  }
+	@media screen and (max-width: 640px) {
+		display: none;
+	}
 }
 
 .closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
 }
 
 .modalContent h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 
 .modalContent p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #aaa;
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: #aaa;
 
-  @media screen and (max-width: 640px) {
-    font-size: 16px;
-  }
+	@media screen and (max-width: 640px) {
+		font-size: 16px;
+	}
 }
 
 .modalActions {
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
+	display: flex;
+	justify-content: space-around;
+	gap: 1rem;
 
-  @media screen and (max-width: 640px) {
-    flex-direction: column-reverse;
-  }
+	@media screen and (max-width: 640px) {
+		flex-direction: column-reverse;
+	}
 }
 
 .cancelButton {
-  background-color: white;
-  border-radius: 4px;
-  color: #0f62fe;
-  padding: 10px 20px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+	background-color: white;
+	border-radius: 4px;
+	color: #0f62fe;
+	padding: 10px 20px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
 }
 
 .deleteButton {
-  background-color: #0f62fe;
-  border: 1px solid #0f62fe;
-  border-radius: 4px;
-  color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+	background-color: #0f62fe;
+	border: 1px solid #0f62fe;
+	border-radius: 4px;
+	color: #fff;
+	padding: 10px 20px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
 }
 
 .bigMessage {
-  font-size: 48px !important;
-  @apply font-igraSans;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 60px; /* 125% */
-  letter-spacing: -0.96px;
+	font-size: 48px !important;
+	@apply font-igraSans;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 60px; /* 125% */
+	letter-spacing: -0.96px;
 
-  @media screen and (max-width: 640px) {
-    font-size: 30px !important;
-  }
+	@media screen and (max-width: 640px) {
+		font-size: 30px !important;
+	}
 }

@@ -9,72 +9,72 @@ import PopupMessage from "../../../components/PopupMessage";
 import RightBg from "/images/right-bg.png";
 
 const FounderAdminPanel: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const adminMenuRef = useRef<HTMLDivElement>(null);
+	const [isModalOpen, setIsModalOpen] = useState(true);
+	const menuRef = useRef<HTMLDivElement>(null);
+	const adminMenuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const adjustMenuHeight = () => {
-      if (adminMenuRef.current && menuRef.current) {
-        menuRef.current.style.height = `${adminMenuRef.current.offsetHeight}px`;
-      }
-    };
+	useEffect(() => {
+		const adjustMenuHeight = () => {
+			if (adminMenuRef.current && menuRef.current) {
+				menuRef.current.style.height = `${adminMenuRef.current.offsetHeight}px`;
+			}
+		};
 
-    adjustMenuHeight();
-    window.addEventListener("resize", adjustMenuHeight);
+		adjustMenuHeight();
+		window.addEventListener("resize", adjustMenuHeight);
 
-    return () => {
-      window.removeEventListener("resize", adjustMenuHeight);
-    };
-  }, []);
+		return () => {
+			window.removeEventListener("resize", adjustMenuHeight);
+		};
+	}, []);
 
-  return (
-    <>
-      <img className={styles.rightBg} src={RightBg} alt="" />
-      <div>
-        <div
-          style={{
-            background: `url(${ArkhamTopBg})`,
-          }}
-          className={styles.bgContainer}
-        ></div>
-        {/* <img src={ArkhamTopBg} alt="arkham top bg" /> */}
-        {isModalOpen && (
-          <PopupMessage
-            title="Congratulations!"
-            description={{
-              text: "Your project has been successfully published. For any help contact our",
-              link: "24/7 support chat.",
-            }}
-            setIsModalOpen={setIsModalOpen}
-            type="success"
-          />
-        )}
-        <div className={styles.container}>
-          <Menu
-            ref={menuRef}
-            menuStyle={{
-              position: "relative",
-            }}
-          />
-          <AdminMenu
-            ref={adminMenuRef}
-            style={{
-              position: "relative",
-              left: "0",
-              height: "100%",
-            }}
-          />
-          <AdminInvestingContent
-            style={{
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          />
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<img className={styles.rightBg} src={RightBg} alt="" />
+			<div>
+				<div
+					style={{
+						background: `url(${ArkhamTopBg})`,
+					}}
+					className={styles.bgContainer}
+				></div>
+				{/* <img src={ArkhamTopBg} alt="arkham top bg" /> */}
+				{isModalOpen && (
+					<PopupMessage
+						title="Congratulations!"
+						description={{
+							text: "Your project has been successfully published. For any help contact our",
+							link: "24/7 support chat.",
+						}}
+						setIsModalOpen={setIsModalOpen}
+						type="success"
+					/>
+				)}
+				<div className={styles.container}>
+					<Menu
+						ref={menuRef}
+						menuStyle={{
+							position: "relative",
+						}}
+					/>
+					<AdminMenu
+						ref={adminMenuRef}
+						style={{
+							position: "relative",
+							left: "0",
+							height: "100%",
+						}}
+					/>
+					<AdminInvestingContent
+						style={{
+							marginLeft: "auto",
+							marginRight: "auto",
+						}}
+					/>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default FounderAdminPanel;
