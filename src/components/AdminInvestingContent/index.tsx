@@ -53,7 +53,7 @@ const MobileGraph = ({
 	setChart: React.Dispatch<React.SetStateAction<"line" | "circular">>;
 }) => {
 	return (
-		<div className="block lg:hidden h-[403px] w-full pt-4">
+		<div className="block lg:hidden h-[403px] w-full pt-4 relative">
 			<div
 				className={`${styles.chartsSwitch} `}
 				onClick={() => setChart(chart === "line" ? "circular" : "line")}
@@ -77,7 +77,9 @@ const MobileGraph = ({
 				</div>
 			)}
 			{chart === "line" && (
-				<div className={styles.chartWrapper}>
+				<div
+					className={`${styles.chartWrapper} mobile-admin-investing-line-chart`}
+				>
 					<span className={styles.graphTitle}>Vesting</span>
 					<ChartLine />
 				</div>
@@ -186,26 +188,35 @@ const FounderComponent = () => {
 				</div>
 			</div>
 			<div className={styles.graph}>
-				<button className={`${styles.chartsSwitch} sm:hidden block`} onClick={() => setIsCircleGraph(!isCircleGraph)}>
+				<button
+					className={`${styles.chartsSwitch} sm:hidden block`}
+					onClick={() => setIsCircleGraph(!isCircleGraph)}
+				>
 					{isCircleGraph ? (
 						<img src="/images/switch-line.svg" alt="switch" />
 					) : (
 						<img src="/images/switch-circular.svg" alt="switch" />
 					)}
 				</button>
-				<div className={`${styles.leftGraphWrapper} ${isCircleGraph ? "" : "hidden sm:flex"} min-w-full sm:min-w-0 pt-[80px] sm:pt-[30px]`}>
+				<div
+					className={`${styles.leftGraphWrapper} ${
+						isCircleGraph ? "" : "hidden sm:flex"
+					} min-w-full sm:min-w-0 pt-[80px] sm:pt-[30px]`}
+				>
 					<span className={styles.founderGraphTitle}>
 						<div
 							onClick={() => setTypeRoundGraph(0)}
-							className={`${styles.graphTitle} ${typeRoundGraph === 0 ? "" : styles.noActive
-								}`}
+							className={`${styles.graphTitle} ${
+								typeRoundGraph === 0 ? "" : styles.noActive
+							}`}
 						>
 							Seed round
 						</div>
 						<div
 							onClick={() => setTypeRoundGraph(1)}
-							className={`${styles.graphTitle} ${typeRoundGraph === 1 ? "" : styles.noActive
-								}`}
+							className={`${styles.graphTitle} ${
+								typeRoundGraph === 1 ? "" : styles.noActive
+							}`}
 						>
 							Private round
 						</div>
@@ -227,7 +238,11 @@ const FounderComponent = () => {
 						)}
 					</div>
 				</div>
-				<div className={`${styles.chartWrapper} ${isCircleGraph ? "hidden sm:flex" : ""} min-h-[390px] sm:min-h-0 pt-[80px] sm:pt-[30px]`}>
+				<div
+					className={`${styles.chartWrapper} ${
+						isCircleGraph ? "hidden sm:flex" : ""
+					} min-h-[390px] sm:min-h-0 pt-[80px] sm:pt-[30px]`}
+				>
 					<span className={styles.graphTitle}>Vesting</span>
 					<ChartLine />
 				</div>
@@ -307,8 +322,9 @@ const AdminInvestingContent: React.FC<AdminInvestingContentProps> = ({
 
 					<h3 className={styles.topCardTitle}>
 						<HeaderTitle
-							className={`${styles.topCardTitle} ${roundTitle.includes("Private") ? styles.privateRound : ""
-								}`}
+							className={`${styles.topCardTitle} ${
+								roundTitle.includes("Private") ? styles.privateRound : ""
+							}`}
 						>
 							<div
 								style={{

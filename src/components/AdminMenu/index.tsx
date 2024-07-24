@@ -31,6 +31,18 @@ const MobileAdminMenu = () => {
 	useEffect(() => {
 		setTab(0);
 	}, []);
+
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		if (pathname.includes("/project-introduction")) {
+			setTab(1);
+		} else if (pathname.includes("/key-features-highlights")) {
+			setTab(2);
+		} else if (pathname.includes("/investor/admin")) {
+			setTab(3);
+		}
+	}, [pathname]);
 	return (
 		<ul className="flex lg:hidden overflow-scroll sm:justify-center gap-4 text-[12px] text-[#676E76] no-scrollbar px-[15px] pt-8">
 			<li
@@ -53,7 +65,7 @@ const MobileAdminMenu = () => {
 			</li>
 			<li
 				className={`border-b-2 px-[0.1rem] pb-1 text-nowrap ${
-					tab !== 2 ? "border-[#1D283A] " : "border-[#0F62FE]"
+					tab !== 3 ? "border-[#1D283A] " : "border-[#0F62FE]"
 				}`}
 			>
 				Investments
