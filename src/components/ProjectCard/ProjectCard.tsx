@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <div className={styles.projectDetails}>
         <div className={styles.tokenName}>
-          <span>Token Name :</span>
+          <span>Token Name: </span>
           <span>{tokenName}</span>
         </div>
 

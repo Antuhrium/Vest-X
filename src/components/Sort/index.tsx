@@ -46,9 +46,10 @@ const SortDropdown: React.FC<SortDropdownProps> = ({
 
   return (
     <div className={styles.dropdownContainer} id="sort-dropdown-menu">
+      <span className={styles.mobileSortLabel}>Sort by <img src={DropdownIcon} alt="dropdown icon" /></span>
       <button
         className={styles.dropdownButton}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {setIsOpen(!isOpen); console.log("clicked", isOpen);}}
       >
         {selectedOption?.label} <img src={DropdownIcon} alt="dropdown icon" />
       </button>

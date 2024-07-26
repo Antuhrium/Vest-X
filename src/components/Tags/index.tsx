@@ -48,7 +48,7 @@ const Tags: React.FC = () => {
           />
         </div>
       ))}
-      <img src={NextTagIcon} alt="Next Tag" />
+      <img src={NextTagIcon} alt="Next Tag" className={styles.nextButton} />
     </div>
   );
 };
