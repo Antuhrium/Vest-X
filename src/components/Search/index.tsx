@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./style.module.scss";
-import SearchIcon from "/images/tdesign_search.png";
+import SearchIcon from "/images/tdesign_search.svg";
 
 interface SearchProps {
   onSearch: (query: string) => void;

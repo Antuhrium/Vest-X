@@ -10,6 +10,17 @@
   margin-left: calc(435px + 140px + 24px);
   padding-bottom: 144px;
   width: 100%;
+  @media screen and (max-width: 1280px) {
+    margin-left: 0;
+    padding: 52px 16px 100px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .searchWrapper {
@@ -19,11 +30,52 @@
   align-items: center;
   justify-content: space-between;
   gap: 140px;
+
+  @media screen and (max-width: 1280px) {
+    margin-top: 24px;
+    padding-right: 0;
+    & > div {
+      display: none;
+    }
+
+    form {
+      border: none;
+      background-color: #1d283a;
+    }
+  }
 }
 
 .tags {
   width: 100%;
   margin-top: 32px;
+
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
+}
+
+.mobileFilterControlContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.mobileOpenFilter {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #0f62fe;
+
+  @media screen and (min-width: 1280px) {
+    padding: 0;
+  }
 }
 
 .projectsWrapper {
@@ -32,11 +84,23 @@
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
+
+  @media screen and (max-width: 1280px) {
+    gap: 16px;
+    margin-top: 24px;
+    justify-content: center;
+    padding-right: 0;
+  }
 }
 
 .paginationWrapper {
   margin-top: 80px;
   padding-right: 38px;
+
+  @media screen and (max-width: 1280px) {
+    margin-top: 32px;
+    padding-right: 0;
+  }
 }
 
 .rightBg {
@@ -44,4 +108,234 @@
       bottom-0
       left-1/2;
   z-index: 1;
+
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
+}
+
+.mobileFilterBg {
+  background: #030711;
+  opacity: 0.9;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 10000;
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.mobileFilter {
+  position: fixed;
+  bottom: 0;
+  z-index: 10001;
+  padding: 30px 28px 30px 28px;
+  left: 5px;
+  right: 5px;
+  height: fit-content;
+  background: #1d283a;
+  border-radius: 16px 16px 0px 0px;
+  max-height: 75%;
+  overflow-y: auto;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+  @apply no-scrollbar;
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #fff;
+
+  .mobileFilterTitle {
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .mobileFilterWrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .mobileFilterItem {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #7f8ea333;
+      padding-bottom: 16px;
+
+      .mobileFilterTop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      .mobileFilterContent {
+        margin-top: 4px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .mobileFilterContentItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+        padding-left: 20px;
+
+        label {
+          font-size: 14px;
+          line-height: 26px;
+        }
+      }
+
+      .radioButton {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #7f8ea3;
+        border-radius: 50%;
+      }
+
+      .checkboxButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid #7f8ea3;
+      }
+
+      .checkboxChecked {
+        background: #0F62FE;
+        border: none;
+      }
+
+      .checked {
+        width: 20px;
+        height: 20px;
+        background-color: #1d283a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 6px solid #0f62fe;
+      }
+
+      .mobileFilterRoundButton {
+        margin-top: 8px;
+        padding: 8px 20px 8px 20px;
+        border-radius: 8px;
+
+        border: 1px solid #7f8ea366;
+
+        font-size: 14px;
+        line-height: 26px;
+        transition: background 0.1s ease;
+
+        &:active {
+          background: #7f8ea366;
+        }
+      }
+    }
+    .mobileFilterArrow {
+      min-height: fit-content;
+    }
+  }
+}
+
+.mobileFilterButtonContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(29, 40, 58, 0) 0%, #1d283a 92.36%);
+  height: 400px;
+  z-index: 10002;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+  padding-bottom: 64px;
+
+  button {
+    min-width: 260px;
+    padding: 14px 30px 14px 30px;
+    border-radius: 4px;
+    background: #0f62fe;
+    box-shadow: 0px 4px 40px 0px #111827;
+
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+
+    transition: background 0.1s ease-in-out;
+
+    &:active {
+      background: #1f6dff;
+    }
+  }
+
+  .mobileFilterClear {
+    background: #111827;
+
+    &:active {
+      background: #0f1727;
+    }
+  }
+}
+
+.mobileFilterClose {
+  transform: translateY(100%);
+}
+
+.mobileFilterInputs {
+  padding: 16px 52px 16px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+
+  input {
+    background: transparent;
+    border: none;
+    max-width: fit-content;
+    padding: 0 !important;
+    height: fit-content;
+  }
+
+  label {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    margin: 0;
+  }
 }
